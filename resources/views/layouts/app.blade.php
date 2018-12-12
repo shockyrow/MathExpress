@@ -36,7 +36,7 @@
         <div id="app"
              class="container"
         >
-            <nav class="navbar navbar-expand-md navbar-light navbar-laravel shadow border rounded-bottom border-top-0 sticky-top">
+            <nav class="navbar navbar-expand-md navbar-light navbar-laravel shadow border rounded-bottom border-top-0 sticky-top mx-0 px-3">
                 <a class="navbar-brand"
                    href="{{ url('/') }}"
                 >

@@ -75,18 +75,22 @@
                             eleifend. Donec nulla velit, euismod a lobortis a, consequat pretium nisi.
                         </p>
 
-                        <div class="offset-md-1 col-md-10 embed-responsive embed-responsive-16by9 my-3">
-                            <iframe class="embed-responsive-item"
-                                    src="https://onedrive.live.com/embed?cid=A17C0ABDF318AEF5&resid=A17C0ABDF318AEF5%21106&authkey=ADQBLfEFvW3acEU&em=2&wdAr=1.3333333333333333"
-                                    allowfullscreen
-                            ></iframe>
-                        </div>
+                        <div class="d-flex justify-content-around my-3">
+                            <button type="button"
+                                    class="btn btn-primary"
+                                    data-toggle="modal"
+                                    data-target="#presentationModal"
+                            >
+                                Open Presentation
+                            </button>
 
-                        <div class="offset-md-1 col-md-10 embed-responsive embed-responsive-16by9 my-3">
-                            <iframe class="embed-responsive-item"
-                                    src="https://www.youtube.com/embed/tgbNymZ7vqY"
-                                    allowfullscreen
-                            ></iframe>
+                            <button type="button"
+                                    class="btn btn-primary"
+                                    data-toggle="modal"
+                                    data-target="#videoModal"
+                            >
+                                Watch Video
+                            </button>
                         </div>
 
                         <div>
@@ -116,6 +120,88 @@
                         <div>
                             <strong>Extras:</strong>
                             video, audio, presentation
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade"
+         id="presentationModal"
+         tabindex="-1"
+         role="dialog"
+         aria-labelledby="presentationModalLabel"
+         aria-hidden="true"
+    >
+        <div class="container h-100 d-flex align-items-center">
+
+            <div class="modal-dialog mx-0 w-100"
+                 role="document"
+                 style="max-width: initial !important;"
+            >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"
+                            id="presentationModalLabel"
+                        >
+                            Presentation
+                        </h5>
+                        <button type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                        >
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item"
+                                    src="https://onedrive.live.com/embed?cid=A17C0ABDF318AEF5&resid=A17C0ABDF318AEF5%21106&authkey=ADQBLfEFvW3acEU&em=2&wdAr=1.3333333333333333"
+                                    allowfullscreen
+                            ></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade"
+         id="videoModal"
+         tabindex="-1"
+         role="dialog"
+         aria-labelledby="videoModalLabel"
+         aria-hidden="true"
+    >
+        <div class="container h-100 d-flex align-items-center">
+
+            <div class="modal-dialog mx-0 w-100"
+                 role="document"
+                 style="max-width: initial !important;"
+            >
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title"
+                            id="videoModalLabel"
+                        >
+                            Video
+                        </h5>
+                        <button type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-label="Close"
+                        >
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item"
+                                    src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                                    allowfullscreen
+                            ></iframe>
                         </div>
                     </div>
                 </div>
