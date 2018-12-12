@@ -93,17 +93,17 @@
                                  style="max-height: 256px; overflow-y: auto;"
                             >
                                 <a class="dropdown-item"
-                                   href="{{ route('home') }}"
+                                   href="{{ route('modules.show', 1) }}"
                                 >
                                     {{ __('Module').' #1' }}
                                 </a>
                                 <a class="dropdown-item"
-                                   href="{{ route('home') }}"
+                                   href="{{ route('modules.show', 1) }}"
                                 >
                                     {{ __('Module').' #2' }}
                                 </a>
                                 <a class="dropdown-item"
-                                   href="{{ route('home') }}"
+                                   href="{{ route('modules.show', 1) }}"
                                 >
                                     {{ __('Module').' #3' }}
                                 </a>

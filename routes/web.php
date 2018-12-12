@@ -27,3 +27,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/modules', function () {
     return view('modules.list');
 })->name('modules.list');
+
+Route::get('/modules/{module}', function () {
+    return view('modules.show');
+})->name('modules.show');

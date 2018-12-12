@@ -5,9 +5,9 @@
         <div class="row justify-content-center">
             @for($i = 0; $i < 15; $i++)
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="card shadow mb-3">
+                    <a href="{{ route('modules.show', 1) }}" class="btn p-0 card shadow mb-3">
                         <img src="{{ asset('img/module-example.jpg') }}"
-                             class="w-100"
+                             class="w-100 rounded-top"
                         />
 
                         <div class="card-body">
@@ -28,7 +28,7 @@
                                 video, audio, presentation
                             </div>
                         </div>
-                    </div>
+                    </a>
                 </div>
             @endfor
         </div>
