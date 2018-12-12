@@ -141,21 +141,21 @@
                  style="max-width: initial !important;"
             >
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header p-2 px-3">
                         <h5 class="modal-title"
                             id="presentationModalLabel"
                         >
                             Presentation
                         </h5>
                         <button type="button"
-                                class="close"
+                                class="ml-auto btn btn-light btn-sm h-100 border shadow-sm"
                                 data-dismiss="modal"
                                 aria-label="Close"
                         >
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body p-0">
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item"
                                     src="https://onedrive.live.com/embed?cid=A17C0ABDF318AEF5&resid=A17C0ABDF318AEF5%21106&authkey=ADQBLfEFvW3acEU&em=2&wdAr=1.3333333333333333"
@@ -182,21 +182,21 @@
                  style="max-width: initial !important;"
             >
                 <div class="modal-content">
-                    <div class="modal-header">
+                    <div class="modal-header p-2 px-3">
                         <h5 class="modal-title"
                             id="videoModalLabel"
                         >
                             Video
                         </h5>
                         <button type="button"
-                                class="close"
+                                class="ml-auto btn btn-light btn-sm h-100 border shadow-sm"
                                 data-dismiss="modal"
                                 aria-label="Close"
                         >
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
+                    <div class="modal-body p-0">
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item"
                                     src="https://www.youtube.com/embed/tgbNymZ7vqY"
