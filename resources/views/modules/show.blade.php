@@ -75,21 +75,21 @@
                             eleifend. Donec nulla velit, euismod a lobortis a, consequat pretium nisi.
                         </p>
 
-                        <div class="embed-responsive embed-responsive-16by9 my-3">
+                        <div class="offset-md-1 col-md-10 embed-responsive embed-responsive-16by9 my-3">
                             <iframe class="embed-responsive-item"
                                     src="https://onedrive.live.com/embed?cid=A17C0ABDF318AEF5&resid=A17C0ABDF318AEF5%21106&authkey=ADQBLfEFvW3acEU&em=2&wdAr=1.3333333333333333"
                                     allowfullscreen
                             ></iframe>
                         </div>
 
-                        <div class="embed-responsive embed-responsive-16by9 my-3">
+                        <div class="offset-md-1 col-md-10 embed-responsive embed-responsive-16by9 my-3">
                             <iframe class="embed-responsive-item"
                                     src="https://www.youtube.com/embed/tgbNymZ7vqY"
                                     allowfullscreen
                             ></iframe>
                         </div>
 
-                        <div class="my-3">
+                        <div>
                             <audio class="w-100"
                                    controls
                             >
