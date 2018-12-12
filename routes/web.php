@@ -31,3 +31,7 @@ Route::get('/modules', function () {
 Route::get('/modules/{module}', function () {
     return view('modules.show');
 })->name('modules.show');
+
+Route::get('/docs', function () {
+    return view('docs.list');
+})->name('docs.list');
