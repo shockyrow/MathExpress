@@ -120,6 +120,13 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
+                               href="{{ route('docs.list') }}"
+                            >
+                                {{ __('Documents') }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
                                href="{{ route('home') }}"
                             >
                                 {{ __('Discussion') }}
