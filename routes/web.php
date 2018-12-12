@@ -13,8 +13,17 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+/*
+ * The routes below is only for design testing purpose and should removed later
+ */
+
+Route::get('/modules', function () {
+    return view('modules.list');
+})->name('modules.list');

@@ -109,7 +109,7 @@
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item"
-                                   href="{{ route('home') }}"
+                                   href="{{ route('modules.list') }}"
                                 >
                                     {{ __('All Module') }}
                                 </a>
