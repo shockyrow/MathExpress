@@ -8,7 +8,7 @@
     </div>
 
     <div class="d-flex justify-content-around align-items-stretch row">
-        <div class="col-12 col-sm-6 col-md-4 my-3">
+        <div class="col-12 col-lg-4 my-3">
             <div class="card h-100">
                 <div class="card-header font-weight-bold"
                      style="padding-left: 64px;"
@@ -31,7 +31,7 @@
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 my-3">
+        <div class="col-12 col-lg-4 my-3">
             <div class="card h-100">
                 <div class="card-header font-weight-bold"
                      style="padding-left: 64px;"
@@ -58,7 +58,7 @@
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 my-3">
+        <div class="col-12 col-lg-4 my-3">
             <div class="card h-100">
                 <div class="card-header font-weight-bold"
                      style="padding-left: 64px;"
@@ -79,6 +79,74 @@
                     posuere dui, quis varius leo sagittis eget. Etiam semper, velit et eleifend sollicitudin, est velit
                     faucibus nisl, et rutrum ligula tellus eu urna. Nulla facilisi. Sed nunc nisi, auctor in mauris
                     consequat, rhoncus cursus velit.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-around align-items-stretch row">
+        <div class="col-12 col-md-10 my-3 text-center py-5">
+            <h3>
+                Our portal is used by <strong class="text-primary">1,000,000+</strong> users around the globe.
+            </h3>
+            <h5>
+                Donec tempus dignissim dui, at laoreet urna. Nam vel odio ligula. Nam faucibus ligula commodo lectus
+                elementum, tincidunt consectetur elit porttitor. Nunc finibus pharetra massa, id bibendum sem fermentum
+                iaculis. Nam gravida elementum orci, ac consectetur lectus interdum vitae. Nam et vestibulum tellus, ac
+                volutpat libero. Duis porta odio ex, at molestie purus semper ut.
+            </h5>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-around align-items-stretch row">
+        <div class="col-12 col-sm-6 col-md-3 my-3 text-center">
+            <div class="card bg-dark text-white shadow-sm">
+                <div class="card-body">
+                    <h2 class="font-weight-bold">
+                        20,000
+                    </h2>
+                    <h4>
+                        Students
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3 my-3 text-center">
+            <div class="card bg-dark text-white shadow-sm">
+                <div class="card-body">
+                    <h2 class="font-weight-bold">
+                        124
+                    </h2>
+                    <h4>
+                        Mentors
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3 my-3 text-center">
+            <div class="card bg-dark text-white shadow-sm">
+                <div class="card-body">
+                    <h2 class="font-weight-bold">
+                        600
+                    </h2>
+                    <h4>
+                        Lectures
+                    </h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3 my-3 text-center">
+            <div class="card bg-dark text-white shadow-sm">
+                <div class="card-body">
+                    <h2 class="font-weight-bold">
+                        150
+                    </h2>
+                    <h4>
+                        Docs
+                    </h4>
                 </div>
             </div>
         </div>
