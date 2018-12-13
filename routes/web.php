@@ -35,3 +35,7 @@ Route::get('/modules/{module}', function () {
 Route::get('/docs', function () {
     return view('docs.list');
 })->name('docs.list');
+
+Route::get('/docs/create', function () {
+    return view('docs.create');
+})->name('docs.create');

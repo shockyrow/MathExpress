@@ -2,6 +2,11 @@
 
 @section('content')
     <div class="container">
+        <div class="row">
+            <a href="{{ route('docs.create') }}">
+                Create
+            </a>
+        </div>
         <div class="row justify-content-left">
             @for($i = 0; $i < 15; $i++)
                 <div class="col-12 col-md-6">
