@@ -2,10 +2,17 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <a href="{{ route('docs.create') }}">
-                Create
-            </a>
+        <div class="row mb-5">
+            <div class="col">
+                <h2>Recent Books</h2>
+            </div>
+            <div class="col  d-flex justify-content-end">
+                <a
+                 class="btn btn-primary"
+                 href="{{ route('docs.create') }}">
+                     Upload New Book
+                </a>
+            </div>
         </div>
         <div class="row justify-content-left">
             @for($i = 0; $i < 15; $i++)

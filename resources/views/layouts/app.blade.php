@@ -127,9 +127,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                               href="{{ route('home') }}"
+                               href="{{ route('questions.list') }}"
                             >
-                                {{ __('Discussion') }}
+                                {{ __('Questions') }}
                             </a>
                         </li>
                         <li class="nav-item">

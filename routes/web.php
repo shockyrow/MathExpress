@@ -39,3 +39,11 @@ Route::get('/docs', function () {
 Route::get('/docs/create', function () {
     return view('docs.create');
 })->name('docs.create');
+
+Route::get('/questions', function () {
+    return view('questions.list');
+})->name('questions.list');
+
+Route::get('/questions/create', function () {
+    return view('questions.create');
+})->name('questions.create');
