@@ -2,24 +2,28 @@
 
 @section('content')
     <div class="container">
+        <div class="row mb-5">
+            <div class="col">
+                <h2>Модули #1</h2>
+            </div>
+            <div class="col  d-flex justify-content-end">
+                <a
+                 class="btn btn-primary"
+                 href="{{ route('modules.create') }}">
+                     Модули нав
+                </a>
+            </div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-12">
                 <div class="card shadow mb-3">
                     <div class="card-header">
-                        <h3 class="mb-0 text-center">Title goes here!</h3>
+                        <h3 class="mb-0 text-center">Математикаи дискретӣ</h3>
                     </div>
 
                     <div class="card-body text-justify">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus a magna risus. Praesent
-                            lobortis tellus fermentum nisl condimentum mollis. Proin at bibendum eros, nec sollicitudin
-                            erat. Ut non bibendum nisl. Fusce lacinia lacus quis mi tempus blandit. Proin vitae magna
-                            eget dui elementum pharetra. Etiam ut volutpat diam. Aenean mattis sapien vel felis
-                            accumsan, eget tristique mi consequat. Nulla nec odio dolor. Phasellus vehicula sodales
-                            justo, id faucibus nulla cursus at. Maecenas laoreet et purus eget scelerisque. Suspendisse
-                            aliquam iaculis metus ac lacinia. Praesent sed venenatis erat. Mauris et purus scelerisque,
-                            vulputate metus ac, lacinia dui. Vivamus vitae suscipit nulla. Integer rutrum et mauris quis
-                            consectetur.
+                            Мувофиқат функсионалӣ, ё ки функсия номида мешавад, агар графики он ҷуфтҳое, ки координатаи якумашон якхела буда, координатаи дуюмашон гуногун бошад, надошта бошад. Мувофиқат функсионалӣ, ё ки функсия номида мешавад, агар графики он ҷуфтҳое, ки координатаи якумашон якхела буда, координатаи дуюмашон гуногун бошад, надошта бошад.
                         </p>
                         <div class="text-center">
                             <img src="{{ asset('img/math-example-1.png') }}"
@@ -28,12 +32,7 @@
                             />
                         </div>
                         <p>
-                            Morbi bibendum sollicitudin fringilla. Phasellus et mauris vel leo mollis ultrices. Aenean
-                            aliquam nibh ut metus congue suscipit. Aliquam auctor nunc quis turpis blandit, a facilisis
-                            sapien vulputate. Vestibulum vehicula justo ut sapien porta, id imperdiet felis ultricies.
-                            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                            egestas. Cras accumsan erat non efficitur imperdiet. Nullam lacinia urna risus, et rhoncus
-                            lorem consectetur vel.
+                            Мувофиқат функсионалӣ, ё ки функсия номида мешавад, агар графики он ҷуфтҳое, ки координатаи якумашон якхела буда, координатаи дуюмашон гуногун бошад, надошта бошад. Мувофиқат функсионалӣ, ё ки функсия номида мешавад, агар графики он ҷуфтҳое, ки координатаи якумашон якхела буда, координатаи дуюмашон гуногун бошад, надошта бошад.
                         </p>
                         <div class="text-center">
                             <img src="{{ asset('img/math-example-2.png') }}"
@@ -42,24 +41,10 @@
                             />
                         </div>
                         <p>
-                            Praesent massa turpis, suscipit vel vehicula in, laoreet eu diam. Donec ut ipsum sed enim
-                            volutpat rutrum. Donec gravida tortor augue, eget porttitor ex ultrices accumsan. Aenean
-                            varius id sapien ac vulputate. Etiam nisl sapien, commodo quis tristique quis, condimentum
-                            nec mi. Aliquam mauris lectus, commodo ut mi non, suscipit egestas elit. Nullam rutrum elit
-                            rhoncus nunc consequat, eu fringilla sapien tempor. Maecenas laoreet felis id luctus
-                            accumsan. Pellentesque lacinia ex non vestibulum mollis. Suspendisse ullamcorper tortor et
-                            ullamcorper dignissim. Sed pretium posuere orci in venenatis. Nam lacinia rutrum mi, sed
-                            placerat massa ullamcorper sit amet. Morbi rutrum dictum nibh id consequat. Sed vehicula
-                            aliquet mauris, quis malesuada urna elementum sit amet.
+                            Мувофиқат функсионалӣ, ё ки функсия номида мешавад, агар графики он ҷуфтҳое, ки координатаи якумашон якхела буда, координатаи дуюмашон гуногун бошад, надошта бошад. Мувофиқат функсионалӣ, ё ки функсия номида мешавад, агар графики он ҷуфтҳое, ки координатаи якумашон якхела буда, координатаи дуюмашон гуногун бошад, надошта бошад.
                         </p>
                         <p>
-                            Mauris fringilla, ligula ut fringilla mollis, risus leo posuere est, nec rhoncus orci felis
-                            ut nibh. Donec aliquam auctor nunc, in tristique massa laoreet sit amet. Curabitur porta
-                            magna sed feugiat semper. Curabitur luctus, risus sed accumsan scelerisque, mi mauris auctor
-                            ante, quis maximus nulla tortor at diam. Orci varius natoque penatibus et magnis dis
-                            parturient montes, nascetur ridiculus mus. Morbi imperdiet velit eros, non volutpat neque
-                            consectetur sit amet. Pellentesque euismod rutrum mattis. Donec pellentesque felis augue,
-                            vel eleifend tortor ultricies in.
+                            Мувофиқат функсионалӣ, ё ки функсия номида мешавад, агар графики он ҷуфтҳое, ки координатаи якумашон якхела буда, координатаи дуюмашон гуногун бошад, надошта бошад. Мувофиқат функсионалӣ, ё ки функсия номида мешавад, агар графики он ҷуфтҳое, ки координатаи якумашон якхела буда, координатаи дуюмашон гуногун бошад, надошта бошад.
                         </p>
                         <div class="text-center">
                             <img src="{{ asset('img/math-example-3.png') }}"
@@ -68,11 +53,7 @@
                             />
                         </div>
                         <p>
-                            Phasellus urna neque, molestie eget lobortis quis, imperdiet id justo. Pellentesque nisi
-                            arcu, maximus et quam eu, dignissim efficitur mauris. Proin tincidunt nisi ligula, nec
-                            luctus erat eleifend in. Sed vitae ligula sodales, semper augue vel, congue nunc. Ut eu
-                            magna et nibh posuere auctor ultricies id tellus. Nulla efficitur quis dui sit amet
-                            eleifend. Donec nulla velit, euismod a lobortis a, consequat pretium nisi.
+                            Мувофиқат функсионалӣ, ё ки функсия номида мешавад, агар графики он ҷуфтҳое, ки координатаи якумашон якхела буда, координатаи дуюмашон гуногун бошад, надошта бошад. Мувофиқат функсионалӣ, ё ки функсия номида мешавад, агар графики он ҷуфтҳое, ки координатаи якумашон якхела буда, координатаи дуюмашон гуногун бошад, надошта бошад.
                         </p>
 
                         <div class="d-flex justify-content-around my-3">
@@ -81,7 +62,7 @@
                                     data-toggle="modal"
                                     data-target="#presentationModal"
                             >
-                                Open Presentation
+                                Пресентасия
                             </button>
 
                             <button type="button"
@@ -89,7 +70,7 @@
                                     data-toggle="modal"
                                     data-target="#videoModal"
                             >
-                                Watch Video
+                                Видео
                             </button>
                         </div>
 
@@ -103,23 +84,23 @@
                                 <source src="horse.mp3"
                                         type="audio/mpeg"
                                 >
-                                Your browser does not support the audio element.
+                                Лутфан Хром истифода баред.
                             </audio>
                         </div>
                     </div>
 
                     <div class="card-footer small text-muted">
                         <div>
-                            <strong>Lecturer:</strong>
-                            Ibrokhim Shokirov
+                            <strong>Сана:</strong>
+                            23 Янв
                         </div>
                         <div>
-                            <strong>Date:</strong>
-                            23 Jan
+                            <strong>Профессор:</strong>
+                            Али Валиев
                         </div>
                         <div>
-                            <strong>Extras:</strong>
-                            video, audio, presentation
+                            <strong>Маводхо:</strong>
+                            Видео, аудио, пресентасия.
                         </div>
                     </div>
                 </div>
@@ -145,7 +126,7 @@
                         <h5 class="modal-title"
                             id="presentationModalLabel"
                         >
-                            Presentation
+                            Пресентасия
                         </h5>
                         <button type="button"
                                 class="ml-auto btn btn-light btn-sm h-100 border shadow-sm"
@@ -199,7 +180,7 @@
                     <div class="modal-body p-0">
                         <div class="embed-responsive embed-responsive-16by9">
                             <iframe class="embed-responsive-item"
-                                    src="https://www.youtube.com/embed/tgbNymZ7vqY"
+                                    src="https://www.youtube.com/embed/092GKXB0WZY"
                                     allowfullscreen
                             ></iframe>
                         </div>

@@ -69,14 +69,14 @@
                             <a class="nav-link"
                                href="{{ route('home') }}"
                             >
-                                {{ __('Home') }}
+                                {{ __('Асоси') }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
                                href="{{ route('home') }}"
                             >
-                                {{ __('Terms') }}
+                                {{ __('Махфум') }}
                             </a>
                         </li>
                         <li class="nav-item dropdown">
@@ -88,7 +88,7 @@
                                aria-haspopup="true"
                                aria-expanded="false"
                             >
-                                {{ __('Modules') }}
+                                {{ __('Модулхо') }}
                             </a>
 
                             <div class="dropdown-menu"
@@ -98,23 +98,23 @@
                                 <a class="dropdown-item"
                                    href="{{ route('modules.show', 1) }}"
                                 >
-                                    {{ __('Module').' #1' }}
+                                    {{ __('Модули').' 15.1' }}
                                 </a>
                                 <a class="dropdown-item"
                                    href="{{ route('modules.show', 1) }}"
                                 >
-                                    {{ __('Module').' #2' }}
+                                    {{ __('Модули').' 14.4' }}
                                 </a>
                                 <a class="dropdown-item"
                                    href="{{ route('modules.show', 1) }}"
                                 >
-                                    {{ __('Module').' #3' }}
+                                    {{ __('Модули').' 14.3' }}
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item"
                                    href="{{ route('modules.list') }}"
                                 >
-                                    {{ __('All Module') }}
+                                    {{ __('Хамаи Модулхо') }}
                                 </a>
                             </div>
                         </li>
@@ -122,21 +122,21 @@
                             <a class="nav-link"
                                href="{{ route('docs.list') }}"
                             >
-                                {{ __('Documents') }}
+                                {{ __('Маводхо') }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
                                href="{{ route('questions.list') }}"
                             >
-                                {{ __('Questions') }}
+                                {{ __('Саволу Чавоб') }}
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
                                href="{{ route('home') }}"
                             >
-                                {{ __('Contact Us') }}
+                                {{ __('Тамос') }}
                             </a>
                         </li>
                     </ul>
@@ -149,14 +149,14 @@
                                 <a class="nav-link"
                                    href="{{ route('login') }}"
                                 >
-                                    {{ __('Login') }}
+                                    {{ __('Даромад') }}
                                 </a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link"
                                        href="{{ route('register') }}"
-                                    >{{ __('Register') }}</a>
+                                    >{{ __('Бакайдгири') }}</a>
                                 </li>
                             @endif
                         @else
@@ -181,7 +181,7 @@
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();"
                                     >
-                                        {{ __('Logout') }}
+                                        {{ __('Баромад') }}
                                     </a>
 
                                     <form id="logout-form"

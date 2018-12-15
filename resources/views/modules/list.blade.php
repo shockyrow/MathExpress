@@ -4,13 +4,13 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col">
-                <h2>All modules</h2>
+                <h2>Хамаи Модулхо</h2>
             </div>
             <div class="col  d-flex justify-content-end">
                 <a
                  class="btn btn-primary"
                  href="{{ route('modules.create') }}">
-                     Create New Module
+                     Модули нав
                 </a>
             </div>
         </div>
@@ -24,25 +24,25 @@
 
                         <div class="card-body">
                             <h5 class="card-title">
-                                Module #{{ $i+1 }}: Title goes here!
+                                Модули #{{ $i+1 }}: Номи модуле
                             </h5>
                             <h6 class="card-subtitle">
-                                by Ibrokhim Shokirov
+                                Номи мавзуъ
                             </h6>
                         </div>
 
                         <div class="card-footer small text-muted">
                             <div>
-                                <strong>Date:</strong>
-                                23 Jan
+                                <strong>Сана:</strong>
+                                23 Янв
                             </div>
                             <div>
-                                <strong>Lecturer:</strong>
-                                Ibrokhim Shokirov
+                                <strong>Профессор:</strong>
+                                Али Валиев
                             </div>
                             <div>
-                                <strong>Extras:</strong>
-                                video, audio, presentation
+                                <strong>Маводхо:</strong>
+                                Видео, аудио, пресентасия.
                             </div>
                         </div>
                     </a>

@@ -4,13 +4,13 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col">
-                <h2>Recent Books</h2>
+                <h2>Китобхои охирин</h2>
             </div>
             <div class="col  d-flex justify-content-end">
                 <a
                  class="btn btn-primary"
                  href="{{ route('docs.create') }}">
-                     Upload New Book
+                     Китоби нав
                 </a>
             </div>
         </div>
@@ -29,26 +29,20 @@
                                             data-toggle="modal"
                                             data-target="#bookView"
                                     >
-                                        Read
+                                        Кушоед
                                     </button>
                                 </div>
                                 <div class="col">
-                                    <h3>
-                                        Force of Nature
-                                    </h3>
+                                    <h2>
+                                        Точикон
+                                    </h2>
                                     <h4>
-                                        <small>by</small>
-                                        Muso Khon
+                                        <small>Бобочон Гафуров</small>
                                     </h4>
                                     <hr>
                                     <p class="text-justify">
-                                        From Pete Souza, the #1 New York Times bestselling author of Obama: An Intimate
-                                        Portrait, comes a potent commentary on the Presidency--and our country.
-                                        As Chief Official White House Photographer, Pete Souza spent more time alongside
-                                        President Barack Obama than almost anyone else. His years photographing the
-                                        President gave him an intimate behind-the-scenes view of the unique gravity of
-                                        the Office of the Presidency--and the tremendous responsibility that comes with
-                                        it.
+                                        Агар кас гузаштаи аҷдоди худро надонад, инсони комил нест!
+                                        Ин хитобаи сода, вале дар айни замон ҷиддии бузургони илму адаби мо аз қаъри асрҳо ба гўш мерасад ва ҳушдор медиҳад, ки аз таърихи миллату сарзамин, расму русум ва дину оини худ мудом воқиф бошем. Воқеан, таърихро хотираи <a href="">( Бисёртар )</a>
                                     </p>
                                 </div>
                             </div>
@@ -77,7 +71,7 @@
                         <h5 class="modal-title"
                             id="bookViewLabel"
                         >
-                            Book Info
+                            Маълумоти китоб
                         </h5>
                         <button type="button"
                                 class="ml-auto btn btn-light btn-sm h-100 border shadow-sm"
@@ -96,22 +90,15 @@
                                     />
                                 </div>
                                 <div class="col my-2">
-                                    <h3>
-                                        Force of Nature
-                                    </h3>
+                                    <h2>
+                                        Точикон
+                                    </h2>
                                     <h4>
-                                        <small>by</small>
-                                        Muso Khon
+                                        <small>Бобочон Гафуров</small>
                                     </h4>
                                     <hr>
                                     <p class="text-justify">
-                                        From Pete Souza, the #1 New York Times bestselling author of Obama: An Intimate
-                                        Portrait, comes a potent commentary on the Presidency--and our country.
-                                        As Chief Official White House Photographer, Pete Souza spent more time alongside
-                                        President Barack Obama than almost anyone else. His years photographing the
-                                        President gave him an intimate behind-the-scenes view of the unique gravity of
-                                        the Office of the Presidency--and the tremendous responsibility that comes with
-                                        it.
+                                        Пас ҳар фард бе омўзиши таърихи кишвари худ аслу насаб ва маърифати бумиву зотиашро пойдору бегазанд нигоҳ дошта наметавонад, аз решаи хеш дур ё канда шуда, ба вартаи гумномӣ ё фано қадам мениҳад ва, ба таъбири имрўзиён, «манқурт» мешавад. Пас ҳар фард бе омўзиши таърихи кишвари худ аслу насаб ва маърифати бумиву зотиашро пойдору бегазанд нигоҳ дошта наметавонад, аз решаи хеш дур ё канда шуда, ба вартаи гумномӣ ё фано қадам мениҳад ва, ба таъбири имрўзиён, «манқурт» мешавад. Пас ҳар фард бе омўзиши таърихи кишвари худ аслу насаб ва маърифати бумиву зотиашро пойдору бегазанд нигоҳ дошта наметавонад, аз решаи хеш дур ё канда шуда, ба вартаи гумномӣ ё фано қадам мениҳад ва, ба таъбири имрўзиён, «манқурт» мешавад. Пас ҳар фард бе омўзиши таърихи кишвари худ аслу насаб ва маърифати бумиву зотиашро пойдору бегазанд нигоҳ дошта наметавонад, аз решаи хеш дур ё канда шуда, ба вартаи гумномӣ ё фано қадам мениҳад ва, ба таъбири имрўзиён, «манқурт» мешавад.
                                     </p>
                                 </div>
                             </div>
@@ -121,13 +108,13 @@
                         <button type="button"
                                 class="btn btn-primary"
                         >
-                            Download
+                            Боргири
                         </button>
                         <button type="button"
                                 class="btn btn-secondary"
                                 data-dismiss="modal"
                         >
-                            Close
+                            Пушидан
                         </button>
                     </div>
                 </div>
