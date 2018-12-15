@@ -27,12 +27,11 @@
                         <label for="questionTagsInput">Tags</label>
                         <input type="text" class="form-control" id="questionTagsInput" placeholder="e.g. (geometry, graph)">
                     </div>
-                    <button
-                     type="button" 
+                    <a
                      class="btn btn-primary mt-5"
-                     href="{{ route('questions.create') }}">
+                     href="{{ route('questions.list') }}">
                          Post Your Question
-                    </button>
+                    </a>
                 </form>
             </div>
         </div>

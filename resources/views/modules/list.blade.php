@@ -2,6 +2,18 @@
 
 @section('content')
     <div class="container">
+        <div class="row mb-5">
+            <div class="col">
+                <h2>All modules</h2>
+            </div>
+            <div class="col  d-flex justify-content-end">
+                <a
+                 class="btn btn-primary"
+                 href="{{ route('modules.create') }}">
+                     Create New Module
+                </a>
+            </div>
+        </div>
         <div class="row justify-content-center">
             @for($i = 0; $i < 15; $i++)
                 <div class="col-12 col-md-6 col-lg-4">
