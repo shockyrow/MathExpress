@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row mb-5">
+        <div class="row mb-3">
             <div class="col">
                 <h2>Модули нав</h2>
             </div>

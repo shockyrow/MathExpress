@@ -2,16 +2,16 @@
 
 @section('content')
     <div class="container">
-        <div class="row mb-5">
+        <div class="row mb-3">
             <div class="col">
-                <h2>Модули #1</h2>
-            </div>
-            <div class="col  d-flex justify-content-end">
-                <a
-                 class="btn btn-primary"
-                 href="{{ route('modules.create') }}">
-                     Модули нав
-                </a>
+                <h2>
+                    Модули #1
+                    <a
+                            class="btn btn-primary float-right"
+                            href="{{ route('modules.create') }}">
+                        Модули нав
+                    </a>
+                </h2>
             </div>
         </div>
         <div class="row justify-content-center">
