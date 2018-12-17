@@ -19,7 +19,7 @@ A great app to learn math.
 
    ```bash
    cd MathExpress
-   cp .env.example .env // user copy .env.example .env for Windows
+   cp .env.example .env // copy .env.example .env for Windows users
    mysql -u root -p < db.sql
    php artisan key:generate
    composer update && composer install
