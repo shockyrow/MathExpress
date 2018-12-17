@@ -3,7 +3,7 @@ A great app to learn math.
 
 ## How to run
 
-***Note:*** *Make sure you have PHP 7.2, mysql, git and composer installed on your system.*
+***Note:*** *Make sure you have PHP 7.2, mysql, [git](https://git-scm.com/download/win) and [composer](https://getcomposer.org/download/) installed on your system.*
 
 ### First installation
 
