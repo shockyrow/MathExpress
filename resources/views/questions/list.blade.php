@@ -2,19 +2,13 @@
 
 @section('content')
     <div class="container">
-        <div class="row mb-3">
-            <div class="col">
-                <h2>
-                    Саволхои охирин
-                    <a
-                            class="btn btn-primary float-right"
-                            href="{{ route('questions.create') }}"
-                    >
-                        Саволи нав
-                    </a>
-                </h2>
-            </div>
-        </div>
+        @component('layouts.components.titleWithAddBtn')
+            Саволхои охирин
+
+            @slot('btn_text')
+                Саволи нав
+            @endslot
+        @endcomponent
         <div class="row justify-content-left">
             @for($i = 0; $i < 15; $i++)
                 <div class="col-12">
