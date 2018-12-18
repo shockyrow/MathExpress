@@ -74,7 +74,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                               href="{{ route('home') }}"
+                               href="{{ route('terms.list') }}"
                             >
                                 {{ __('Махфум') }}
                             </a>

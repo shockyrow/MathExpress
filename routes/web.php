@@ -55,3 +55,7 @@ Route::get('/questions/create', function () {
 Route::get('/questions/{question}', function () {
     return view('questions.show');
 })->name('questions.show');
+
+Route::get('/terms', function () {
+    return view('terms.list');
+})->name('terms.list');
