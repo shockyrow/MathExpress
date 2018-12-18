@@ -2,6 +2,8 @@
 
 @section('content')
     <div class="container">
+        @component('layouts.components.searchBar')
+        @endcomponent
         @component('layouts.components.titleWithAddBtn')
             Саволхои охирин
 
