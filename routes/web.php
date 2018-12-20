@@ -28,13 +28,13 @@ Route::get('/modules', function () {
     return view('modules.list');
 })->name('modules.list');
 
-Route::get('/modules/{module}', function () {
-    return view('modules.show');
-})->name('modules.show');
-
 Route::get('/modules/create', function () {
     return view('modules.create');
 })->name('modules.create');
+
+Route::get('/modules/{module}', function () {
+    return view('modules.show');
+})->name('modules.show');
 
 Route::get('/docs', function () {
     return view('docs.list');
@@ -52,6 +52,10 @@ Route::get('/questions/create', function () {
     return view('questions.create');
 })->name('questions.create');
 
-Route::get('/questions/{module}', function () {
+Route::get('/questions/{question}', function () {
     return view('questions.show');
 })->name('questions.show');
+
+Route::get('/terms', function () {
+    return view('terms.list');
+})->name('terms.list');

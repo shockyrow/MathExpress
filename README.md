@@ -3,9 +3,28 @@ A great app to learn math.
 
 ## How to run
 
-***Note:*** *Make sure you have PHP 7.2, mysql, git and composer installed on your system.*
+### With Docker
 
-### First installation
+***Note:*** *Make sure you have [docker](https://www.docker.com/) installed on your system.*
+
+1. Open a terminal where you downloaded project in my case `~/Projects/MathExpress/`
+
+2. Run following commands:
+
+   ```bash
+   docker build -t math-express .
+   docker run -p 8181:8181 math-express
+   ```
+
+3. Now go to: [http://localhost:8000](http://localhost:8000)
+
+4. Enjoy!
+
+### Without Docker
+
+***Note:*** *Make sure you have [PHP 7.2](http://php.net/), [mysql](https://www.mysql.com/), [git](https://git-scm.com/) and [composer](https://getcomposer.org/) installed on your system.*
+
+#### First installation
 
 1. Open a terminal where you want to have your project in my case `~/Projects/`
 
@@ -19,7 +38,7 @@ A great app to learn math.
 
    ```bash
    cd MathExpress
-   cp .env.example .env
+   cp .env.example .env # copy .env.example .env for Windows users
    mysql -u root -p < db.sql
    php artisan key:generate
    composer update && composer install
@@ -31,7 +50,7 @@ A great app to learn math.
 
 5. Enjoy!
 
-### Update
+#### Update
 
 1. Open a terminal where you downloaded project in my case `~/Projects/MathExpress/`
 2. Run following commands:
