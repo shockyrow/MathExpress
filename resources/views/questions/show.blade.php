@@ -33,7 +33,7 @@
             <div class="col-12 mt-5">
                 <form>
                     <div class="form-group">
-                        <label for="answerInput">Чавоби шумо</label>
+                        <label for="answerInput"><h3>Чавоби шумо</h3></label>
                         <textarea class="form-control" id="answerInput" rows="5" placeholder="Чавобатонро дар инчо набисед."></textarea>
                     </div>
 
