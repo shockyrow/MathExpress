@@ -2,13 +2,10 @@
 
 @section('content')
     <div class="container">
-        @component('layouts.components.searchBar')
-        @endcomponent
-        @component('layouts.components.titleWithAddBtn')
+        @component('layouts.components.titleWithSearch')
             Саволхои охирин
-
-            @slot('btn_text')
-                Саволи нав
+            @slot('search_text')
+                Номи савол
             @endslot
         @endcomponent
         <div class="row justify-content-left">
@@ -18,7 +15,7 @@
                        class="btn p-0 card shadow mb-3 text-justify"
                     >
                         <div class="card-body d-flex align-items-center p-3">
-                            <h5 class="flex-grow-1 pr-2"
+                            <h3 class="flex-grow-1 pr-2"
                                 style="white-space: normal"
                             >
                                 Масохати секунчаро читавр меёбед?
@@ -27,7 +24,7 @@
                                     <span class="badge badge-secondary mr-1 p-1">граф</span>
                                     <span class="badge badge-secondary mr-1 p-1">сентроид</span>
                                 </div>
-                            </h5>
+                            </h3>
                             <div>
                                 @if($i % 3 == 0)
                                     <button type="button"
@@ -62,6 +59,19 @@
                     </a>
                 </div>
             @endfor
+        </div>
+        <div class="d-flex justify-content-center">
+            <nav>
+              <ul class="pagination mt-5">
+                <li class="page-item"><a class="page-link" href="#">Аввалин</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                <li class="page-item"><a class="page-link" href="#">Охирин</a></li>
+              </ul>
+        </nav>
         </div>
     </div>
 @endsection

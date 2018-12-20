@@ -2,18 +2,12 @@
 
 @section('content')
     <div class="container">
-        <div class="row mb-3">
-            <div class="col">
-                <h2>
-                    Китобхои охирин
-                    <a
-                            class="btn btn-primary float-right"
-                            href="{{ route('docs.create') }}">
-                        Китоби нав
-                    </a>
-                </h2>
-            </div>
-        </div>
+        @component('layouts.components.titleWithSearch')
+            Китобхои охирин
+            @slot('search_text')
+                Номи китоб
+            @endslot
+        @endcomponent
         <div class="row justify-content-left">
             @for($i = 0; $i < 15; $i++)
                 <div class="col-12 col-md-6">
