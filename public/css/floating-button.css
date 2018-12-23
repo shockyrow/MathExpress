@@ -1,0 +1,24 @@
+.floating-button {
+  position: fixed !important;
+  z-index: 100 !important;
+}
+
+.floating-button-tl {
+  top: 32px;
+  left: 32px;
+}
+
+.floating-button-tr {
+  top: 32px;
+  right: 32px;
+}
+
+.floating-button-bl {
+  bottom: 32px;
+  left: 32px;
+}
+
+.floating-button-br {
+  bottom: 32px;
+  right: 32px;
+}

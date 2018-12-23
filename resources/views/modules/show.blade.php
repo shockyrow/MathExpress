@@ -7,9 +7,9 @@
                 <h2>
                     Модули #1
                     <a
-                            class="btn btn-primary float-right"
+                            class="btn btn-primary floating-button floating-button-br"
                             href="{{ route('modules.create') }}">
-                        Модули нав
+                        <i class="fas fa-plus"></i>
                     </a>
                 </h2>
             </div>
