@@ -20,7 +20,7 @@
                         <label for="bookDescriptionInput">Маълумот</label>
                         <textarea class="form-control" id="bookDescriptionInput" rows="5"></textarea>
                     </div>
-                    <button class="btn btn-primary align-self-end my-3" type="submit">Боргузори</button>
+                    <button class="btn btn-success align-self-end my-3" type="submit">Боргузори</button>
                 </form>
             </div>
         </div>

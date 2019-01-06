@@ -8,7 +8,7 @@
                 Номи Махфум
             @endslot
         @endcomponent
-        <div class="d-flex justify-content-center my-2">
+        <div class="d-flex justify-content-center my-5">
             <div class="btn-group btn-group-sm">
                 <button class="btn btn-secondary">A</button>
                 <button class="btn btn-secondary">Б</button>
@@ -54,11 +54,11 @@
                 >
                     @for($i = 0; $i < 15; $i++)
                         <div class="card bg-white shadow my-1">
-                            <div class="card-header"
+                            <div class="card-body"
                                  id="heading{{$i}}"
                             >
                                 <h5 class="mb-0">
-                                    <button class="btn btn-link"
+                                    <button class="btn btn-link text-dark font-weight-bold"
                                             type="button"
                                             data-toggle="collapse"
                                             data-target="#collapse{{$i}}"
@@ -85,13 +85,13 @@
             </div>
             <nav>
               <ul class="pagination mt-5">
-                <li class="page-item"><a class="page-link" href="#">Аввалин</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item"><a class="page-link" href="#">Охирин</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">Аввалин</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">1</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">4</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">5</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">Охирин</a></li>
               </ul>
             </nav>
         </div>

@@ -9,11 +9,11 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <div class="card shadow mb-3">
-                    <div class="card-header">
-                        <h3 class="mb-0 text-center">Математикаи дискретӣ</h3>
-                    </div>
 
                     <div class="card-body text-justify">
+
+
+                    <h5 class="card-title font-weight-bold">{{ __('Математикаи дискрити') }}</h5>
                         <p>
                             Мувофиқат функсионалӣ, ё ки функсия номида мешавад, агар графики он ҷуфтҳое, ки координатаи якумашон якхела буда, координатаи дуюмашон гуногун бошад, надошта бошад. Мувофиқат функсионалӣ, ё ки функсия номида мешавад, агар графики он ҷуфтҳое, ки координатаи якумашон якхела буда, координатаи дуюмашон гуногун бошад, надошта бошад.
                         </p>
@@ -48,9 +48,9 @@
                             Мувофиқат функсионалӣ, ё ки функсия номида мешавад, агар графики он ҷуфтҳое, ки координатаи якумашон якхела буда, координатаи дуюмашон гуногун бошад, надошта бошад. Мувофиқат функсионалӣ, ё ки функсия номида мешавад, агар графики он ҷуфтҳое, ки координатаи якумашон якхела буда, координатаи дуюмашон гуногун бошад, надошта бошад.
                         </p>
 
-                        <div class="d-flex justify-content-around my-3">
+                        <div class="d-flex justify-content-around my-5">
                             <button type="button"
-                                    class="btn btn-primary"
+                                    class="btn btn-success"
                                     data-toggle="modal"
                                     data-target="#presentationModal"
                             >
@@ -58,11 +58,18 @@
                             </button>
 
                             <button type="button"
-                                    class="btn btn-primary"
+                                    class="btn btn-success"
                                     data-toggle="modal"
                                     data-target="#videoModal"
                             >
                                 Видео
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-success"
+                                    href="{{ route('questions.list') }}"
+                            >
+                                Саволхои алокаманд
                             </button>
                         </div>
 
@@ -81,7 +88,9 @@
                         </div>
                     </div>
 
-                    <div class="card-footer small text-muted">
+                    <hr>
+
+                    <div class="p-3">
                         <div>
                             <strong>Сана:</strong>
                             23 Янв

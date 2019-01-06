@@ -14,8 +14,8 @@
                     <a href="{{ route('questions.show', 1) }}"
                        class="btn p-0 card shadow mb-3 text-justify"
                     >
-                        <div class="card-body d-flex align-items-center p-3">
-                            <h3 class="flex-grow-1 pr-2"
+                        <div class="card-body d-flex align-items-center p-4">
+                            <h3 class="flex-grow-1 pr-2 text-dark font-weight-bold"
                                 style="white-space: normal"
                             >
                                 Масохати секунчаро читавр меёбед?

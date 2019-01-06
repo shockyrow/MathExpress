@@ -26,7 +26,7 @@
                         <input type="text" class="form-control" id="questionTagsInput" placeholder="масалан (гиометриа, граф)">
                     </div>
                     <a
-                     class="btn btn-primary mt-5"
+                     class="btn btn-success mt-5"
                      href="{{ route('questions.list') }}">
                          Саволро боргузоред.
                     </a>

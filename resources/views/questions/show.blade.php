@@ -45,7 +45,7 @@
                     </div>
                     <button
                      type="button" 
-                     class="btn btn-primary mt-5"
+                     class="btn btn-success mt-5"
                      href="{{ route('questions.create') }}">
                          Чавобро боргузоред.
                     </button>

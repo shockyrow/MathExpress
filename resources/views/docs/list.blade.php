@@ -19,7 +19,7 @@
                                          class="rounded shadow-sm w-100"
                                     />
                                     <button type="button"
-                                            class="btn btn-outline-primary btn-block shadow-sm my-3"
+                                            class="btn btn-outline-success btn-block shadow-sm my-3"
                                             data-toggle="modal"
                                             data-target="#bookView"
                                     >
@@ -100,7 +100,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button"
-                                class="btn btn-primary"
+                                class="btn btn-success"
                         >
                             Боргири
                         </button>
