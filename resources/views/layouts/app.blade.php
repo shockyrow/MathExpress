@@ -37,16 +37,19 @@
         <link href="{{ asset('css/floating-button.css') }}"
               rel="stylesheet"
         >
+        <link href="{{ asset('css/style.css') }}"
+              rel="stylesheet"
+        >
     </head>
     <body>
         <div id="app"
              class="container"
         >
-            <nav class="navbar navbar-expand-lg navbar-light navbar-laravel shadow border rounded-bottom border-top-0 sticky-top mx-0 px-3">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow rounded-bottom border-top-0 sticky-top">
                 <a class="navbar-brand"
                    href="{{ url('/') }}"
                 >
-                    <img src="{{asset('img/logo.png')}}"
+                    <img src="{{asset('img/logo-text.png')}}"
                          height="30"
                          class="d-inline-block align-top"
                          alt="Logo"
@@ -67,7 +70,7 @@
                      id="navbarSupportedContent"
                 >
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav active mr-auto">
                         <li class="nav-item">
                             <a class="nav-link"
                                href="{{ url('/') }}"
@@ -94,27 +97,27 @@
                                 {{ __('Модулхо') }}
                             </a>
 
-                            <div class="dropdown-menu"
+                            <div class="dropdown-menu navbar-dark bg-dark text-white"
                                  aria-labelledby="modulesDropdown"
                                  style="max-height: 256px; overflow-y: auto;"
                             >
-                                <a class="dropdown-item"
+                                <a class="dropdown-item text-white"
                                    href="{{ route('modules.show', 1) }}"
                                 >
                                     {{ __('Модули').' 15.1' }}
                                 </a>
-                                <a class="dropdown-item"
+                                <a class="dropdown-item text-white"
                                    href="{{ route('modules.show', 1) }}"
                                 >
                                     {{ __('Модули').' 14.4' }}
                                 </a>
-                                <a class="dropdown-item"
+                                <a class="dropdown-item text-white"
                                    href="{{ route('modules.show', 1) }}"
                                 >
                                     {{ __('Модули').' 14.3' }}
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item"
+                                <a class="dropdown-item text-white"
                                    href="{{ route('modules.list') }}"
                                 >
                                     {{ __('Хамаи Модулхо') }}
@@ -204,6 +207,16 @@
             <main class="py-4">
                 @yield('content')
             </main>
+
+            <footer>
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="footer-copyright text-center">
+                          <p>&copy;<script>document.write(new Date().getFullYear());</script> Ҳамаи ҳуқуқҳо ҳифз карда шудааст.</p>
+                      </div>
+                  </div>
+              </div>
+            </footer>
         </div>
     </body>
 </html>

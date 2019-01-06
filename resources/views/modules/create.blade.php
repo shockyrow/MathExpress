@@ -2,11 +2,9 @@
 
 @section('content')
     <div class="container">
-        <div class="row mb-3">
-            <div class="col">
-                <h2>Модули нав</h2>
-            </div>
-        </div>
+        @component('layouts.components.title')
+            Махфумхои Мухим
+        @endcomponent
         <div class="row">
             <div class="col-12">
                 <form>

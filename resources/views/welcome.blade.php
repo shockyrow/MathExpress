@@ -1,67 +1,58 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="p-3 text-center">
-        <img src="{{asset('img/logo.png')}}"
-             class="w-50"
-        />
+    <div class="row justify-content-around align-items-stretch">
+        <div class="col-12 text-center">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img class="d-block w-100" src="{{ asset('img/module-example.jpg') }}" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="{{ asset('img/module-example.jpg') }}" alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                  <img class="d-block w-100" src="{{ asset('img/module-example.jpg') }}" alt="Third slide">
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+        </div>
     </div>
 
-    <div class="d-flex justify-content-around align-items-stretch row">
-        <div class="col-12 col-lg-4 my-3">
-            <div class="card h-100">
-                <div class="card-header font-weight-bold"
-                     style="padding-left: 64px;"
-                >
-                    <div class="d-inline-flex justify-content-center align-items-center position-absolute bg-primary text-light p-2 rounded border shadow-sm"
-                         style="top:-8px; left: 8px; width: 48px; height: 48px;"
-                    >
-                        <i class="fas fa-graduation-cap fa-lg"
-                        ></i>
-                    </div>
-                    Дониши кафолат
+    <div class="d-flex justify-content-around align-items-stretch row shadow">
+        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+            <div class="p-3">
+                <div class="d-inline-flex justify-content-center features-box-icon align-items-center">
+                    <i class="fa fa-graduation-cap"></i>
                 </div>
-                <div class="card-body text-justify">
-                    Ягон тект барои тариф кардани портал. Ягон тект барои тариф кардани портал. Ягон тект барои тариф кардани портал.
-                </div>
+                <h3 class="box-title"><strong>Дониши кафолат</strong></h3>
+                <p>Ягон тект барои тариф кардани портал. Ягон тект барои тариф кардани портал. Ягон тект барои тариф кардани портал.</p>
             </div>
         </div>
-
-        <div class="col-12 col-lg-4 my-3">
-            <div class="card h-100">
-                <div class="card-header font-weight-bold"
-                     style="padding-left: 64px;"
-                >
-                    <div class="d-inline-flex justify-content-center align-items-center position-absolute bg-primary text-light p-2 rounded border shadow-sm"
-                         style="top:-8px; left: 8px; width: 48px; height: 48px;"
-                    >
-                        <i class="fas fa-user-tie fa-lg"
-                        ></i>
-                    </div>
-                    Дастрас
+        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+            <div class="p-3">
+                <div class="d-inline-flex justify-content-center features-box-icon align-items-center">
+                    <i class="fa fa-rocket"></i>
                 </div>
-                <div class="card-body text-justify">
-                    Дасти ери аз профессорони забарасти донишкадаи ДДТХ дастраст кунед.
-                </div>
+                <h3 class="box-title"><strong>Муаллимони забардаст</strong></h3>
+                <p>Ягон тект барои тариф кардани портал. Ягон тект барои тариф кардани портал. Ягон тект барои тариф кардани портал.</p>
             </div>
         </div>
-
-        <div class="col-12 col-lg-4 my-3">
-            <div class="card h-100">
-                <div class="card-header font-weight-bold"
-                     style="padding-left: 64px;"
-                >
-                    <div class="d-inline-flex justify-content-center align-items-center position-absolute bg-primary text-light p-2 rounded border shadow-sm"
-                         style="top:-8px; left: 8px; width: 48px; height: 48px;"
-                    >
-                        <i class="fas fa-mouse-pointer fa-lg"
-                        ></i>
-                    </div>
-                    Дониши кафолат
+        <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+            <div class="p-3">
+                <div class="d-inline-flex justify-content-center features-box-icon align-items-center">
+                    <i class="fas fa-user-tie fa-lg"></i>
                 </div>
-                <div class="card-body text-justify">
-                    Портали мазкурро шумо метавонед хамавак дарстрас кунед ва дониши худро сайкал дихед
-                </div>
+                <h3 class="box-title"><strong>Дониши кафолат</strong></h3>
+                <p>Ягон тект барои тариф кардани портал. Ягон тект барои тариф кардани портал. Ягон тект барои тариф кардани портал.</p>
             </div>
         </div>
     </div>
@@ -69,7 +60,7 @@
     <div class="d-flex justify-content-around align-items-stretch row">
         <div class="col-12 col-md-10 my-3 text-center py-5">
             <h3>
-                Портали мо аз тарафи <strong class="text-primary">10,000+</strong> донушчуен истифода бурда мешабад
+                Портали мо аз тарафи <strong>10,000+</strong> донушчуен истифода бурда мешабад
             </h3>
             <h5>
                 Портали мо аз тарафи 10,000+ донушчуен истифода бурда мешабад. Портали мо аз тарафи 10,000+ донушчуен истифода бурда мешабад. Портали мо аз тарафи 10,000+ донушчуен истифода бурда мешабад. Портали мо аз тарафи 10,000+ донушчуен истифода бурда мешабад

@@ -3,17 +3,9 @@
 @section('content')
     <div class="container">
         <div class="row mb-3">
-            <div class="col">
-                <h2>
-                    Модули #1
-                    <a
-                            class="btn btn-primary floating-button floating-button-br"
-                            href="{{ route('modules.create') }}">
-                        <i class="fas fa-plus"></i>
-                    </a>
-                </h2>
-            </div>
-        </div>
+        @component('layouts.components.title')
+            Модули 1
+        @endcomponent
         <div class="row justify-content-center">
             <div class="col-12">
                 <div class="card shadow mb-3">

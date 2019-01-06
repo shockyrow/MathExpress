@@ -2,51 +2,28 @@
 
 @section('content')
     <div class="container">
-        <div class="row mb-3">
-            <div class="col">
-                <h2>
-                    Хамаи Модулхо
-                    <a
-                            class="btn btn-primary float-right"
-                            href="{{ route('modules.create') }}">
-                        Модули нав
-                    </a>
-                </h2>
-            </div>
-        </div>
+        @component('layouts.components.titleWithSearch')
+            Хамаи Модулхо
+            @slot('search_text')
+                Номи Модул
+            @endslot
+        @endcomponent
         <div class="row justify-content-center">
             @for($i = 0; $i < 15; $i++)
-                <div class="col-12 col-md-6 col-lg-4">
-                    <a href="{{ route('modules.show', 1) }}" class="btn p-0 card shadow mb-3 text-justify">
-                        <img src="{{ asset('img/module-example.jpg') }}"
-                             class="card-img-top"
-                        />
-
-                        <div class="card-body">
-                            <h5 class="card-title">
-                                Модули #{{ $i+1 }}: Номи модуле
-                            </h5>
-                            <h6 class="card-subtitle">
-                                Номи мавзуъ
-                            </h6>
+            <div class="col-md-4 col-lg-4 col-sm-6 col-xs-12">
+                <div class="single-module-item">
+                    <div class="module-thumb">
+                        <a href="{{ route('modules.show', $i) }}"><img src="{{ asset('img/module-example.jpg') }}" alt=""></a>
+                    </div>
+                    <div class="mx-4 my-4">
+                        <h4><strong>Модули 12.1. Номи мавзуъ мешавад инчаба</strong></h4>
+                        <div class="d-flex my-2">
+                            <p>Фев 01, 2018</p>
+                            <p class="mx-3">проф. Али Валиев</p>
                         </div>
-
-                        <div class="card-footer small text-muted">
-                            <div>
-                                <strong>Сана:</strong>
-                                23 Янв
-                            </div>
-                            <div>
-                                <strong>Профессор:</strong>
-                                Али Валиев
-                            </div>
-                            <div>
-                                <strong>Маводхо:</strong>
-                                Видео, аудио, пресентасия.
-                            </div>
-                        </div>
-                    </a>
+                    </div>
                 </div>
+            </div>
             @endfor
         </div>
     </div>

@@ -4,10 +4,6 @@
     <div class="container">
         @component('layouts.components.titleWithSearch')
             Махфумхои Мухим
-
-            @slot('btn_text')
-                Махфуми нав
-            @endslot
             @slot('search_text')
                 Номи Махфум
             @endslot

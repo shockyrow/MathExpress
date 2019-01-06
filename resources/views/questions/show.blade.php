@@ -2,18 +2,9 @@
 
 @section('content')
     <div class="container">
-        <div class="row mb-3">
-            <div class="col">
-                <h2>
-                    Масохати секунчаро читавр меёбед?
-                    <a
-                            class="btn btn-primary float-right"
-                            href="{{ route('questions.create') }}">
-                        Савоми нав
-                    </a>
-                </h2>
-            </div>
-        </div>
+        @component('layouts.components.title')
+            Масохати секунчаро читавр меёбанд?
+        @endcomponent
         <div class="row">
             <div class="col-12">
                 <p>
