@@ -61,15 +61,14 @@
             @endfor
         </div>
         <div class="d-flex justify-content-center">
-            <nav>
-              <ul class="pagination mt-5">
-                <li class="page-item"><a class="page-link" href="#">Аввалин</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item"><a class="page-link" href="#">Охирин</a></li>
+            <nav><ul class="pagination mt-5">
+                <li class="page-item"><a class="page-link text-dark" href="#">Аввалин</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">1</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">4</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">5</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">Охирин</a></li>
               </ul>
         </nav>
         </div>
