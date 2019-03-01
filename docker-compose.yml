@@ -1,0 +1,68 @@
+version: "3"
+services:
+  php:
+    user: 1000:1000
+    build: ./php
+    container_name: lemp-php
+    working_dir: /code
+    volumes:
+      - ./code:/code
+    networks:
+      - backend
+
+  nginx:
+    image: tutum/nginx
+    container_name: lemp-nginx
+    hostname: project
+    domainname: project.dev.docker
+    working_dir: /code
+    ports:
+      - "8080:80"
+    depends_on:
+      - php
+    volumes:
+      - ./code:/code
+      - ./nginx/default:/etc/nginx/sites-enabled/default
+      - ./logs:/var/log/nginx
+    networks:
+      - backend
+
+  mysql:
+    user: 1000:1000
+    image: mysql:5.7
+    container_name: lemp-mysql
+    ports:
+      - "3306:3306"
+    depends_on:
+      - php
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: homestead
+      MYSQL_USER: homestead
+      MYSQL_PASSWORD: secret
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      backend:
+        ipv4_address: 10.10.10.10
+
+  composer:
+    user: 1000:1000
+    restart: 'on-failure'
+    image: composer
+    container_name: lemp-composer
+    working_dir: /code
+    command:
+      - install
+    volumes:
+      - ./code:/code
+    networks:
+      - backend
+
+networks:
+  backend:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.10.10.0/24
