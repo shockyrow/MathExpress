@@ -5,18 +5,17 @@ A great app to learn math.
 
 ### With Docker
 
-***Note:*** *Make sure you have [docker](https://www.docker.com/) installed on your system.*
+***Note:*** *Make sure you have [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/install/) installed on your system.*
 
 1. Open a terminal where you downloaded project in my case `~/Projects/MathExpress/`
 
 2. Run following commands:
 
    ```bash
-   docker build -t math-express .
-   docker run -p 8181:8181 math-express
+   docker-compose up -d --build
    ```
 
-3. Now go to: [http://localhost:8000](http://localhost:8000)
+3. Now go to: [http://localhost:8080](http://localhost:8080)
 
 4. Enjoy!
 
@@ -31,13 +30,13 @@ A great app to learn math.
 2. Clone repository using:
 
    ```bash
-   git clone https://github.com/IIINIII/MathExpress.git
+   git clone https://github.com/IIINIII/MathExpress
    ```
 
 3. Run following commands:
 
    ```bash
-   cd MathExpress
+   cd MathExpress/code
    cp .env.example .env # copy .env.example .env for Windows users
    mysql -u root -p < db.sql
    php artisan key:generate
@@ -56,10 +55,13 @@ A great app to learn math.
 2. Run following commands:
 
    ```bash
+   git pull
    composer update && composer install
    php artisan migrate:fresh --seed
    ```
 
-3. Run `php artisan serve` and go to: [http://localhost:8000](http://localhost:8000)
+3. Run `php artisan serve` (if you are not using docker).
 
-4. Enjoy!
+4. Go to: [http://localhost:8000](http://localhost:8000)
+
+5. Enjoy!
