@@ -52,48 +52,38 @@
                 <div class=""
                      id="termsList"
                 >
-                    @for($i = 0; $i < 15; $i++)
+                    @foreach($terms as $term)
                         <div class="card bg-white shadow my-1">
                             <div class="card-body"
-                                 id="heading{{$i}}"
+                                 id="heading{{$term->getId()}}"
                             >
                                 <h5 class="mb-0">
                                     <button class="btn btn-link text-dark font-weight-bold"
                                             type="button"
                                             data-toggle="collapse"
-                                            data-target="#collapse{{$i}}"
+                                            data-target="#collapse{{$term->getId()}}"
                                             aria-expanded="false"
-                                            aria-controls="collapse{{$i}}"
+                                            aria-controls="collapse{{$term->getId()}}"
                                     >
-                                        Мафҳуми логарифм
+                                        {{$term->getTitle()}}
                                     </button>
                                 </h5>
                             </div>
 
-                            <div id="collapse{{$i}}"
+                            <div id="collapse{{$term->getId()}}"
                                  class="collapse"
-                                 aria-labelledby="heading{{$i}}"
+                                 aria-labelledby="heading{{$term->getId()}}"
                                  data-parent="#termsList"
                             >
                                 <div class="card-body">
-                                    Логарифми адади мусбати N  аз рӯи асоси b ( b>0,b≠1 ) гуфта нишондиҳандаи дараҷа x, ки ба он b-ро барои ҳосил намудани N бардоштан лозим аст, меноманд. Ишораи логарифм: logbN=x. Ин навишт ба баробарии зерин баробарқувва аст: bx=N.
+                                    {{$term->getBody()}}
                                 </div>
                             </div>
                         </div>
-                    @endfor
+                    @endforeach
                 </div>
             </div>
-            <nav>
-              <ul class="pagination mt-5">
-                <li class="page-item"><a class="page-link text-dark" href="#">Аввалин</a></li>
-                <li class="page-item"><a class="page-link text-dark" href="#">1</a></li>
-                <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
-                <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
-                <li class="page-item"><a class="page-link text-dark" href="#">4</a></li>
-                <li class="page-item"><a class="page-link text-dark" href="#">5</a></li>
-                <li class="page-item"><a class="page-link text-dark" href="#">Охирин</a></li>
-              </ul>
-            </nav>
+            {{$terms->links()}}
         </div>
     </div>
 @endsection

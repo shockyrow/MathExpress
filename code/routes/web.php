@@ -57,5 +57,5 @@ Route::get('/questions/{question}', function () {
 })->name('questions.show');
 
 Route::get('/terms', function () {
-    return view('terms.list');
+    return view('terms.list', ['terms' => \App\Term::paginate(15)]);
 })->name('terms.list');
