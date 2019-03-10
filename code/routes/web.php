@@ -36,14 +36,6 @@ Route::get('/modules/{module}', function () {
     return view('modules.show');
 })->name('modules.show');
 
-Route::get('/docs', function () {
-    return view('docs.list');
-})->name('docs.list');
-
-Route::get('/docs/create', function () {
-    return view('docs.create');
-})->name('docs.create');
-
 Route::get('/questions', function () {
     return view('questions.list');
 })->name('questions.list');
@@ -59,3 +51,6 @@ Route::get('/questions/{question}', function () {
 Route::get('/terms', function () {
     return view('terms.list', ['terms' => \App\Term::paginate(15)]);
 })->name('terms.list');
+
+Route::resource('/docs', 'DocController');
+Route::get('/docs/{doc}/download', 'DocController@download')->name('doc.download');

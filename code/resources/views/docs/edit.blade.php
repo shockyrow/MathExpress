@@ -7,19 +7,20 @@
         @endcomponent
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('docs.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('docs.update', $doc->getId()) }}" method="post" enctype="multipart/form-data">
                     @csrf
+                    @method('patch')
                     <div class="form-group">
                         <label for="bookTitleInput">Номи китоб</label>
-                        <input type="text" class="form-control" id="bookTitleInput" name="title" placeholder="Номи китоб">
+                        <input type="text" class="form-control" id="bookTitleInput" name="title" placeholder="Номи китоб" value="{{$doc->getTitle()}}">
                     </div>
                     <div class="form-group">
                         <label for="bookAuthorInput">Нависанда</label>
-                        <input type="text" class="form-control" id="bookAuthorInput" name="author" placeholder="Нависанда">
+                        <input type="text" class="form-control" id="bookAuthorInput" name="author" placeholder="Нависанда" value="{{$doc->getAuthor()}}">
                     </div>
                     <div class="form-group">
                         <label for="bookDescriptionInput">Дар бораи китоб</label>
-                        <textarea class="form-control" id="bookDescriptionInput" name="description" rows="5"></textarea>
+                        <textarea class="form-control" id="bookDescriptionInput" name="description" rows="5">{{$doc->getDescription()}}</textarea>
                     </div>
                     <div class="custom-file">
                         <input type="file" id="bookThumb" name="thumbnail">

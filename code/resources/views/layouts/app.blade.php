@@ -126,7 +126,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                               href="{{ route('docs.list') }}"
+                               href="{{ route('docs.index') }}"
                             >
                                 {{ __('Маводхо') }}
                             </a>

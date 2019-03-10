@@ -9,13 +9,13 @@
             @endslot
         @endcomponent
         <div class="row justify-content-left">
-            @for($i = 0; $i < 15; $i++)
+            @foreach($docs as $doc)
                 <div class="col-12 col-md-6">
                     <div class="p-0 card shadow mb-3">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12 col-lg-5">
-                                    <img src="{{ asset('img/book-thumb-1.jpg') }}"
+                                    <img src="{{ Storage::url($doc->getThumbnail()) }}"
                                          class="rounded shadow-sm w-100"
                                     />
                                     <button type="button"
@@ -28,22 +28,25 @@
                                 </div>
                                 <div class="col">
                                     <h2>
-                                        Точикон
+                                        {{ $doc->getTitle() }}
                                     </h2>
                                     <h4>
-                                        <small>Бобочон Гафуров</small>
+                                        <small>{{ $doc->getAuthor() }}</small>
                                     </h4>
                                     <hr>
                                     <p class="text-justify">
-                                        Агар кас гузаштаи аҷдоди худро надонад, инсони комил нест!
-                                        Ин хитобаи сода, вале дар айни замон ҷиддии бузургони илму адаби мо аз қаъри асрҳо ба гўш мерасад ва ҳушдор медиҳад, ки аз таърихи миллату сарзамин, расму русум ва дину оини худ мудом воқиф бошем. Воқеан, таърихро хотираи зиндаги<a class="text-success" href=""> ( Бисёртар )</a>
+                                        {{ $doc->getDescription() }}
+                                        <a class="text-success" href="">( Бисёртар )</a>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            @endfor
+            @endforeach
+            <div class="d-flex justify-content-center w-100">
+                {{ $docs->links() }}
+            </div>
         </div>
     </div>
 
