@@ -39,7 +39,7 @@ class DocController extends Controller
         if($request->hasFile('thumbnail')) {
             $thumbnailPath = $request->file('thumbnail')->storePublicly('public/thumbnails');
         } else {
-            $thumbnailPath = 'https://fakeimg.pl/250x400';
+            $thumbnailPath = 'public/thumbnails/defbookcover-min.jpg';
         }
 
         if($request->hasFile('file')) {
@@ -135,5 +135,15 @@ class DocController extends Controller
     public function download(Doc $doc)
     {
         return Storage::download($doc->getFilename());
+    }
+
+
+    /**
+     * @param string $keyword
+     * @return Doc
+     */
+    public function find(string $keyword) : Doc
+    {
+
     }
 }

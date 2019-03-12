@@ -7,7 +7,7 @@ $factory->define(App\Doc::class, function (Faker $faker) {
         'title' => $faker->sentence,
         'author' => $faker->name,
         'description' => $faker->paragraph,
-        'thumbnail' => 'https://fakeimg.pl/250x400',
-        'filename' => 'https://fakeimg.pl/250x400',
+        'thumbnail' => 'public/thumbnails/defbookcover-min.jpg',
+        'filename' => 'public/thumbnails/defbookcover-min.jpg',
     ];
 });

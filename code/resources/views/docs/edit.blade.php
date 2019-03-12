@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         @component('layouts.components.title')
-            Китоби нав
+            Ислохи Китоб
         @endcomponent
         <div class="row">
             <div class="col-12">

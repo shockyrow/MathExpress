@@ -2,11 +2,8 @@
 
 @section('content')
     <div class="container">
-        @component('layouts.components.titleWithSearch')
-            Китобхои охирин
-            @slot('search_text')
-                Номи китоб
-            @endslot
+        @component('layouts.components.title')
+            Маълумот ва боргири
         @endcomponent
         <div class="row justify-content-left">
             <div class="col-12">
@@ -29,11 +26,27 @@
                                 <p class="text-justify">
                                     {{ $doc->getDescription() }}
                                 </p>
-                            </div>
-                            <div>
-                                <a href="{{ route('doc.download', $doc->getId()) }}">
-                                    Download
-                                </a>
+
+                                <div class="row">
+                                    <div class="col">
+                                        <a href="{{ route('doc.download', $doc->getId()) }}" style="text-decoration : none">
+                                            <button type="button"
+                                                    class="btn btn-outline-success btn-block shadow-sm my-3"
+                                            >
+                                                Боргири
+                                            </button>
+                                        </a>
+                                    </div>
+                                    <div class="col">
+                                        <a href="{{ route('docs.edit', $doc->getId()) }}" style="text-decoration : none">
+                                            <button type="button"
+                                                    class="btn btn-outline-success btn-block shadow-sm my-3"
+                                            >
+                                                Ислохкуни
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

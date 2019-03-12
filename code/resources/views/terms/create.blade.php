@@ -14,8 +14,8 @@
                         <input type="text" class="form-control" id="termTitleInput" name="title" placeholder="Номи махфум">
                     </div>
                     <div class="form-group">
-                        <label for="termDescriptionInput">Дар бораи китоб</label>
-                        <textarea class="form-control" id="termDescriptionInput" name="description" rows="5"></textarea>
+                        <label for="termDescriptionInput">Маълумоти зиёдтар</label>
+                        <textarea class="form-control" id="termDescriptionInput" name="body" rows="5" placeholder="Маълумоти зиёдтар оиди махфум"></textarea>
                     </div>
                     <button class="btn btn-primary align-self-end my-3" type="submit">Боргузорӣ</button>
                 </form>

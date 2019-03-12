@@ -65,7 +65,9 @@
                                             aria-expanded="false"
                                             aria-controls="collapse{{$term->getId()}}"
                                     >
-                                        {{$term->getTitle()}}
+                                        <h3>
+                                            {{$term->getTitle()}}
+                                        </h3>
                                     </button>
                                 </h5>
                             </div>

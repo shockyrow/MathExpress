@@ -18,12 +18,13 @@
                                     <img src="{{ Storage::url($doc->getThumbnail()) }}"
                                          class="rounded shadow-sm w-100"
                                     />
-                                    <button type="button"
-                                            class="btn btn-outline-success btn-block shadow-sm my-3"
-                                            href="{{route("docs.show", $doc->getId())}}"
-                                    >
-                                        Кушоед
-                                    </button>
+                                    <a href="{{route("docs.show", $doc->getId())}}" style="text-decoration : none">
+                                        <button type="button"
+                                                class="btn btn-outline-success btn-block shadow-sm my-3"
+                                        >
+                                            Кушоед
+                                        </button>
+                                    </a>
                                 </div>
                                 <div class="col">
                                     <h2>

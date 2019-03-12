@@ -35,7 +35,13 @@ class TermController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $term = new Term([
+            'title' => $request->get('title'),
+            'body' => $request->get('body'),
+        ]);
+        $term->save();
+
+        return redirect(route('terms.index'));
     }
 
     /**
@@ -81,5 +87,14 @@ class TermController extends Controller
     public function destroy(Term $term)
     {
         //
+    }
+
+    /**
+     * @param string $keyword
+     * @return Term
+     */
+    public function find(string $keyword) : Term
+    {
+
     }
 }
