@@ -80,7 +80,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                               href="{{ route('terms.list') }}"
+                               href="{{ route('terms.index') }}"
                             >
                                 {{ __('Махфум') }}
                             </a>

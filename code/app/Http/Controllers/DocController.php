@@ -37,7 +37,7 @@ class DocController extends Controller
     public function store(Request $request)
     {
         if($request->hasFile('thumbnail')) {
-            $thumbnailPath = $request->file('thumbnail')->storePublicly('public/files');
+            $thumbnailPath = $request->file('thumbnail')->storePublicly('public/thumbnails');
         } else {
             $thumbnailPath = 'https://fakeimg.pl/250x400';
         }
@@ -93,7 +93,7 @@ class DocController extends Controller
     {
         if($request->hasFile('thumbnail')) {
             Storage::delete($doc->getThumbnail());
-            $thumbnailPath = $request->file('thumbnail')->storePublicly('public/files');
+            $thumbnailPath = $request->file('thumbnail')->storePublicly('public/thumbnails');
         } else {
             $thumbnailPath = $doc->getThumbnail();
         }

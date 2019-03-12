@@ -48,9 +48,8 @@ Route::get('/questions/{question}', function () {
     return view('questions.show');
 })->name('questions.show');
 
-Route::get('/terms', function () {
-    return view('terms.list', ['terms' => \App\Term::paginate(15)]);
-})->name('terms.list');
 
 Route::resource('/docs', 'DocController');
 Route::get('/docs/{doc}/download', 'DocController@download')->name('doc.download');
+
+Route::resource('/terms', 'TermController');
