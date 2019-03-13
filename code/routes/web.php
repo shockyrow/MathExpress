@@ -49,6 +49,7 @@ Route::get('/questions/{question}', function () {
 })->name('questions.show');
 
 
+Route::get('/docs/search', 'DocController@search');
 Route::resource('/docs', 'DocController');
 Route::get('/docs/{doc}/download', 'DocController@download')->name('doc.download');
 

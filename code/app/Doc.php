@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Interfaces\SearchableModelInterface;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -15,7 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $thumbnail
  * @property string $filename
  */
-class Doc extends Model
+class Doc extends Model implements SearchableModelInterface
 {
     protected $fillable = [
         'title',
@@ -126,5 +127,19 @@ class Doc extends Model
         $this->filename = $filename;
 
         return $this;
+    }
+
+
+    /**
+     * @param string|null $key
+     * @return mixed
+     */
+    public static function search(string $key = null)
+    {
+        if ($key === null) {
+            return self::where();
+        } else {
+            return self::where('title', 'like', '%' . $key . '%')->orWhere('author', 'like', '%' . $key . '%')->orWhere('description', 'like', '%' . $key . '%');
+        }
     }
 }

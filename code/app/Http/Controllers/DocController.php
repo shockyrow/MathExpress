@@ -139,11 +139,11 @@ class DocController extends Controller
 
 
     /**
-     * @param string $keyword
-     * @return Doc
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function find(string $keyword) : Doc
+    public function search(Request $request)
     {
-
+        return view('docs.index', ['docs' => Doc::search($request->get('q'))->paginate(10)]);
     }
 }
