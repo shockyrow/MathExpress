@@ -15,7 +15,7 @@ class TermController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->has('q')) {
+        if ($request->has('q') && $request->get('q') !== null) {
             $terms = Term::search($request->get('q'))->paginate(10);
         } else {
             $terms = Term::paginate(10);
