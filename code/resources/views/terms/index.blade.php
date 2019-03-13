@@ -85,7 +85,7 @@
                     @endforeach
                 </div>
             </div>
-            {{$terms->links()}}
+            {{$terms->appends($_GET)->links()}}
         </div>
     </div>
 @endsection

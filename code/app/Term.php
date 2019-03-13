@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Interfaces\SearchableModelInterface;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -12,7 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $title
  * @property string $body
  */
-class Term extends Model
+class Term extends Model implements SearchableModelInterface
 {
     protected $fillable = [
         'title',
@@ -63,5 +64,14 @@ class Term extends Model
         $this->body = $body;
 
         return $this;
+    }
+
+    public static function search(string $key = null)
+    {
+        if ($key === null) {
+            return self::where();
+        } else {
+            return self::where('title', 'like', '%' . $key . '%')->orWhere('body', 'like', '%' . $key . '%');
+        }
     }
 }

@@ -94,11 +94,13 @@ class TermController extends Controller
     }
 
     /**
-     * @param string $keyword
-     * @return Term
+     * Display a listing of resource related with keyword
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\Response
      */
-    public function find(string $keyword) : Term
+    public function search(Request $request)
     {
-
+        return view('terms.index', ['terms' => Term::search($request->get('q'))->paginate(10)]);
     }
 }
