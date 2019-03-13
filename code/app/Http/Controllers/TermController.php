@@ -10,11 +10,18 @@ class TermController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('terms.index', ['terms' => Term::paginate(10)]);
+        if ($request->has('q')) {
+            $terms = Term::search($request->get('q'))->paginate(10);
+        } else {
+            $terms = Term::paginate(10);
+        }
+
+        return view('terms.index', ['terms' => $terms]);
     }
 
     /**
@@ -93,16 +100,5 @@ class TermController extends Controller
         $term->forceDelete();
 
         return redirect(route('terms.index'));
-    }
-
-    /**
-     * Display a listing of resource related with keyword
-     *
-     * @param Request $request
-     * @return \Illuminate\Http\Response
-     */
-    public function search(Request $request)
-    {
-        return view('terms.index', ['terms' => Term::search($request->get('q'))->paginate(10)]);
     }
 }

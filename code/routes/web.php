@@ -53,5 +53,4 @@ Route::get('/docs/search', 'DocController@search');
 Route::resource('/docs', 'DocController');
 Route::get('/docs/{doc}/download', 'DocController@download')->name('doc.download');
 
-Route::get('/terms/search', 'TermController@search');
 Route::resource('/terms', 'TermController');

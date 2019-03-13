@@ -2,11 +2,8 @@
 
 @section('content')
     <div class="container">
-        @component('layouts.components.titleWithSearch')
+        @component('layouts.components.titleWithSearch', ['search_text' => 'Номи Махфум', 'search_url' => route('terms.index')])
             Махфумхои Мухим
-            @slot('search_text')
-                Номи Махфум
-            @endslot
         @endcomponent
         <div class="d-flex justify-content-center my-5">
             <div class="btn-group btn-group-sm">
