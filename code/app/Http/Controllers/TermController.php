@@ -90,7 +90,9 @@ class TermController extends Controller
      */
     public function destroy(Term $term)
     {
-        //
+        $term->forceDelete();
+
+        return redirect(route('terms.index'));
     }
 
     /**
