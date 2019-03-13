@@ -85,4 +85,7 @@
             {{$terms->appends($_GET)->links()}}
         </div>
     </div>
+    <button class="floating-button floating-button-br rounded-circle btn btn-primary">
+        <i class="fa fa-plus"></i>
+    </button>
 @endsection

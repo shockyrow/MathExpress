@@ -1,6 +1,8 @@
 .floating-button {
   position: fixed !important;
   z-index: 100 !important;
+  width: 64px;
+  height: 64px;
 }
 
 .floating-button-tl {
