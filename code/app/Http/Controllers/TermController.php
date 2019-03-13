@@ -52,7 +52,6 @@ class TermController extends Controller
      */
     public function show(Term $term)
     {
-        //
     }
 
     /**
@@ -63,7 +62,7 @@ class TermController extends Controller
      */
     public function edit(Term $term)
     {
-        //
+        return view('terms.edit', ['term' => $term]);
     }
 
     /**
@@ -75,7 +74,12 @@ class TermController extends Controller
      */
     public function update(Request $request, Term $term)
     {
-        //
+        $term
+            ->setTitle($request->get('title'))
+            ->setBody($request->get('body'))
+            ->save()
+        ;
+        return redirect(route('terms.index'));
     }
 
     /**

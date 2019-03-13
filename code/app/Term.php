@@ -28,17 +28,6 @@ class Term extends Model
     }
 
     /**
-     * @param int $id
-     * @return Term
-     */
-    public function setId(int $id): Term
-    {
-        $this->id = $id;
-
-        return $this;
-    }
-
-    /**
      * @return string
      */
     public function getTitle(): string

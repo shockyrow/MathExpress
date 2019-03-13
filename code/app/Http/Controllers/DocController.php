@@ -92,7 +92,7 @@ class DocController extends Controller
     public function update(Request $request, Doc $doc)
     {
         if($request->hasFile('thumbnail')) {
-            Storage::delete($doc->getThumbnail());
+            //Storage::delete($doc->getThumbnail()); // should not delete default thumbnail
             $thumbnailPath = $request->file('thumbnail')->storePublicly('public/thumbnails');
         } else {
             $thumbnailPath = $doc->getThumbnail();
