@@ -2,11 +2,8 @@
 
 @section('content')
     <div class="container">
-        @component('layouts.components.titleWithSearch')
+        @component('layouts.components.titleWithSearch', ['search_text' => 'Номи китоб', 'search_url' => route('docs.index')])
             Китобхои охирин
-            @slot('search_text')
-                Номи китоб
-            @endslot
         @endcomponent
         <div class="row justify-content-left">
             @foreach($docs as $doc)

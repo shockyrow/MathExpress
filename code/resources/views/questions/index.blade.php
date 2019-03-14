@@ -2,11 +2,8 @@
 
 @section('content')
     <div class="container">
-        @component('layouts.components.titleWithSearch')
+        @component('layouts.components.titleWithSearch', ['search_text' => 'Номи савол', 'search_url' => 'questions.index'])
             Саволхои охирин
-            @slot('search_text')
-                Номи савол
-            @endslot
         @endcomponent
         <div class="row justify-content-left">
             @for($i = 0; $i < 15; $i++)

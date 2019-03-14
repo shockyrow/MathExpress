@@ -45,32 +45,26 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-12">
+            <div class="col-12 mb-3">
                 <div class=""
                      id="termsList"
                 >
                     @foreach($terms as $term)
-                        <div class="card bg-white shadow my-1">
-                            <div class="card-body"
+                        <div class="card bg-white shadow mb-3">
+                            <div class="btn card-body text-justify"
                                  id="heading{{$term->getId()}}"
+                                 data-toggle="collapse"
+                                 data-target="#collapse{{$term->getId()}}"
+                                 aria-expanded="false"
+                                 aria-controls="collapse{{$term->getId()}}"
                             >
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link text-dark font-weight-bold"
-                                            type="button"
-                                            data-toggle="collapse"
-                                            data-target="#collapse{{$term->getId()}}"
-                                            aria-expanded="false"
-                                            aria-controls="collapse{{$term->getId()}}"
-                                    >
-                                        <h3>
-                                            {{$term->getTitle()}}
-                                        </h3>
-                                    </button>
-                                </h5>
+                                <h3 class="mb-0">
+                                    {{$term->getTitle()}}
+                                </h3>
                             </div>
 
                             <div id="collapse{{$term->getId()}}"
-                                 class="collapse"
+                                 class="collapse bg-light border-top"
                                  aria-labelledby="heading{{$term->getId()}}"
                                  data-parent="#termsList"
                             >

@@ -133,7 +133,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"
-                               href="{{ route('questions.list') }}"
+                               href="{{ route('questions.index') }}"
                             >
                                 {{ __('Саволу Чавоб') }}
                             </a>

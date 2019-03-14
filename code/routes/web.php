@@ -37,8 +37,8 @@ Route::get('/modules/{module}', function () {
 })->name('modules.show');
 
 Route::get('/questions', function () {
-    return view('questions.list');
-})->name('questions.list');
+    return view('questions.index');
+})->name('questions.index');
 
 Route::get('/questions/create', function () {
     return view('questions.create');
