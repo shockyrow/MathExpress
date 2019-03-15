@@ -17,12 +17,12 @@ class DocController extends Controller
     public function index(Request $request)
     {
         if ($request->has('q') && $request->get('q') !== null) {
-            $doc = Doc::search($request->get('q'))->paginate(10);
+            $docs = Doc::search($request->get('q'))->paginate(10);
         } else {
-            $doc = Doc::paginate(10);
+            $docs = Doc::paginate(10);
         }
 
-        return view('docs.index', ['docs' => $doc]);
+        return view('docs.index', ['docs' => $docs]);
     }
 
     /**

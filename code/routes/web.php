@@ -36,20 +36,9 @@ Route::get('/modules/{module}', function () {
     return view('modules.show');
 })->name('modules.show');
 
-Route::get('/questions', function () {
-    return view('questions.index');
-})->name('questions.index');
-
-Route::get('/questions/create', function () {
-    return view('questions.create');
-})->name('questions.create');
-
-Route::get('/questions/{question}', function () {
-    return view('questions.show');
-})->name('questions.show');
-
 
 Route::resource('/docs', 'DocController');
 Route::get('/docs/{doc}/download', 'DocController@download')->name('doc.download');
 
 Route::resource('/terms', 'TermController');
+Route::resource('/questions','QuestionController');
