@@ -11,11 +11,18 @@ class DocController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param Request $request
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('docs.index', ['docs' => Doc::paginate(10)]);
+        if ($request->has('q') && $request->get('q') !== null) {
+            $doc = Doc::search($request->get('q'))->paginate(10);
+        } else {
+            $doc = Doc::paginate(10);
+        }
+
+        return view('docs.index', ['docs' => $doc]);
     }
 
     /**
@@ -125,7 +132,9 @@ class DocController extends Controller
      */
     public function destroy(Doc $doc)
     {
-        //
+        $doc->forceDelete();
+
+        return redirect(route('docs.index'));
     }
 
     /**
@@ -135,15 +144,5 @@ class DocController extends Controller
     public function download(Doc $doc)
     {
         return Storage::download($doc->getFilename());
-    }
-
-
-    /**
-     * @param Request $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function search(Request $request)
-    {
-        return view('docs.index', ['docs' => Doc::search($request->get('q'))->paginate(10)]);
     }
 }
