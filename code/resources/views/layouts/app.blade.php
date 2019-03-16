@@ -118,7 +118,7 @@
                                 </a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item text-white"
-                                   href="{{ route('modules.list') }}"
+                                   href="{{ route('modules.index') }}"
                                 >
                                     {{ __('Хамаи Модулхо') }}
                                 </a>
