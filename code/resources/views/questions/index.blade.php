@@ -17,23 +17,25 @@
                             >
                                 {{ $question->getTitle() }}
                                 <div class="small mt-2">
-                                    <span class="badge badge-secondary mr-1 p-1">{{ $question->getTags() }}</span>
-                                    <span class="badge badge-secondary mr-1 p-1">граф</span>
-                                    <span class="badge badge-secondary mr-1 p-1">сентроид</span>
+                                    @foreach($question->tags as $tag)
+                                        <span class="badge badge-secondary mr-1 p-1">
+                                            {{ $tag->getName() }}
+                                        </span>
+                                    @endforeach
                                 </div>
                             </h3>
                             <div>
-                                <button type="button"
-                                        class="btn btn-sm mr-2 btn-success align-self-center h-100"
+                                <button
+                                        class="btn btn-sm mr-2 {{ $question->answers->count() > 0 ? ($question->getAnswerId() === null ? 'border border-success btn-light' : 'border border-success btn-success') : 'btn-light' }} align-self-center h-100"
                                 >
-                                    <h2 class="mb-0">{{ $question->getAnswerCount() }}</h2>
+                                    <h2 class="mb-0">{{ $question->answers->count() }}</h2>
                                     <small>чавобхо</small>
                                 </button>
 
                                 <button type="button"
-                                        class="btn btn-sm btn-primary-outline align-self-center h-100"
+                                        class="btn btn-sm btn-light align-self-center h-100"
                                 >
-                                    <h2 class="mb-0">{{ $question->getViewCount() }}</h2>
+                                    <h2 class="mb-0">{{ $question->answers->count() }}</h2>
                                     <small>дидан</small>
                                 </button>
                             </div>

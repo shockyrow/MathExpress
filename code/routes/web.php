@@ -31,3 +31,4 @@ Route::get('/docs/{doc}/download', 'DocController@download')->name('doc.download
 Route::resource('/terms', 'TermController');
 Route::resource('/questions','QuestionController');
 Route::resource('/modules', 'ModuleController');
+Route::resource('/answers', 'AnswerController');

@@ -11,20 +11,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id
  * @property string $title
  * @property string $description
- * @property string $tags
- * @property int $answerCount
- * @property int $viewCount
- * @property int $answerState
+ * @property int|null $answer_id
  */
 class Question extends Model implements SearchableModelInterface
 {
     protected $fillable = [
         'title',
         'description',
-        'tags',
-        'answerCount',
-        'viewCount',
-        'answerState'
+        'answer_id',
     ];
 
     /**
@@ -36,16 +30,15 @@ class Question extends Model implements SearchableModelInterface
     }
 
     /**
-     * @param string $title
+     * @param int $id
      * @return Question
      */
-    public function setTitle(string $title): Question
+    public function setId(int $id): Question
     {
-        $this->title = $title;
+        $this->id = $id;
+
         return $this;
     }
-
-
 
     /**
      * @return string
@@ -53,6 +46,17 @@ class Question extends Model implements SearchableModelInterface
     public function getTitle(): string
     {
         return $this->title;
+    }
+
+    /**
+     * @param string $title
+     * @return Question
+     */
+    public function setTitle(string $title): Question
+    {
+        $this->title = $title;
+
+        return $this;
     }
 
     /**
@@ -70,82 +74,38 @@ class Question extends Model implements SearchableModelInterface
     public function setDescription(string $description): Question
     {
         $this->description = $description;
+
         return $this;
     }
 
     /**
-     * @return string
+     * @return int|null
      */
-    public function getTags(): string
+    public function getAnswerId(): ?int
     {
-        return $this->tags;
+        return $this->answer_id;
     }
 
     /**
-     * @param string $tags
+     * @param int|null $answer_id
      * @return Question
      */
-    public function setTags(string $tags): Question
+    public function setAnswerId(?int $answer_id): Question
     {
-        $this->tags = $tags;
+        $this->answer_id = $answer_id;
+
         return $this;
     }
 
-    /**
-     * @return int
-     */
-    public function getAnswerCount(): int
+    public function answers()
     {
-        return $this->answerCount;
+        return $this->hasMany(Answer::class);
     }
 
-    /**
-     * @param int $answerCount
-     * @return Question
-     */
-    public function setAnswerCount(int $answerCount): Question
+    public function tags()
     {
-        $this->answerCount = $answerCount;
-        return $this;
+        return $this->belongsToMany(Tag::class);
     }
-
-    /**
-     * @return int
-     */
-    public function getViewCount(): int
-    {
-        return $this->viewCount;
-    }
-
-    /**
-     * @param int $viewCount
-     * @return Question
-     */
-    public function setViewCount(int $viewCount): Question
-    {
-        $this->viewCount = $viewCount;
-        return $this;
-    }
-
-    /**
-     * @return int
-     */
-    public function getAnswerState(): int
-    {
-        return $this->answerState;
-    }
-
-    /**
-     * @param int $answerState
-     * @return Question
-     */
-    public function setAnswerState(int $answerState): Question
-    {
-        $this->answerState = $answerState;
-        return $this;
-    }
-
-
 
     /**
      * @param string|null $key
@@ -153,10 +113,9 @@ class Question extends Model implements SearchableModelInterface
      */
     public static function search(string $key = null)
     {
-        if ($key === null) {
-            return self::where();
-        } else {
-            return self::where('title', 'like', '%' . $key . '%')->orWhere('description', 'like', '%' . $key . '%')->orWhere('tags', 'like', '%' . $key . '%');
-        }
+        return $key === null
+            ? self::where()
+            : self::where('title', 'like', '%' . $key . '%')->orWhere('description', 'like', '%' . $key . '%')
+        ;
     }
 }

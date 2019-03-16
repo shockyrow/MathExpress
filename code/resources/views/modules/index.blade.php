@@ -16,7 +16,7 @@
                         <div class="mx-4 my-4">
                             <h4><strong>{{$module -> getTitle()}}</strong></h4>
                             <div class="d-flex my-2">
-                                <p>Фев 01, 2018</p>
+                                <p>{{ \Carbon\Carbon::parse($module->created_at)->diffForHumans() }}</p>
                                 <p class="mx-3">{{$module -> getProfessor()}}</p>
                             </div>
                         </div>

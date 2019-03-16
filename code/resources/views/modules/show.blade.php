@@ -6,7 +6,7 @@
         @component('layouts.components.title')
             {{$module -> getTitle()}}
         @endcomponent
-        <div class="row justify-content-center">
+        <div class="row justify-content-center w-100">
             <div class="col-12">
                 <div class="card shadow mb-3">
 
@@ -63,7 +63,7 @@
                     <div class="p-3">
                         <div>
                             <strong>Сана:</strong>
-                            23 Янв
+                            {{ \Carbon\Carbon::parse($module->created_at)->diffForHumans() }}
                         </div>
                         <div>
                             <strong>Профессор:</strong>

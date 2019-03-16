@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Question;
+use App\Tag;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -42,15 +43,26 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
+        $tags = array_map('trim', explode(',', $request->get('tags')));
+
         $question = new Question([
             'title' => $request->get('title'),
             'description' => $request->get('description'),
-            'tags'=>$request->get('tags'),
-            'answerState' => 1,
-            'answerCount' => 0,
-            'viewCount' => 0
         ]);
+
+        $tagList = [];
+
+        foreach ($tags as $tag)
+        {
+            $tagList[] = Tag::where('name',$tag)->first()
+                ? Tag::where('name',$tag)->first()
+                : new Tag(['name' => $tag])
+            ;
+        }
+
         $question->save();
+
+        $question->tags()->saveMany($tagList);
 
         return redirect(route('questions.show', $question->getId()));
     }
