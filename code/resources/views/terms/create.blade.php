@@ -17,7 +17,7 @@
                         <label for="termDescriptionInput">Маълумоти зиёдтар</label>
                         <textarea class="form-control" id="termDescriptionInput" name="body" rows="5" placeholder="Маълумоти зиёдтар оиди махфум"></textarea>
                     </div>
-                    <button class="btn btn-primary align-self-end my-3" type="submit">Боргузорӣ</button>
+                    <button class="btn btn-success align-self-end my-3" type="submit">Боргузорӣ</button>
                 </form>
             </div>
         </div>

@@ -3,21 +3,22 @@
 @section('content')
     <div class="container">
         @component('layouts.components.title')
-            Саволи нав
+            Ислохи савол
         @endcomponent
         <div class="row">
             <div class="col-12">
-                <form action="{{ route('questions.store') }}" method="post" enctype="multipart/form-data">
+                <form action="{{ route('questions.update', $question->getId()) }}" method="post" enctype="multipart/form-data">
                     @csrf
+                    @method('patch')
                     <div class="form-group">
                         <label for="questionTitleInput">Мавзуъи савол</label>
-                        <input type="text" class="form-control" id="questionTitleInput" name="title"
+                        <input type="text" class="form-control" id="questionTitleInput" name="title" value="{{$question->getTitle()}}"
                                placeholder="Саволи шумо чист?">
                     </div>
                     <div class="form-group">
                         <label for="questionDescriptionInput">Маълумот</label>
                         <textarea class="form-control" id="questionDescriptionInput" rows="5" name="description"
-                                  placeholder="Бисёртар маълумот дихед"></textarea>
+                                  placeholder="Бисёртар маълумот дихед">{{$question->getDescription()}}</textarea>
                     </div>
 
                     <div class="mb-5">
@@ -26,12 +27,12 @@
 
                     <div class="form-group">
                         <label for="questionTagsInput">Тагхо</label>
-                        <input type="text" class="form-control" id="questionTagsInput" name="tags"
+                        <input type="text" class="form-control" id="questionTagsInput" name="tags" value="{{$question->getTags()}}"
                                placeholder="масалан (гиометриа, граф)">
                     </div>
                     <button
                             class="btn btn-success mt-5" type="submit">
-                        Саволро боргузоред.
+                        Ислохкуни
                     </button>
                 </form>
             </div>

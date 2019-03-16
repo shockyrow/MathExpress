@@ -2,13 +2,13 @@
 
 @section('content')
     <div class="container">
-        @component('layouts.components.titleWithSearch', ['search_text' => 'Номи савол', 'search_url' => 'questions.index'])
+        @component('layouts.components.titleWithSearch', ['search_text' => 'Номи савол', 'search_url' => route('questions.index')])
             Саволхои охирин
         @endcomponent
         <div class="row justify-content-left">
             @foreach($questions as $question)
                 <div class="col-12">
-                    <a href="{{ route('questions.show', 1) }}"
+                    <a href="{{ route('questions.show', $question->getId()) }}"
                        class="btn p-0 card shadow mb-3 text-justify"
                     >
                         <div class="card-body d-flex align-items-center p-4">
@@ -26,14 +26,14 @@
                                 <button type="button"
                                         class="btn btn-sm mr-2 btn-success align-self-center h-100"
                                 >
-                                    <h2 class="mb-0">5</h2>
+                                    <h2 class="mb-0">{{ $question->getAnswerCount() }}</h2>
                                     <small>чавобхо</small>
                                 </button>
 
                                 <button type="button"
                                         class="btn btn-sm btn-primary-outline align-self-center h-100"
                                 >
-                                    <h2 class="mb-0">15</h2>
+                                    <h2 class="mb-0">{{ $question->getViewCount() }}</h2>
                                     <small>дидан</small>
                                 </button>
                             </div>

@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class Question
  * @package App
+ * @property int $id
  * @property string $title
  * @property string $description
  * @property string $tags
  * @property int $answerCount
  * @property int $viewCount
- * @property boolean $isAnswered
+ * @property int $answerState
  */
 class Question extends Model implements SearchableModelInterface
 {
@@ -23,8 +24,28 @@ class Question extends Model implements SearchableModelInterface
         'tags',
         'answerCount',
         'viewCount',
-        'isAnswered'
+        'answerState'
     ];
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param string $title
+     * @return Question
+     */
+    public function setTitle(string $title): Question
+    {
+        $this->title = $title;
+        return $this;
+    }
+
+
 
     /**
      * @return string
@@ -107,22 +128,24 @@ class Question extends Model implements SearchableModelInterface
     }
 
     /**
-     * @return bool
+     * @return int
      */
-    public function isAnswered(): bool
+    public function getAnswerState(): int
     {
-        return $this->isAnswered;
+        return $this->answerState;
     }
 
     /**
-     * @param bool $isAnswered
+     * @param int $answerState
      * @return Question
      */
-    public function setIsAnswered(bool $isAnswered): Question
+    public function setAnswerState(int $answerState): Question
     {
-        $this->isAnswered = $isAnswered;
+        $this->answerState = $answerState;
         return $this;
     }
+
+
 
     /**
      * @param string|null $key

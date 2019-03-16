@@ -85,44 +85,12 @@
                                 {{ __('Махфум') }}
                             </a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle"
-                               href="{{ route('home') }}"
-                               id="modulesDropdown"
-                               role="button"
-                               data-toggle="dropdown"
-                               aria-haspopup="true"
-                               aria-expanded="false"
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="{{ route('modules.index') }}"
                             >
                                 {{ __('Модулхо') }}
                             </a>
-
-                            <div class="dropdown-menu navbar-dark bg-dark text-white"
-                                 aria-labelledby="modulesDropdown"
-                                 style="max-height: 256px; overflow-y: auto;"
-                            >
-                                <a class="dropdown-item text-white"
-                                   href="{{ route('modules.show', 1) }}"
-                                >
-                                    {{ __('Модули').' 15.1' }}
-                                </a>
-                                <a class="dropdown-item text-white"
-                                   href="{{ route('modules.show', 1) }}"
-                                >
-                                    {{ __('Модули').' 14.4' }}
-                                </a>
-                                <a class="dropdown-item text-white"
-                                   href="{{ route('modules.show', 1) }}"
-                                >
-                                    {{ __('Модули').' 14.3' }}
-                                </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item text-white"
-                                   href="{{ route('modules.list') }}"
-                                >
-                                    {{ __('Хамаи Модулхо') }}
-                                </a>
-                            </div>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link"

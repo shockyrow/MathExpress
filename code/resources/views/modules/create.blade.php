@@ -3,22 +3,23 @@
 @section('content')
     <div class="container">
         @component('layouts.components.title')
-            Махфумхои Мухим
+            Модули нав
         @endcomponent
         <div class="row">
             <div class="col-12">
-                <form>
+                <form action="{{ route('modules.store') }}" method="post" enctype="multipart/form-data">
+                    @csrf
                     <div class="form-group">
                         <label for="bookTitleInput">Сарлавхо</label>
-                        <input type="text" class="form-control" id="bookTitleInput" placeholder="Сарлавхои модул">
+                        <input type="text" class="form-control" id="bookTitleInput" name="title" placeholder="Сарлавхои модул">
                     </div>
                     <div class="form-group">
                         <label for="bookAuthorInput">Нависанда</label>
-                        <input type="text" class="form-control" id="bookAuthorInput" placeholder="Нависанда">
+                        <input type="text" class="form-control" id="bookAuthorInput" name="professor" placeholder="Нависанда">
                     </div>
                     <div class="form-group">
                         <label for="bookDescriptionInput">Маълумот</label>
-                        <textarea class="form-control" id="bookDescriptionInput" rows="5"></textarea>
+                        <textarea class="form-control" id="bookDescriptionInput" name="description" rows="5" placeholder="Контенти модул"></textarea>
                     </div>
                     <button class="btn btn-success align-self-end my-3" type="submit">Боргузори</button>
                 </form>

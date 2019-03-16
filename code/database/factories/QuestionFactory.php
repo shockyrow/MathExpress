@@ -7,8 +7,8 @@ $factory->define(App\Question::class, function (Faker $faker) {
         'title' => $faker->sentence,
         'description' => $faker->paragraph,
         'tags' => $faker->colorName,
-        'answerCount' => $faker->numberBetween(0, 100),
+        'answerCount' => $faker->numberBetween(0, 10),
         'viewCount' => $faker->numberBetween(0, 100),
-        'isAnswered' => $faker->boolean
+        'answerState' => $faker->numberBetween(0,2),
     ];
 });

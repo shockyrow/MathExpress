@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Question;
+use App\Module;
 use Illuminate\Http\Request;
 
-class QuestionController extends Controller
+class ModuleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +16,12 @@ class QuestionController extends Controller
     public function index(Request $request)
     {
         if ($request->has('q') && $request->get('q') !== null) {
-            $questions = Question::search($request->get('q'))->paginate(10);
+            $modules = Module::search($request->get('q'))->paginate(9);
         } else {
-            $questions = Question::paginate(10);
+            $modules = Module::paginate(9);
         }
 
-        return view('questions.index', ['questions' => $questions]);
+        return view('modules.index', ['modules' => $modules]);
     }
 
     /**
@@ -31,7 +31,7 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        return view('questions.create');
+        return view('modules.create');
     }
 
     /**
@@ -42,70 +42,67 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        $question = new Question([
+        $module = new Module([
             'title' => $request->get('title'),
+            'professor' => $request->get('professor'),
             'description' => $request->get('description'),
-            'tags'=>$request->get('tags'),
-            'answerState' => 1,
-            'answerCount' => 0,
-            'viewCount' => 0
+            'thumbnail' => "public/thumbnails/default_module_thumb.jpeg",
         ]);
-        $question->save();
+        $module->save();
 
-        return redirect(route('questions.show', $question->getId()));
+        return redirect(route('modules.show', $module->getId()));
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Question  $question
+     * @param  \App\Module  $module
      * @return \Illuminate\Http\Response
      */
-    public function show(Question $question)
+    public function show(Module $module)
     {
-        return view('questions.show', ['question' => $question]);
+        return view('modules.show', ['module' => $module]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Question  $question
+     * @param  \App\Module  $module
      * @return \Illuminate\Http\Response
      */
-    public function edit(Question $question)
+    public function edit(Module $module)
     {
-        return view('questions.edit', ['question' => $question]);
+        return view('modules.edit', ['module' => $module]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Question  $question
+     * @param  \App\Module  $module
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Question $question)
+    public function update(Request $request, Module $module)
     {
-        $question
+        $module
             ->setTitle($request->get('title'))
+            ->setProfessor($request->get('professor'))
             ->setDescription($request->get('description'))
-            ->setTags($request->get('tags'))
-            ->save()
-        ;
-        return redirect(route('questions.show'), $question->getId());
+            ->save();
 
+        return redirect(route('modules.show', $module->getId()));
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Question  $question
+     * @param  \App\Module  $module
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Question $question)
+    public function destroy(Module $module)
     {
-        $question->forceDelete();
+        $module->forceDelete();
 
-        return redirect(route('question.index'));
+        return redirect(route('modules.index'));
     }
 }

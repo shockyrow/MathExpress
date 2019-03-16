@@ -24,21 +24,10 @@ Route::get('/home', 'HomeController@index')->name('home');
  * The routes below is only for design testing purpose and should removed later
  */
 
-Route::get('/modules', function () {
-    return view('modules.list');
-})->name('modules.list');
-
-Route::get('/modules/create', function () {
-    return view('modules.create');
-})->name('modules.create');
-
-Route::get('/modules/{module}', function () {
-    return view('modules.show');
-})->name('modules.show');
-
 
 Route::resource('/docs', 'DocController');
 Route::get('/docs/{doc}/download', 'DocController@download')->name('doc.download');
 
 Route::resource('/terms', 'TermController');
 Route::resource('/questions','QuestionController');
+Route::resource('/modules', 'ModuleController');
