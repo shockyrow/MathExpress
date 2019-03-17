@@ -6,25 +6,47 @@
             {{$question->getTitle()}}
         @endcomponent
         <div class="row">
-            <div class="col-12">
-                <p>
-                    {{$question->getDescription()}}
-                </p>
-                <div class="text-right">
-                    <small>Аз тарафи <strong>Али Валиев</strong> пурсида шуд</small>
+            <div class="col-12 p-0 card shadow mb-3 text-justify">
+                <div class="d-flex justify-content-end pr-4 mt-4 w-100">
+                    <a href="{{route("questions.edit", $question->getId())}}">
+                        <i class="pr-4 fa fa-pencil-alt"></i>
+                    </a>
+                    <a href="#">
+                        <i class="pr-2 fa fa-trash"></i>
+                    </a>
                 </div>
-                <hr>
+                <div class="p-4">
+                    <h5 class="pr-2 text-dark font-weight-bold">
+                        {{$question->getDescription()}}
+                    </h5>
+                </div>
+                <div class="d-flex justify-content-end p-4 w-100">
+                    <h5 class="pr-2 text-dark font-weight-bold">
+                        Али Валиев
+                    </h5>
+                </div>
             </div>
-            <div class="col-12">
-                <label><h3>{{$question->answers->count()}} чавоб</h3></label>
-                <hr>
+            <div class="col-12 my-2">
+                <label><h2>{{$question->answers->count()}} чавоб</h2></label>
                 @foreach($question->answers as $answer)
-                    <div class="card my-3 {{ $answer->getId() === $question->getAnswerId() ? 'border border-success' : '' }}">
-                        <div class="card-header">
-                            {{ $answer->user->name }}
+                    <div class="p-0 card shadow mb-3 text-justify my-3 {{ $answer->getId() === $question->getAnswerId() ? 'border border-success' : '' }}">
+                        <div class="d-flex justify-content-end pr-4 mt-3 w-100">
+                            <a href="#">
+                                <i class="pr-4 fa fa-pencil-alt"></i>
+                            </a>
+                            <a href="#">
+                                <i class="pr-2 fa fa-trash"></i>
+                            </a>
                         </div>
-                        <div class="card-body">
-                            {{ $answer->getText() }}
+                        <div class="p-4">
+                            <p class="pr-2 text-dark font-weight-bold">
+                                {{$answer->getText()}}
+                            </p>
+                        </div>
+                        <div class="d-flex justify-content-end px-4 w-100">
+                            <p class="pr-2 text-dark font-weight-bold">
+                                Али Валиев
+                            </p>
                         </div>
                     </div>
                 @endforeach
@@ -38,7 +60,7 @@
                     <input type="hidden" name="question_id" value="{{ $question->getId() }}"/>
 
                     <div class="form-group">
-                        <label for="answerInput"><h3>Чавоби шумо</h3></label>
+                        <label for="answerInput"><h2>Чавоби шумо</h2></label>
                         <textarea class="form-control" id="answerInput" rows="5" placeholder="Чавобатонро дар инчо набисед." name="text"></textarea>
                     </div>
 

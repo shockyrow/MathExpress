@@ -98,12 +98,30 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
+
+        $tags = array_map('trim', explode(',', $request->get('tags')));
+        $tagList = [];
+
+        foreach ($tags as $tag)
+        {
+            $tagList[] = Tag::where('name',$tag)->first()
+                ? Tag::where('name',$tag)->first()
+                : new Tag(['name' => $tag])
+            ;
+        }
+
         $question
             ->setTitle($request->get('title'))
             ->setDescription($request->get('description'))
-            ->setTags($request->get('tags'))
-            ->save()
         ;
+
+        $question->tags()->delete();
+
+        $question->tags()->saveMany($tagList);
+
+        $question->save();
+
+
         return redirect(route('questions.show'), $question->getId());
 
     }

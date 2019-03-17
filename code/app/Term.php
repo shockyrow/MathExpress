@@ -68,10 +68,17 @@ class Term extends Model implements SearchableModelInterface
 
     public static function search(string $key = null)
     {
-        if ($key === null) {
-            return self::where();
-        } else {
-            return self::where('title', 'like', '%' . $key . '%')->orWhere('body', 'like', '%' . $key . '%');
-        }
+        return $key === null
+            ? self::where()
+            : self::where('title', 'like', '%' . $key . '%')->orWhere('body', 'like', '%' . $key . '%')
+            ;
+    }
+
+    public static function searchByLetter(string $key = null)
+    {
+        return $key === null
+            ? self::where()
+            : self::where('title', 'like', $key . '%');
+
     }
 }

@@ -24,6 +24,7 @@ class TermController extends Controller
         return view('terms.index', ['terms' => $terms]);
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
@@ -62,7 +63,7 @@ class TermController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the s  pecified resource.
      *
      * @param  \App\Term  $term
      * @return \Illuminate\Http\Response
@@ -100,5 +101,17 @@ class TermController extends Controller
         $term->forceDelete();
 
         return redirect(route('terms.index'));
+    }
+
+
+    /**
+     * @param string $key
+     * @return \Illuminate\Http\Response
+     */
+    public function searchByLetter(string $key){
+        $terms = Term::searchByLetter($key)->paginate(10);
+
+        return view('terms.index', ['terms' => $terms]);
+
     }
 }

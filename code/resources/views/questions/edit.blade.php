@@ -27,7 +27,7 @@
 
                     <div class="form-group">
                         <label for="questionTagsInput">Тагхо</label>
-                        <input type="text" class="form-control" id="questionTagsInput" name="tags" value="{{$question->getTags()}}"
+                        <input type="text" class="form-control" id="questionTagsInput" name="tags" value="{{$question->tags->implode('name', ', ')}}"
                                placeholder="масалан (гиометриа, граф)">
                     </div>
                     <button

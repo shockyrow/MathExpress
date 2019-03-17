@@ -7,7 +7,7 @@
         @endcomponent
         <div class="d-flex justify-content-center my-5">
             <div class="btn-group btn-group-sm">
-                <button class="btn btn-secondary">A</button>
+                <a class="btn btn-secondary" href="{{route('terms.searchByLetter', 'A')}}">A</a>
                 <button class="btn btn-secondary">Б</button>
                 <button class="btn btn-secondary">В</button>
                 <button class="btn btn-secondary">Г</button>
@@ -58,9 +58,21 @@
                                  aria-expanded="false"
                                  aria-controls="collapse{{$term->getId()}}"
                             >
-                                <h3 class="mb-0">
-                                    {{$term->getTitle()}}
-                                </h3>
+                                <div class="row">
+                                    <div class="col-10">
+                                        <h3 class="mb-0 text-justify">
+                                            {{$term->getTitle()}}
+                                        </h3>
+                                    </div>
+                                    <div class="col d-flex pr-4 justify-content-end">
+                                        <a href="{{route('terms.edit', $term->getId())}}">
+                                            <i class="pr-4 fa fa-pencil-alt"></i>
+                                        </a>
+                                        <a href="{{route('terms.destroy', $term->getId())}}">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
 
                             <div id="collapse{{$term->getId()}}"
