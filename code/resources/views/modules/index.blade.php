@@ -24,7 +24,7 @@
                 </div>
             @endforeach
         </div>
-            <div class="d-flex justify-content-center w-100">
+            <div class="d-flex justify-content-center w-100 mt-3">
                 {{ $modules->appends($_GET)->links() }}
             </div>
     </div>

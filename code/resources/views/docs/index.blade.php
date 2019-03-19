@@ -40,7 +40,7 @@
                     </div>
                 </div>
             @endforeach
-            <div class="d-flex justify-content-center w-100">
+            <div class="d-flex justify-content-center w-100 mt-3">
                 {{$docs->appends($_GET)->links()}}
             </div>
         </div>
