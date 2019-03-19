@@ -9,5 +9,6 @@ $factory->define(App\Doc::class, function (Faker $faker) {
         'description' => $faker->paragraph,
         'thumbnail' => 'public/thumbnails/doc_thumb.default.jpg',
         'filename' => 'public/files/book.example.jpg',
+        'user_id' => $faker->numberBetween(0, 99),
     ];
 });
