@@ -7,7 +7,7 @@ $factory->define(App\Doc::class, function (Faker $faker) {
         'title' => $faker->sentence,
         'author' => $faker->name,
         'description' => $faker->paragraph,
-        'thumbnail' => 'public/thumbnails/default_doc_thumb.jpg',
-        'filename' => 'public/thumbnails/default_doc_thumb.jpg',
+        'thumbnail' => 'public/thumbnails/doc_thumb.default.jpg',
+        'filename' => 'public/files/book.example.jpg',
     ];
 });

@@ -7,7 +7,7 @@ $factory->define(App\Module::class, function (Faker $faker) {
         'title' => $faker->sentence,
         'professor' => $faker->name,
         'description' => $faker->paragraph,
-        'thumbnail' => 'public/thumbnails/default_module_thumb.jpeg',
+        'thumbnail' => 'public/thumbnails/module_thumb.default.jpeg',
         'presentation' => null,
         'audio' => null,
         'video' => null,
