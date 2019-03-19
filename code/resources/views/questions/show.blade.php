@@ -2,28 +2,24 @@
 
 @section('content')
     <div class="container">
-        @component('layouts.components.title')
-            {{$question->getTitle()}}
-        @endcomponent
         <div class="row">
             <div class="col-12 p-0 card shadow mb-3 text-justify">
-                <div class="d-flex justify-content-end pr-4 mt-4 w-100">
-                    <a href="{{route("questions.edit", $question->getId())}}">
+                <div class="card-header d-flex align-items-center">
+                    <div class="mr-auto">
+                        {{ $question->getTitle() }}
+                        <div class="small text-muted">
+                            Али Валиев
+                        </div>
+                    </div>
+                    <a href="{{ route("questions.edit", $question->getId()) }}">
                         <i class="pr-4 fa fa-pencil-alt"></i>
                     </a>
                     <a href="#">
                         <i class="pr-2 fa fa-trash"></i>
                     </a>
                 </div>
-                <div class="p-4">
-                    <h5 class="pr-2 text-dark font-weight-bold">
-                        {{$question->getDescription()}}
-                    </h5>
-                </div>
-                <div class="d-flex justify-content-end p-4 w-100">
-                    <h5 class="pr-2 text-dark font-weight-bold">
-                        Али Валиев
-                    </h5>
+                <div class="card-body">
+                    {{ \Illuminate\Mail\Markdown::parse($question->getDescription()) }}
                 </div>
             </div>
             <div class="col-12 my-2">

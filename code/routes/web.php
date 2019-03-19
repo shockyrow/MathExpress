@@ -29,7 +29,6 @@ Route::resource('/docs', 'DocController');
 Route::get('/docs/{doc}/download', 'DocController@download')->name('doc.download');
 
 Route::resource('/terms', 'TermController');
-Route::get('/terms/{letter}', 'TermController@searchByLetter')->name('terms.searchByLetter');
 
 Route::resource('/questions','QuestionController');
 Route::resource('/modules', 'ModuleController');

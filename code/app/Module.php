@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Helpers\SearchHelper;
 use App\Interfaces\SearchableModelInterface;
 use Illuminate\Database\Eloquent\Model;
 
@@ -164,16 +165,17 @@ class Module extends Model implements SearchableModelInterface
         return $this;
     }
 
-    /**
-     * @param string|null $key
-     * @return mixed
-     */
-    public static function search(string $key = null)
+    public static function search(string $key = null, int $searchType = SearchHelper::SEARCH_TYPE_CONTAINS)
     {
         if ($key === null) {
             return self::where();
         } else {
-            return self::where('title', 'like', '%' . $key . '%')->orWhere('professor', 'like', '%' . $key . '%')->orWhere('description', 'like', '%' . $key . '%');
+            $query = SearchHelper::getSearchQuery($key, $searchType);
+
+            return self::where('title', 'like', $query)
+                ->orWhere('professor', 'like', $query)
+                ->orWhere('description', 'like', $query)
+            ;
         }
     }
 

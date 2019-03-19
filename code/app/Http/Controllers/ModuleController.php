@@ -16,7 +16,15 @@ class ModuleController extends Controller
     public function index(Request $request)
     {
         if ($request->has('q') && $request->get('q') !== null) {
-            $modules = Module::search($request->get('q'))->paginate(9);
+            if($request->has('searchType')) {
+                $modules = Module::search(
+                    $request->get('q'),
+                    $request->get('searchType')
+                )->paginate(9);
+            }
+            else {
+                $modules = Module::search($request->get('q'))->paginate(9);
+            }
         } else {
             $modules = Module::paginate(9);
         }

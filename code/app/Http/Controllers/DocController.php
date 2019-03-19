@@ -17,7 +17,15 @@ class DocController extends Controller
     public function index(Request $request)
     {
         if ($request->has('q') && $request->get('q') !== null) {
-            $docs = Doc::search($request->get('q'))->paginate(10);
+            if($request->has('searchType')) {
+                $docs = Doc::search(
+                    $request->get('q'),
+                    $request->get('searchType')
+                )->paginate(10);
+            }
+            else {
+                $docs = Doc::search($request->get('q'))->paginate(10);
+            }
         } else {
             $docs = Doc::paginate(10);
         }

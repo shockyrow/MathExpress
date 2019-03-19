@@ -8,19 +8,21 @@
         <div class="row justify-content-left">
             @foreach($questions as $question)
                 <div class="col-12">
-                    <a href="{{ route('questions.show', $question->getId()) }}"
-                       class="btn p-0 card shadow mb-3 text-justify"
-                    >
+                    <div class="p-0 card shadow mb-3 text-justify">
                         <div class="card-body d-flex align-items-center p-4">
                             <h3 class="flex-grow-1 pr-2 text-dark font-weight-bold"
                                 style="white-space: normal"
                             >
-                                {{ $question->getTitle() }}
+                                <a class="btn" href="{{ route('questions.show', $question->getId()) }}">
+                                    <h3>
+                                        {{ $question->getTitle() }}
+                                    </h3>
+                                </a>
                                 <div class="small mt-2">
                                     @foreach($question->tags as $tag)
-                                        <span class="badge badge-secondary mr-1 p-1">
+                                        <a class="badge badge-secondary mr-1 p-1" href="{{ route('questions.index', ['tag' => $tag->getName()]) }}">
                                             {{ $tag->getName() }}
-                                        </span>
+                                        </a>
                                     @endforeach
                                 </div>
                             </h3>
@@ -40,7 +42,7 @@
                                 </button>
                             </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
             @endforeach
             <div class="d-flex justify-content-center w-100">

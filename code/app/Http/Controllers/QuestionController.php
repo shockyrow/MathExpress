@@ -16,8 +16,22 @@ class QuestionController extends Controller
      */
     public function index(Request $request)
     {
-        if ($request->has('q') && $request->get('q') !== null) {
-            $questions = Question::search($request->get('q'))->paginate(10);
+        if($request->has('tag')) {
+            $questions = Tag::where('name', $request->get('tag'))
+                ->first()
+                ->questions()
+                ->paginate(10)
+            ;
+        } elseif ($request->has('q') && $request->get('q') !== null) {
+            if($request->has('searchType')) {
+                $questions = Question::search(
+                    $request->get('q'),
+                    $request->get('searchType')
+                )->paginate(10);
+            }
+            else {
+                $questions = Question::search($request->get('q'))->paginate(10);
+            }
         } else {
             $questions = Question::paginate(10);
         }
@@ -54,15 +68,14 @@ class QuestionController extends Controller
 
         foreach ($tags as $tag)
         {
-            $tagList[] = Tag::where('name',$tag)->first()
+            $tagList[] = (Tag::where('name',$tag)->first()
                 ? Tag::where('name',$tag)->first()
-                : new Tag(['name' => $tag])
+                : Tag::create(['name' => $tag]))->getId()
             ;
         }
 
         $question->save();
-
-        $question->tags()->saveMany($tagList);
+        $question->tags()->attach($tagList);
 
         return redirect(route('questions.show', $question->getId()));
     }
@@ -104,9 +117,9 @@ class QuestionController extends Controller
 
         foreach ($tags as $tag)
         {
-            $tagList[] = Tag::where('name',$tag)->first()
+            $tagList[] = (Tag::where('name',$tag)->first()
                 ? Tag::where('name',$tag)->first()
-                : new Tag(['name' => $tag])
+                : Tag::create(['name' => $tag]))->getId()
             ;
         }
 
@@ -115,14 +128,11 @@ class QuestionController extends Controller
             ->setDescription($request->get('description'))
         ;
 
-        $question->tags()->delete();
-
-        $question->tags()->saveMany($tagList);
-
+        $question->tags()->detach($question->tags->pluck('id'));
+        $question->tags()->attach($tagList);
         $question->save();
 
-
-        return redirect(route('questions.show'), $question->getId());
+        return redirect(route('questions.show', $question->getId()));
 
     }
 

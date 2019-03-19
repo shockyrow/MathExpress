@@ -2,8 +2,10 @@
 
 namespace App;
 
+use App\Helpers\SearchHelper;
 use App\Interfaces\SearchableModelInterface;
 use Illuminate\Database\Eloquent\Model;
+use function Sodium\library_version_major;
 
 /**
  * Class Doc
@@ -129,17 +131,17 @@ class Doc extends Model implements SearchableModelInterface
         return $this;
     }
 
-
-    /**
-     * @param string|null $key
-     * @return mixed
-     */
-    public static function search(string $key = null)
+    public static function search(string $key = null, int $searchType = SearchHelper::SEARCH_TYPE_CONTAINS)
     {
         if ($key === null) {
             return self::where();
         } else {
-            return self::where('title', 'like', '%' . $key . '%')->orWhere('author', 'like', '%' . $key . '%')->orWhere('description', 'like', '%' . $key . '%');
+            $query = SearchHelper::getSearchQuery($key, $searchType);
+
+            return self::where('title', 'like', $query)
+                ->orWhere('author', 'like', $query)
+                ->orWhere('description', 'like', $query)
+            ;
         }
     }
 }

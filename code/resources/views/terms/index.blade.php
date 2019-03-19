@@ -7,41 +7,9 @@
         @endcomponent
         <div class="d-flex justify-content-center my-5">
             <div class="btn-group btn-group-sm">
-                <a class="btn btn-secondary" href="{{route('terms.searchByLetter', 'A')}}">A</a>
-                <button class="btn btn-secondary">Б</button>
-                <button class="btn btn-secondary">В</button>
-                <button class="btn btn-secondary">Г</button>
-                <button class="btn btn-secondary">Ғ</button>
-                <button class="btn btn-secondary">Д</button>
-                <button class="btn btn-secondary">Е</button>
-                <button class="btn btn-secondary">Ё</button>
-                <button class="btn btn-secondary">Ж</button>
-                <button class="btn btn-secondary">З</button>
-                <button class="btn btn-secondary">И</button>
-                <button class="btn btn-secondary">Ӣ</button>
-                <button class="btn btn-secondary">Й</button>
-                <button class="btn btn-secondary">К</button>
-                <button class="btn btn-secondary">Қ</button>
-                <button class="btn btn-secondary">Л</button>
-                <button class="btn btn-secondary">М</button>
-                <button class="btn btn-secondary">Н</button>
-                <button class="btn btn-secondary">О</button>
-                <button class="btn btn-secondary">П</button>
-                <button class="btn btn-secondary">Р</button>
-                <button class="btn btn-secondary">С</button>
-                <button class="btn btn-secondary">Т</button>
-                <button class="btn btn-secondary">У</button>
-                <button class="btn btn-secondary">Ӯ</button>
-                <button class="btn btn-secondary">Ф</button>
-                <button class="btn btn-secondary">Х</button>
-                <button class="btn btn-secondary">Ҳ</button>
-                <button class="btn btn-secondary">Ч</button>
-                <button class="btn btn-secondary">Ҷ</button>
-                <button class="btn btn-secondary">Ш</button>
-                <button class="btn btn-secondary">Ъ</button>
-                <button class="btn btn-secondary">Э</button>
-                <button class="btn btn-secondary">Ю</button>
-                <button class="btn btn-secondary">Я</button>
+                @foreach (['A', 'B', 'C', 'D'] as $letter)
+                    <a class="btn btn-secondary" href="{{route('terms.index', ['q' => $letter, 'searchType' => 1])}}">{{$letter}}</a>
+                @endforeach
             </div>
         </div>
         <div class="row justify-content-center">
