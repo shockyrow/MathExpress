@@ -54,7 +54,7 @@ class DocController extends Controller
         if($request->hasFile('thumbnail')) {
             $thumbnailPath = $request->file('thumbnail')->storePublicly('public/thumbnails');
         } else {
-            $thumbnailPath = 'public/thumbnails/default_doc_thumb.jpg';
+            $thumbnailPath = 'public/thumbnails/doc_thumb.default.jpg';
         }
 
         if($request->hasFile('file')) {

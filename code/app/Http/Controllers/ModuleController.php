@@ -54,7 +54,7 @@ class ModuleController extends Controller
             'title' => $request->get('title'),
             'professor' => $request->get('professor'),
             'description' => $request->get('description'),
-            'thumbnail' => "public/thumbnails/default_module_thumb.jpeg",
+            'thumbnail' => "public/thumbnails/module_thumb.default.jpeg",
         ]);
         $module->save();
 
