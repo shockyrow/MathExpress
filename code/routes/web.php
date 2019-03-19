@@ -24,12 +24,9 @@ Route::get('/home', 'HomeController@index')->name('home');
  * The routes below is only for design testing purpose and should removed later
  */
 
-
-Route::resource('/docs', 'DocController');
 Route::get('/docs/{doc}/download', 'DocController@download')->name('doc.download');
-
+Route::resource('/docs', 'DocController');
 Route::resource('/terms', 'TermController');
-
 Route::resource('/questions','QuestionController');
 Route::resource('/modules', 'ModuleController');
 Route::resource('/answers', 'AnswerController');

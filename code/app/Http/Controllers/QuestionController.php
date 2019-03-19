@@ -5,9 +5,15 @@ namespace App\Http\Controllers;
 use App\Question;
 use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class QuestionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->except(['index', 'show']);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -74,6 +80,7 @@ class QuestionController extends Controller
             ;
         }
 
+        $question->user()->associate(Auth::user());
         $question->save();
         $question->tags()->attach($tagList);
 
@@ -88,6 +95,7 @@ class QuestionController extends Controller
      */
     public function show(Question $question)
     {
+        $question->addView()->save();
         return view('questions.show', ['question' => $question]);
     }
 

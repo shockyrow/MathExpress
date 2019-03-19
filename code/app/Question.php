@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $title
  * @property string $description
  * @property int|null $answer_id
+ * @property int $view_count
  */
 class Question extends Model implements SearchableModelInterface
 {
@@ -98,6 +99,36 @@ class Question extends Model implements SearchableModelInterface
         return $this;
     }
 
+    /**
+     * @return int
+     */
+    public function getViewCount(): int
+    {
+        return $this->view_count;
+    }
+
+    /**
+     * @param int $view_count
+     * @return Question
+     */
+    public function setViewCount(int $view_count): Question
+    {
+        $this->view_count = $view_count;
+
+        return $this;
+    }
+
+    /**
+     * @param int $view_count
+     * @return Question
+     */
+    public function addView(int $view_count = 1): Question
+    {
+        $this->view_count += $view_count;
+
+        return $this;
+    }
+
     public function answers()
     {
         return $this->hasMany(Answer::class);
@@ -106,6 +137,11 @@ class Question extends Model implements SearchableModelInterface
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 
     public static function search(string $key = null, int $searchType = SearchHelper::SEARCH_TYPE_CONTAINS)

@@ -32,7 +32,7 @@
                                             {{$term->getTitle()}}
                                         </h3>
                                     </div>
-                                    <div class="col d-flex pr-4 justify-content-end">
+                                    <div class="col d-flex pr-4 justify-content-end align-items-center">
                                         <a href="{{route('terms.edit', $term->getId())}}">
                                             <i class="pr-4 fa fa-pencil-alt"></i>
                                         </a>

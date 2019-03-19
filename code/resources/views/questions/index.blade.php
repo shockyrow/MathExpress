@@ -37,7 +37,7 @@
                                 <button type="button"
                                         class="btn btn-sm btn-light align-self-center h-100"
                                 >
-                                    <h2 class="mb-0">{{ $question->answers->count() }}</h2>
+                                    <h2 class="mb-0">{{ $question->getViewCount() }}</h2>
                                     <small>дидан</small>
                                 </button>
                             </div>

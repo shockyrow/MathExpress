@@ -7,7 +7,7 @@
                 <div class="col-12">
                     <div class="card shadow mb-3">
                         <div class="card-header d-flex align-items-center">
-                            <div class="mr-auto">
+                            <div class="mr-auto font-weight-bold">
                                 {{ $module->getTitle() }}
                             </div>
                             <a href="{{route("modules.edit", $module->getId())}}">

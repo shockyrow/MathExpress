@@ -20,6 +20,7 @@ class CreateDocsTable extends Migration
             $table->text('description');
             $table->string('thumbnail')->nullable();
             $table->string('filename');
+            $table->integer('user_id');
             $table->timestamps();
         });
     }
