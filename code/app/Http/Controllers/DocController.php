@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Doc;
+use App\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class DocController extends Controller
@@ -45,6 +47,8 @@ class DocController extends Controller
      */
     public function create()
     {
+        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+
         return view('docs.create');
     }
 
@@ -56,6 +60,8 @@ class DocController extends Controller
      */
     public function store(Request $request)
     {
+        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+
         if($request->hasFile('thumbnail')) {
             $thumbnailPath = $request->file('thumbnail')->storePublicly('public/thumbnails');
         } else {
@@ -99,6 +105,8 @@ class DocController extends Controller
      */
     public function edit(Doc $doc)
     {
+        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+
         return view('docs.edit', ['doc' => $doc]);
     }
 
@@ -111,6 +119,8 @@ class DocController extends Controller
      */
     public function update(Request $request, Doc $doc)
     {
+        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+
         if($request->hasFile('thumbnail')) {
             //Storage::delete($doc->getThumbnail()); // should not delete default thumbnail
             $thumbnailPath = $request->file('thumbnail')->storePublicly('public/thumbnails');
@@ -145,6 +155,8 @@ class DocController extends Controller
      */
     public function destroy(Doc $doc)
     {
+        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+
         $doc->forceDelete();
 
         return redirect(route('docs.index'));
