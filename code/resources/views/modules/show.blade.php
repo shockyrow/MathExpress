@@ -3,13 +3,13 @@
 @section('content')
     <div class="container">
         <div class="row mb-3">
-            @component('layouts.components.title')
-                {{$module -> getTitle()}}
-            @endcomponent
             <div class="row justify-content-center w-100">
                 <div class="col-12">
                     <div class="card shadow mb-3">
-                        <div class="d-flex justify-content-end pr-4 mt-3 w-100">
+                        <div class="card-header d-flex align-items-center">
+                            <div class="mr-auto">
+                                {{ $module->getTitle() }}
+                            </div>
                             <a href="{{route("modules.edit", $module->getId())}}">
                                 <i class="pr-4 fa fa-pencil-alt"></i>
                             </a>
@@ -21,7 +21,7 @@
                         <div class="card-body text-justify">
 
                             <p>
-                                {{$module->getDescription()}}
+                                {{ \Illuminate\Mail\Markdown::parse($module->getDescription()) }}
                             </p>
 
                             <div class="d-flex justify-content-around my-5">
@@ -64,9 +64,7 @@
                             </div>
                         </div>
 
-                        <hr>
-
-                        <div class="p-3">
+                        <div class="card-footer">
                             <div>
                                 <strong>Сана:</strong>
                                 {{ \Carbon\Carbon::parse($module->created_at)->diffForHumans() }}

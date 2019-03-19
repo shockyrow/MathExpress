@@ -1,4 +1,5 @@
 app/public/thumbnails/
 app/public/files/
-!app/public/thumbnails/defbookcover-min.jpg
+!app/public/thumbnails/default_doc_thumb.jpg
+!app/public/thumbnails/default_module_thumb.jpeg
 !app/public/files/defbookcover-min.jpg
