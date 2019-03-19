@@ -7,7 +7,7 @@
         @endcomponent
         <div class="d-flex justify-content-center my-5">
             <div class="btn-group btn-group-sm">
-                @foreach (['A', 'B', 'C', 'D'] as $letter)
+                @foreach (['А', 'Б', 'В', 'Г'] as $letter)
                     <a class="btn btn-secondary" href="{{route('terms.index', ['q' => $letter, 'searchType' => 1])}}">{{$letter}}</a>
                 @endforeach
             </div>
