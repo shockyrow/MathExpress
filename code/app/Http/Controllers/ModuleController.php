@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Module;
+use App\Role;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ModuleController extends Controller
 {
@@ -44,6 +46,9 @@ class ModuleController extends Controller
      */
     public function create()
     {
+
+        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+
         return view('modules.create');
     }
 
@@ -55,6 +60,8 @@ class ModuleController extends Controller
      */
     public function store(Request $request)
     {
+        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+
         $module = new Module([
             'title' => $request->get('title'),
             'professor' => $request->get('professor'),
@@ -85,6 +92,8 @@ class ModuleController extends Controller
      */
     public function edit(Module $module)
     {
+        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+
         return view('modules.edit', ['module' => $module]);
     }
 
@@ -97,6 +106,8 @@ class ModuleController extends Controller
      */
     public function update(Request $request, Module $module)
     {
+        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+
         $module
             ->setTitle($request->get('title'))
             ->setProfessor($request->get('professor'))
@@ -114,6 +125,8 @@ class ModuleController extends Controller
      */
     public function destroy(Module $module)
     {
+        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+
         $module->forceDelete();
 
         return redirect(route('modules.index'));

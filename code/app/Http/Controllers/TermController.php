@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Role;
 use App\Term;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TermController extends Controller
 {
@@ -45,6 +47,8 @@ class TermController extends Controller
      */
     public function create()
     {
+        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+
         return view('terms.create');
     }
 
@@ -56,6 +60,8 @@ class TermController extends Controller
      */
     public function store(Request $request)
     {
+        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+
         $term = new Term([
             'title' => $request->get('title'),
             'body' => $request->get('body'),
@@ -83,6 +89,8 @@ class TermController extends Controller
      */
     public function edit(Term $term)
     {
+        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+
         return view('terms.edit', ['term' => $term]);
     }
 
@@ -95,6 +103,8 @@ class TermController extends Controller
      */
     public function update(Request $request, Term $term)
     {
+        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+
         $term
             ->setTitle($request->get('title'))
             ->setBody($request->get('body'))
@@ -111,6 +121,8 @@ class TermController extends Controller
      */
     public function destroy(Term $term)
     {
+        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+
         $term->forceDelete();
 
         return redirect(route('terms.index'));
