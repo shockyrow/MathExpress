@@ -6,13 +6,17 @@
             </h3>
 
             <div class="ml-auto">
-                <a href="{{route('terms.edit', $term->getId())}}" class="btn btn-sm mx-1">
-                    <i class="fa fa-pencil-alt"></i>
-                </a>
+                @auth
+                    @if (Auth::user()->hasAnyRole([\App\Role::ROLE_ADMIN, \App\Role::ROLE_TEACHER]))
+                        <a href="{{route('terms.edit', $term->getId())}}" class="btn btn-sm mx-1">
+                            <i class="fa fa-pencil-alt"></i>
+                        </a>
 
-                <a href="{{route('terms.destroy', $term->getId())}}" class="btn btn-sm text-danger mx-1">
-                    <i class="fa fa-trash"></i>
-                </a>
+                        <a href="{{route('terms.destroy', $term->getId())}}" class="btn btn-sm text-danger mx-1">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    @endif
+                @endauth
             </div>
         </div>
 

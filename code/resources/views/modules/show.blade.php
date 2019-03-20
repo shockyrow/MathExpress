@@ -9,12 +9,17 @@
                         <div class="mr-auto font-weight-bold">
                             {{ $module->getTitle() }}
                         </div>
-                        <a href="{{route("modules.edit", $module->getId())}}">
-                            <i class="pr-4 fa fa-pencil-alt"></i>
-                        </a>
-                        <a href="#" class="text-danger">
-                            <i class="pr-2 fa fa-trash"></i>
-                        </a>
+
+                        @auth
+                            @if (Auth::user()->hasAnyRole([\App\Role::ROLE_ADMIN, \App\Role::ROLE_TEACHER]))
+                                <a href="{{route("modules.edit", $module->getId())}}">
+                                    <i class="pr-4 fa fa-pencil-alt"></i>
+                                </a>
+                                <a href="#" class="text-danger">
+                                    <i class="pr-2 fa fa-trash"></i>
+                                </a>
+                            @endif
+                        @endauth
                     </div>
                 </div>
             </div>

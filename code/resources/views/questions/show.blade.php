@@ -12,8 +12,9 @@
                                 {{ $question->user->getName() }}
                             </div>
                         </div>
+
                         @auth
-                            @if (Auth::id() === $question->user->getId() || Auth::user()->authorizeRoles([\App\Role::ROLE_ADMIN]))
+                            @if (Auth::id() === $question->user->getId() || Auth::user()->hasAnyRole([\App\Role::ROLE_ADMIN]))
                                 <a href="{{route("questions.edit", $question->getId())}}">
                                     <i class="pr-4 fa fa-pencil-alt"></i>
                                 </a>
