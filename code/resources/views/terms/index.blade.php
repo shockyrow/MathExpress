@@ -10,11 +10,12 @@
 
         @component('layouts.components.list', ['data' => $terms])
             @foreach($terms as $term)
-                @component('layouts.components.term', ['term' => $term])
+                @component('layouts.components.term_item', ['term' => $term])
                 @endcomponent
             @endforeach
         @endcomponent
-        <button class="floating-button floating-button-br rounded-circle btn btn-secondary">
+
+        <button class="floating-button floating-button-br rounded-circle btn btn-secondary shadow">
             <i class="fa fa-plus"></i>
         </button>
     </div>

@@ -30,10 +30,10 @@ class TermController extends Controller
                 )->paginate(10);
             }
             else {
-                $terms = Term::search($request->get('q'))->paginate(15);
+                $terms = Term::search($request->get('q'))->paginate(10);
             }
         } else {
-            $terms = Term::paginate(15);
+            $terms = Term::paginate(10);
         }
 
         return view('terms.index', ['terms' => $terms]);

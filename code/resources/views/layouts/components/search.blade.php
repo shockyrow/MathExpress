@@ -12,7 +12,7 @@
                             <option value="3">Ends with</option>
                         </select>
 
-                        <button class="btn btn-outline-success" type="submit">Кофтан</button>
+                        <button class="btn btn-success" type="submit">Кофтан</button>
                     </div>
                 </div>
             </form>

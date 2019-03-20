@@ -1,4 +1,4 @@
-<div class="carousel-header app-primary-bg py-3">
+<div class="carousel-header app-primary-bg py-3 mb-3">
     <div class="container">
         <nav class="navbar navbar-light navbar-expand-lg bg-light rounded shadow">
             <a class="navbar-brand" href="{{ route('welcome') }}">

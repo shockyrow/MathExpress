@@ -1,3 +1,7 @@
+html, body {
+    height: 100%;
+}
+
 body {
     background: #fff;
 }
@@ -32,7 +36,7 @@ body {
     background-image: url("../img/wave-footer.png");
     background-position: center top;
     background-repeat: no-repeat;
-    background-size: 100% auto;
+    background-size: 102% auto;
 }
 
 .carousel-item-overlay::after {
@@ -58,4 +62,13 @@ body {
 
 .users-say {
     min-height: 240px;
+}
+
+.zoom img {
+    transition: ease .25s;
+}
+
+.zoom img:hover {
+    transform: scale(1.5) rotate(-10deg);
+    transition: ease .25s;
 }
