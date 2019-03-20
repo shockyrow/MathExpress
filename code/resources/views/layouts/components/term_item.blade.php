@@ -1,5 +1,5 @@
 <div class="col-12">
-    <div class="card bg-white shadow-sm my-2">
+    <div class="card bg-white shadow-sm my-3">
         <div class="btn card-body d-flex" id="heading{{$term->getId()}}" data-toggle="collapse" data-target="#collapse{{$term->getId()}}" aria-expanded="false" aria-controls="collapse{{$term->getId()}}">
             <h3 class="mb-0">
                 {{$term->getTitle()}}

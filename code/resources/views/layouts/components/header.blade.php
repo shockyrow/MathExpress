@@ -16,14 +16,22 @@
                             {{ __('Махфум') }}
                         </a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('modules.index') }}">
                             {{ __('Модулхо') }}
                         </a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('docs.index') }}">
                             {{ __('Маводхо') }}
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('questions.index') }}">
+                            {{ __('Саволу Чавоб') }}
                         </a>
                     </li>
                 </ul>

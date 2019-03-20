@@ -1,5 +1,5 @@
 <div class="col-md-6">
-    <div class="p-0 card shadow mb-3">
+    <div class="p-0 card shadow my-3">
         <div class="card-body">
             <div class="row">
                 <div class="col-12 col-lg-5">
