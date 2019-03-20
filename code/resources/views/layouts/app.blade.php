@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -30,7 +30,7 @@
 @component('layouts.components.header', ['showCarousel' => Route::currentRouteName() === 'welcome' ? true : false])
 @endcomponent
 
-<div id="app" class="container">
+<div id="app">
     <main>
         @yield('content')
     </main>

@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
         ]);
         $admin->roles()->attach($role_admin);
 
-        $teachers = factory(User::class, 100)->create();
+        $teachers = factory(User::class, 50)->create();
         foreach ($teachers as $user)
         {
             $user->roles()->attach($role_teacher);

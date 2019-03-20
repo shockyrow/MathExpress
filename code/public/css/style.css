@@ -10,6 +10,10 @@ body {
     color: #00E676 !important;
 }
 
+.app-primary-border {
+    border-color: #00E676 !important;
+}
+
 .carousel-header {
     background-image: url("../img/wave.png");
     background-position: center bottom -1px;
@@ -40,4 +44,18 @@ body {
     width: 100%;
     background: #000;
     opacity: .7;
+}
+
+.features > * {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.feature-icon {
+    width: 64px;
+    height: 64px;
+}
+
+.users-say {
+    min-height: 240px;
 }
