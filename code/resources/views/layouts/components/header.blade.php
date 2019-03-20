@@ -35,6 +35,41 @@
                         </a>
                     </li>
                 </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <!-- Authentication Links -->
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">
+                                {{ __('Даромад') }}
+                            </a>
+                        </li>
+                        @if (Route::has('register'))
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('register') }}">
+                                    {{ __('Бакайдгири') }}
+                                </a>
+                            </li>
+                        @endif
+                    @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                                    {{ __('Баромад') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                    @endguest
+                </ul>
             </div>
         </nav>
 
@@ -49,24 +84,36 @@
                     <div class="carousel-item carousel-item-overlay active">
                         <img src="{{ asset('img/slider/slide_1.jpg') }}" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5 class="font-weight-bold">First slide label</h5>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h5 class="font-weight-bold">
+                                Аввалин портали математики бо забони точики
+                            </h5>
+                            <p>
+                                Бо маводхои алодарачаи портали математикии мо дониши худро мукаммал дихед.
+                            </p>
                         </div>
                     </div>
 
                     <div class="carousel-item carousel-item-overlay">
                         <img src="{{ asset('img/slider/slide_2.jpg') }}" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5 class="font-weight-bold">Second slide label</h5>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h5 class="font-weight-bold">
+                                Аввалин портали математики бо забони точики
+                            </h5>
+                            <p>
+                                Бо маводхои алодарачаи портали математикии мо дониши худро мукаммал дихед.
+                            </p>
                         </div>
                     </div>
 
                     <div class="carousel-item carousel-item-overlay">
                         <img src="{{ asset('img/slider/slide_3.jpg') }}" class="d-block w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
-                            <h5 class="font-weight-bold">Third slide label</h5>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h5 class="font-weight-bold">
+                                Аввалин портали математики бо забони точики
+                            </h5>
+                            <p>
+                                Бо маводхои алодарачаи портали математикии мо дониши худро мукаммал дихед.
+                            </p>
                         </div>
                     </div>
                 </div>

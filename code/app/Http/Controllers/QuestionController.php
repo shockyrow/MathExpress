@@ -119,7 +119,6 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
-
         $tags = array_map('trim', explode(',', $request->get('tags')));
         $tagList = [];
 
@@ -141,7 +140,6 @@ class QuestionController extends Controller
         $question->save();
 
         return redirect(route('questions.show', $question->getId()));
-
     }
 
     /**
