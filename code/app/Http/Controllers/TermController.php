@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Role;
 use App\Term;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
 class TermController extends Controller
@@ -126,17 +127,5 @@ class TermController extends Controller
         $term->forceDelete();
 
         return redirect(route('terms.index'));
-    }
-
-
-    /**
-     * @param string $key
-     * @return \Illuminate\Http\Response
-     */
-    public function searchByLetter(string $key){
-        $terms = Term::searchByLetter($key)->paginate(10);
-
-        return view('terms.index', ['terms' => $terms]);
-
     }
 }

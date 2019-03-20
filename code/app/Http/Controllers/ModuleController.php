@@ -46,7 +46,6 @@ class ModuleController extends Controller
      */
     public function create()
     {
-
         Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
 
         return view('modules.create');

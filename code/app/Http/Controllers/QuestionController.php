@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Question;
+use App\Role;
 use App\Tag;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
 class QuestionController extends Controller
@@ -107,6 +109,10 @@ class QuestionController extends Controller
      */
     public function edit(Question $question)
     {
+        if(Auth::id() !== $question->user->getId() && !Auth::user()->hasAnyRole([Role::ROLE_ADMIN])) {
+            abort(Response::HTTP_FORBIDDEN);
+        }
+
         return view('questions.edit', ['question' => $question]);
     }
 
@@ -119,6 +125,10 @@ class QuestionController extends Controller
      */
     public function update(Request $request, Question $question)
     {
+        if(Auth::id() !== $question->user->getId() && !Auth::user()->hasAnyRole([Role::ROLE_ADMIN])) {
+            abort(Response::HTTP_FORBIDDEN);
+        }
+
         $tags = array_map('trim', explode(',', $request->get('tags')));
         $tagList = [];
 
@@ -150,6 +160,10 @@ class QuestionController extends Controller
      */
     public function destroy(Question $question)
     {
+        if(Auth::id() !== $question->user->getId() && !Auth::user()->hasAnyRole([Role::ROLE_ADMIN])) {
+            abort(Response::HTTP_FORBIDDEN);
+        }
+
         $question->forceDelete();
 
         return redirect(route('question.index'));

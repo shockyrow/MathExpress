@@ -12,12 +12,16 @@
                                 {{ $question->user->getName() }}
                             </div>
                         </div>
-                        <a href="{{route("questions.edit", $question->getId())}}">
-                            <i class="pr-4 fa fa-pencil-alt"></i>
-                        </a>
-                        <a href="#" class="text-danger">
-                            <i class="pr-2 fa fa-trash"></i>
-                        </a>
+                        @auth
+                            @if (Auth::id() === $question->user->getId() || Auth::user()->authorizeRoles([\App\Role::ROLE_ADMIN]))
+                                <a href="{{route("questions.edit", $question->getId())}}">
+                                    <i class="pr-4 fa fa-pencil-alt"></i>
+                                </a>
+                                <a href="#" class="text-danger">
+                                    <i class="pr-2 fa fa-trash"></i>
+                                </a>
+                            @endif
+                        @endauth
                     </div>
                 </div>
             </div>

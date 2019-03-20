@@ -8,12 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Question
+ *
  * @package App
  * @property int $id
  * @property string $title
  * @property string $description
  * @property int|null $answer_id
  * @property int $view_count
+ * @property User $user
  */
 class Question extends Model implements SearchableModelInterface
 {
