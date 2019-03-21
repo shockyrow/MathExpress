@@ -47,5 +47,11 @@
                 {{ __('Бакайдриред') }}
             </button>
         </form>
+        <div class="my-2">
+            Суратхисоб доред?
+            <a href="{{ route('login') }}" style="color: #e3342f">
+                Даромад
+            </a>
+        </div>
     @endcomponent
 @endsection

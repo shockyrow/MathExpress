@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row d-flex flex-wrap justify-content-center flex-row-reverse my-5">
+        <div class="row d-flex flex-wrap justify-content-center flex-row-reverse my-2">
             <div class="px-5">
                 <img class="w-100" src="{{URL::asset('/img/login-image.png')}}">
             </div>
@@ -13,6 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
+                    <h2 class="py-3">Ирсоли парол</h2>
                     <form method="POST" action="{{ route('password.email') }}">
 
                         @csrf

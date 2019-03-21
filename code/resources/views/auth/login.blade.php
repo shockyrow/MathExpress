@@ -3,7 +3,7 @@
 @section('content')
     @component('layouts.components.auth')
         <h2 class="mb-3">
-            {{ __('Логин') }}
+            {{ __('Даромад') }}
         </h2>
         <form method="POST" action="{{ route('login') }}">
             @csrf
