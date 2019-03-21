@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Module;
 use App\Role;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
 
 class ModuleController extends Controller
@@ -63,11 +64,14 @@ class ModuleController extends Controller
 
         $module = new Module([
             'title' => $request->get('title'),
-            'professor' => $request->get('professor'),
             'description' => $request->get('description'),
             'thumbnail' => "public/thumbnails/module_thumb.default.jpeg",
         ]);
-        $module->save();
+        $module
+            ->user()
+            ->associate(Auth::user())
+            ->save()
+        ;
 
         return redirect(route('modules.show', $module->getId()));
     }
@@ -91,7 +95,9 @@ class ModuleController extends Controller
      */
     public function edit(Module $module)
     {
-        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+        if(Auth::id() !== $module->getUserId() && !Auth::user()->hasAnyRole([Role::ROLE_ADMIN])) {
+            abort(Response::HTTP_FORBIDDEN);
+        }
 
         return view('modules.edit', ['module' => $module]);
     }
@@ -105,13 +111,17 @@ class ModuleController extends Controller
      */
     public function update(Request $request, Module $module)
     {
-        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+        if(Auth::id() !== $module->getUserId() && !Auth::user()->hasAnyRole([Role::ROLE_ADMIN])) {
+            abort(Response::HTTP_FORBIDDEN);
+        }
 
         $module
             ->setTitle($request->get('title'))
-            ->setProfessor($request->get('professor'))
             ->setDescription($request->get('description'))
-            ->save();
+            ->user()
+            ->associate(Auth::user())
+            ->save()
+        ;
 
         return redirect(route('modules.show', $module->getId()));
     }
@@ -124,7 +134,9 @@ class ModuleController extends Controller
      */
     public function destroy(Module $module)
     {
-        Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
+        if(Auth::id() !== $module->getUserId() && !Auth::user()->hasAnyRole([Role::ROLE_ADMIN])) {
+            abort(Response::HTTP_FORBIDDEN);
+        }
 
         $module->forceDelete();
 

@@ -12,8 +12,8 @@ use Illuminate\Database\Eloquent\Model;
  * @package App
  * @property int $id
  * @property string $title
- * @property string professor
  * @property string $description
+ * @property int $user_id
  * @property string|null $thumbnail
  * @property string|null $video
  * @property string|null $audio
@@ -60,24 +60,6 @@ class Module extends Model implements SearchableModelInterface
     /**
      * @return string
      */
-    public function getProfessor(): string
-    {
-        return $this->professor;
-    }
-
-    /**
-     * @param string $professor
-     * @return Module
-     */
-    public function setProfessor(string $professor): Module
-    {
-        $this->professor = $professor;
-        return $this;
-    }
-
-    /**
-     * @return string
-     */
     public function getDescription(): string
     {
         return $this->description;
@@ -90,6 +72,25 @@ class Module extends Model implements SearchableModelInterface
     public function setDescription(string $description): Module
     {
         $this->description = $description;
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getUserId(): int
+    {
+        return $this->user_id;
+    }
+
+    /**
+     * @param int $user_id
+     * @return Module
+     */
+    public function setUserId(int $user_id): Module
+    {
+        $this->user_id = $user_id;
+
         return $this;
     }
 
@@ -165,6 +166,11 @@ class Module extends Model implements SearchableModelInterface
         return $this;
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public static function search(string $key = null, int $searchType = SearchHelper::SEARCH_TYPE_CONTAINS)
     {
         if ($key === null) {
@@ -173,10 +179,8 @@ class Module extends Model implements SearchableModelInterface
             $query = SearchHelper::getSearchQuery($key, $searchType);
 
             return self::where('title', 'like', $query)
-                ->orWhere('professor', 'like', $query)
                 ->orWhere('description', 'like', $query)
             ;
         }
     }
-
 }
