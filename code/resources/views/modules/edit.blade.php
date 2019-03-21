@@ -15,10 +15,6 @@
                         <input type="text" class="form-control" id="bookTitleInput" name="title" placeholder="Сарлавхои модул" value="{{$module->getTitle()}}">
                     </div>
                     <div class="form-group">
-                        <label for="bookAuthorInput">Нависанда</label>
-                        <input type="text" class="form-control" id="bookAuthorInput" name="professor" placeholder="Нависанда" value="{{$module->getProfessor()}}">
-                    </div>
-                    <div class="form-group">
                         <label for="bookDescriptionInput">Маълумот</label>
                         <textarea class="form-control" id="bookDescriptionInput" name="description" rows="5" placeholder="Контенти модул">{{$module->getDescription()}}</textarea>
                     </div>

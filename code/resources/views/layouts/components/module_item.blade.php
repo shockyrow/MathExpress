@@ -6,9 +6,9 @@
 
         <div class="card-body">
             <h5 class="font-weight-bold text-dark m-0">
-                {{ $module -> getTitle() }}
+                {{ $module->getTitle() }}
                 <div class="small">
-                    {{ $module->getProfessor() }}
+                    by {{ $module->user->getName() }}
                 </div>
                 <div class="small text-muted">
                     {{ \Carbon\Carbon::parse($module->created_at)->diffForHumans() }}

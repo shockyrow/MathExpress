@@ -14,10 +14,6 @@
                         <input type="text" class="form-control" id="bookTitleInput" name="title" placeholder="Сарлавхои модул">
                     </div>
                     <div class="form-group">
-                        <label for="bookAuthorInput">Нависанда</label>
-                        <input type="text" class="form-control" id="bookAuthorInput" name="professor" placeholder="Нависанда">
-                    </div>
-                    <div class="form-group">
                         <label for="bookDescriptionInput">Маълумот</label>
                         <textarea class="form-control" id="bookDescriptionInput" name="description" rows="5" placeholder="Контенти модул"></textarea>
                     </div>

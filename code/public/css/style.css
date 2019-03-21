@@ -72,3 +72,7 @@ body {
     transform: scale(1.5) rotate(-10deg);
     transition: ease .25s;
 }
+
+.doc-item {
+    text-decoration: none!important;
+}
