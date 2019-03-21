@@ -166,6 +166,6 @@ class QuestionController extends Controller
 
         $question->forceDelete();
 
-        return redirect(route('question.index'));
+        return redirect(route('questions.index'));
     }
 }

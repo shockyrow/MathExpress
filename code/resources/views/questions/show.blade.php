@@ -18,9 +18,14 @@
                                 <a href="{{route("questions.edit", $question->getId())}}">
                                     <i class="pr-4 fa fa-pencil-alt"></i>
                                 </a>
-                                <a href="#" class="text-danger">
-                                    <i class="pr-2 fa fa-trash"></i>
-                                </a>
+                                <button type="submit" form="deleteQuestion{{ $question->getId() }}" class="btn text-danger">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+
+                                <form id="deleteQuestion{{ $question->getId() }}" action="{{ route($question->getTable() . '.destroy', $question->getId()) }}" method="post" class="d-none">
+                                    @csrf
+                                    @method('delete')
+                                </form>
                             @endif
                         @endauth
                     </div>
@@ -49,10 +54,15 @@
                                     {{ $answer->user->getName() }}
                                 </div>
                                 @auth
-                                    @if (Auth::id() === $answer->user->getId() || Auth::user()->authorizeRoles([\App\Role::ROLE_ADMIN]))
-                                        <a href="#" class="btn btn-sm text-danger">
-                                            <i class="pr-2 fa fa-trash"></i>
-                                        </a>
+                                    @if (Auth::id() === $answer->user->getId() || Auth::user()->hasAnyRole([\App\Role::ROLE_ADMIN]))
+                                        <button type="submit" form="deleteAnswer{{ $answer->getId() }}" class="btn btn-sm text-danger">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+
+                                        <form id="deleteAnswer{{ $answer->getId() }}" action="{{ route($answer->getTable() . '.destroy', $answer->getId()) }}" method="post" class="d-none">
+                                            @csrf
+                                            @method('delete')
+                                        </form>
                                     @endif
                                 @endauth
                             </div>
@@ -66,7 +76,7 @@
                             @csrf
                             @method('post')
 
-                            <input type="hidden" name="user_id" value="{{ 1 }}"/>
+                            <input type="hidden" name="user_id" value="{{ Auth::id() }}"/>
                             <input type="hidden" name="question_id" value="{{ $question->getId() }}"/>
 
                             <div class="form-group">

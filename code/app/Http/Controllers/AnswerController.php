@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Answer;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Redirect;
 use Webmozart\Assert\Assert;
 
 class AnswerController extends Controller
@@ -91,10 +93,12 @@ class AnswerController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Answer  $answer
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Answer $answer)
     {
-        //
+        $answer->forceDelete();
+
+        return Redirect::back();
     }
 }
