@@ -1,45 +1,56 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row my-5">
-        <div class="col-3"></div>
-        <div class="col-3 text-center">
-            <form method="POST" action="{{ route('register') }}">
+    <div class="container">
+        <div class="row d-flex flex-wrap justify-content-center flex-row-reverse my-5">
+            <div class="px-5">
+                <img class="w-100" src="{{URL::asset('/img/login-page.png')}}">
+            </div>
+            <div class="col col-lg-4">
+                <div class="col text-center">
+                <form method="POST" action="{{ route('register') }}">
                 @csrf
-                <div class="input-group d-flex align-items-center m-2">
-                    <i class="fa fa-user"></i>
-                    <input id="name" placeholder="Ному насаб" style="border: 0; box-shadow: none"
-                           class="form-control" name="name" required autofocus>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+
+                        <input id="name" placeholder="Ному насаб" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
+                    </div>
                 </div>
-                <hr class="m-0" style="background-color: {{ $errors->has('name') ? '#e3342f' : ''}}">
-                <div class="input-group d-flex align-items-center m-2">
-                    <i class="fa fa-at"></i>
-                    <input id="email" placeholder="Сурогаи электрони" type="email" style="border: 0; box-shadow: none"
-                           class="form-control" name="email" required autofocus>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-at"></i></span>
+                        </div>
+
+                        <input id="email" placeholder="Сурогаи электрони" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                    </div>
                 </div>
-                <hr class="m-0" style="background-color: {{ $errors->has('email') ? '#e3342f' : ''}}">
-                <div class="input-group d-flex align-items-center m-2">
-                    <i class="fa fa-lock"></i>
-                    <input id="password" placeholder="Парол" type="password" style="border: 0; box-shadow: none"
-                           class="form-control" name="password"
-                           required>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+
+                        <input id="password" placeholder="Парол" type="password" class="form-control" name="password" value="{{ old('password') }}" required autofocus>
+                    </div>
                 </div>
-                <hr class="m-0" style="background-color: {{ $errors->has('password') ? '#e3342f' : ''}}">
-                <div class="input-group d-flex align-items-center m-2">
-                    <i class="fa fa-lock"></i>
-                    <input id="password-confirm" placeholder="Такрори парол" type="password" style="border: 0; box-shadow: none"
-                           class="form-control" name="password_confirmation"
-                           required>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+
+                        <input id="password-confirm" placeholder="Такрори парол" type="password" class="form-control" name="password_confirmation" value="{{ old('password') }}" required autofocus>
+                    </div>
                 </div>
-                <hr class="m-0" style="background-color: {{ $errors->has('password') ? '#e3342f' : ''}}">
                 <button type="submit" class="btn btn-success my-5 w-75" style="border-radius: 20px">
                     {{ __('Бакайдриред') }}
                 </button>
             </form>
-        </div>
-        <div class="col-3">
-            <img src="{{URL::asset('/img/login-page.png')}}">
+            </div>
         </div>
     </div>
 </div>
