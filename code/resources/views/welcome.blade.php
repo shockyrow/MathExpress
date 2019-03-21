@@ -3,8 +3,8 @@
 @section('content')
     <div class="container">
         <div class="row d-flex justify-content-center">
-            <div class="col-10">
-                <div class="card shadow">
+            <div class="col-11 my-3">
+                <div class="card bg-light shadow">
                     <div class="card-body">
                         <div class="row features text-justify">
                             <div class="col-md-4">
@@ -57,8 +57,8 @@
                 </div>
             </div>
         </div>
-        <div class="row d-flex justify-content-center text-center mt-5">
-            <div class="col-md-10 col-lg-8 h2">
+        <div class="row d-flex justify-content-center text-center my-5">
+            <div class="col-md-10 col-lg-8 h2 my-3">
                 Портали мо аз тарафи <strong>10,000+</strong> донушчуен истифода бурда мешабад
             </div>
             <p class="col-md-10 col-lg-8 h6">
@@ -67,9 +67,9 @@
                 тарафи 10,000+ донушчуен истифода бурда мешабад
             </p>
         </div>
-        <div class="row d-flex justify-content-center mt-5">
-            <div class="col-10">
-                <div class="card shadow">
+        <div class="row d-flex justify-content-center my-3">
+            <div class="col-11">
+                <div class="card bg-light shadow">
                     <div class="card-body">
                         <div class="row features text-center">
                             <div class="col-md-6 col-lg-3">
@@ -101,12 +101,12 @@
                 </div>
             </div>
         </div>
-        <div class="row d-flex justify-content-center text-justify mt-5">
-            <h2 class="col-10 text-center mb-4">
+        <div class="row d-flex justify-content-center text-justify my-3">
+            <h2 class="col-10 text-center my-3">
                 Истифодабарандахои Мо Чи Мегуянд?
             </h2>
-            <div class="col-10">
-                <div class="card">
+            <div class="col-11 my-3">
+                <div class="card bg-light">
                     <div class="card-body">
                         <div>
                             <i class="fa fa-quote-right fa-2x app-primary-fg"></i>
