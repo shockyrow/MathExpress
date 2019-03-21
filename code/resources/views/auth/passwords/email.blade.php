@@ -3,8 +3,8 @@
 @section('content')
 <div class="container">
     <div class="row my-5">
-        <div class="col-1"></div>
-        <div class="col-4 text-center">
+        <div class="col-3"></div>
+        <div class="col-3 text-center">
             @if (session('status'))
                 <div class="alert alert-success" role="alert">
                     {{ session('status') }}
@@ -24,6 +24,9 @@
                     {{ __('Паролро равон кунед') }}
                 </button>
             </form>
+        </div>
+        <div class="col-3">
+            <img src="{{URL::asset('/img/login-page.png')}}">
         </div>
     </div>
 </div>

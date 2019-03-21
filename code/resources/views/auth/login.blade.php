@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row my-5">
-            <div class="col-1"></div>
+            <div class="col-3"></div>
             <div class="col-3 text-center">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
@@ -34,10 +34,13 @@
                     </button>
                 </form>
             </div>
+            <div class="col-3">
+                <img src="{{URL::asset('/img/login-page.png')}}">
+            </div>
         </div>
         <div class="row my-5">
-            <div class="col-1"></div>
-            <div class="col-4">
+            <div class="col-3"></div>
+            <div class="col-3">
                 <p style="font-size: small">Суратхисоб надоред?<a class="btn btn-link" href="{{ route('register') }}" style="color: #e3342f">Бакайдгиред</a></p>
             </div>
         </div>
