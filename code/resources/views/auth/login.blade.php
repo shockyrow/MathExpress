@@ -2,20 +2,21 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <div class="col-4 text-center">
+        <div class="row my-5">
+            <div class="col-1"></div>
+            <div class="col-3 text-center">
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="input-group d-flex align-items-center m-2">
                         <i class="fa fa-user"></i>
-                        <input id="email" placeholder="Email" type="email" style="border: 0; box-shadow: none"
+                        <input id="email" placeholder="Сурогаи электрони" type="email" style="border: 0; box-shadow: none"
                                class="form-control" name="email"
                                value="{{ old('email') }}" required autofocus>
                     </div>
                     <hr class="m-0" style="background-color: {{ $errors->has('email') ? '#e3342f' : ''}}">
                     <div class="input-group d-flex align-items-center m-2">
                         <i class="fa fa-lock"></i>
-                        <input id="password" placeholder="Password" type="password" style="border: 0; box-shadow: none"
+                        <input id="password" placeholder="Парол" type="password" style="border: 0; box-shadow: none"
                                class="form-control" name="password" value="{{ old('password') }}"
                                required>
                     </div>
@@ -35,6 +36,7 @@
             </div>
         </div>
         <div class="row my-5">
+            <div class="col-1"></div>
             <div class="col-4">
                 <p style="font-size: small">Суратхисоб надоред?<a class="btn btn-link" href="{{ route('register') }}" style="color: #e3342f">Бакайдгиред</a></p>
             </div>
