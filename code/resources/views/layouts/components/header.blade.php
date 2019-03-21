@@ -77,7 +77,7 @@
                     <li data-target="#mainCarouselControls" data-slide-to="5"></li>
                     <li data-target="#mainCarouselControls" data-slide-to="6"></li>
                 </ol>
-                <div class="carousel-inner rounded shadow">
+                <div class="carousel-inner">
                     <div class="carousel-item carousel-item-overlay active">
                         <img src="{{ asset('img/slider/welcome_slide_1.png') }}" class="d-block w-100" alt="...">
                     </div>
