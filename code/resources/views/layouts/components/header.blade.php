@@ -72,54 +72,34 @@
                     <li data-target="#mainCarouselControls" data-slide-to="0" class="active"></li>
                     <li data-target="#mainCarouselControls" data-slide-to="1"></li>
                     <li data-target="#mainCarouselControls" data-slide-to="2"></li>
+                    <li data-target="#mainCarouselControls" data-slide-to="3"></li>
+                    <li data-target="#mainCarouselControls" data-slide-to="4"></li>
+                    <li data-target="#mainCarouselControls" data-slide-to="5"></li>
+                    <li data-target="#mainCarouselControls" data-slide-to="6"></li>
                 </ol>
                 <div class="carousel-inner rounded shadow">
                     <div class="carousel-item carousel-item-overlay active">
-                        <img src="{{ asset('img/slider/slide_1.jpg') }}" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="font-weight-bold">
-                                Аввалин портали математики бо забони точики
-                            </h5>
-                            <p>
-                                Бо маводхои алодарачаи портали математикии мо дониши худро мукаммал дихед.
-                            </p>
-                        </div>
+                        <img src="{{ asset('img/slider/welcome_slide_1.png') }}" class="d-block w-100" alt="...">
                     </div>
-
-                    <div class="carousel-item carousel-item-overlay">
-                        <img src="{{ asset('img/slider/slide_2.jpg') }}" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="font-weight-bold">
-                                Аввалин портали математики бо забони точики
-                            </h5>
-                            <p>
-                                Бо маводхои алодарачаи портали математикии мо дониши худро мукаммал дихед.
-                            </p>
-                        </div>
+                    <div class="carousel-item carousel-item-overlay ">
+                        <img src="{{ asset('img/slider/welcome_slide_2.png') }}" class="d-block w-100" alt="...">
                     </div>
-
-                    <div class="carousel-item carousel-item-overlay">
-                        <img src="{{ asset('img/slider/slide_3.jpg') }}" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5 class="font-weight-bold">
-                                Аввалин портали математики бо забони точики
-                            </h5>
-                            <p>
-                                Бо маводхои алодарачаи портали математикии мо дониши худро мукаммал дихед.
-                            </p>
-                        </div>
+                    <div class="carousel-item carousel-item-overlay ">
+                        <img src="{{ asset('img/slider/welcome_slide_3.png') }}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item carousel-item-overlay ">
+                        <img src="{{ asset('img/slider/welcome_slide_4.png') }}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item carousel-item-overlay ">
+                        <img src="{{ asset('img/slider/welcome_slide_5.png') }}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item carousel-item-overlay ">
+                        <img src="{{ asset('img/slider/welcome_slide_6.png') }}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item carousel-item-overlay ">
+                        <img src="{{ asset('img/slider/welcome_slide_7.png') }}" class="d-block w-100" alt="...">
                     </div>
                 </div>
-
-                <a class="carousel-control-prev" href="#mainCarouselControls" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-
-                <a class="carousel-control-next" href="#mainCarouselControls" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
             </div>
         @endif
     </div>
