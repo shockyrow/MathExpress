@@ -7,6 +7,6 @@
     </div>
 </div>
 
-<a href="{{ route($data->first()->getTable() . '.create') }}" class="floating-button floating-button-br rounded-circle btn btn-secondary shadow d-flex justify-content-center align-items-center">
+<a href="{{ route($createRouteName) }}" class="floating-button floating-button-br rounded-circle btn btn-secondary shadow d-flex justify-content-center align-items-center">
     <i class="fa fa-plus"></i>
 </a>

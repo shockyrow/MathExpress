@@ -5,7 +5,7 @@
         Китобхои охирин
     @endcomponent
 
-    @component('layouts.components.list', ['data' => $docs])
+    @component('layouts.components.list', ['data' => $docs, 'createRouteName' => 'docs.create'])
         @foreach($docs as $doc)
             @component('layouts.components.doc_item', ['doc' => $doc])
             @endcomponent

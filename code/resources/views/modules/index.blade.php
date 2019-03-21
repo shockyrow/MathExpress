@@ -5,7 +5,7 @@
         Хамаи Модулхо
     @endcomponent
 
-    @component('layouts.components.list', ['data' => $modules])
+    @component('layouts.components.list', ['data' => $modules, 'createRouteName' => 'modules.create'])
         @foreach($modules as $module)
             @component('layouts.components.module_item', ['module' => $module])
             @endcomponent

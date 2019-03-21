@@ -7,7 +7,7 @@
     @component('layouts.components.letters')
     @endcomponent
 
-    @component('layouts.components.list', ['data' => $terms])
+    @component('layouts.components.list', ['data' => $terms, 'createRouteName' => 'terms.create'])
         @foreach($terms as $term)
             @component('layouts.components.term_item', ['term' => $term])
             @endcomponent

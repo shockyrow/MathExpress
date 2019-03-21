@@ -4,7 +4,7 @@
     @component('layouts.components.search', ['search_text' => 'Номи савол'])
     @endcomponent
 
-    @component('layouts.components.list', ['data' => $questions])
+    @component('layouts.components.list', ['data' => $questions, 'createRouteName' => 'questions.create'])
         @foreach($questions as $question)
             @component('layouts.components.question_item', ['question' => $question])
             @endcomponent
