@@ -2,12 +2,13 @@
 
 @section('content')
     <div class="container">
-        <div class="row d-flex flex-wrap justify-content-center flex-row-reverse my-5">
+        <div class="row d-flex flex-wrap justify-content-center flex-row-reverse my-2">
             <div class="px-5">
                 <img class="w-100" src="{{URL::asset('/img/login-image.png')}}">
             </div>
             <div class="col col-lg-4">
                 <div class="col text-center">
+                    <h2 class="py-3">Даромад</h2>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group">
@@ -36,17 +37,18 @@
                             @endif
                         </div>
 
-                        <button type="submit" class="btn btn-success mt-3 w-75" style="border-radius: 20px">
+                        <button type="submit" class="btn btn-success my-5 w-75" style="border-radius: 20px">
                             {{ __('Логин') }}  <i class="fa fa-angle-right"></i>
                         </button>
+
+                        <div class="my-2">
+                            Суратхисоб надоред?
+                            <a href="{{ route('register') }}" style="color: #e3342f">
+                                Бакайдгиред
+                            </a>
+                        </div>
                     </form>
 
-                    <div class="my-2">
-                        Суратхисоб надоред?
-                        <a href="{{ route('register') }}" style="color: #e3342f">
-                            Бакайдгиред
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
