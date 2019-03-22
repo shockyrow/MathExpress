@@ -11,25 +11,25 @@
 
             <div class="collapse navbar-collapse" id="navbarContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
+                    <li class="nav-item{{ strpos(Route::getCurrentRoute()->getName(), 'terms') !== false ? ' active' : '' }}">
                         <a class="nav-link" href="{{ route('terms.index') }}">
                             {{ __('Махфум') }}
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item{{ strpos(Route::getCurrentRoute()->getName(), 'modules') !== false ? ' active' : '' }}">
                         <a class="nav-link" href="{{ route('modules.index') }}">
                             {{ __('Модулхо') }}
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item{{ strpos(Route::getCurrentRoute()->getName(), 'docs') !== false ? ' active' : '' }}">
                         <a class="nav-link" href="{{ route('docs.index') }}">
                             {{ __('Маводхо') }}
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item{{ strpos(Route::getCurrentRoute()->getName(), 'questions') !== false ? ' active' : '' }}">
                         <a class="nav-link" href="{{ route('questions.index') }}">
                             {{ __('Саволу Чавоб') }}
                         </a>
@@ -40,7 +40,7 @@
                 <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                     @guest
-                        <li class="nav-item">
+                        <li class="nav-item{{ Route::getCurrentRoute()->getName() === "login" ? " active" : "" }}">
                             <a class="nav-link" href="{{ route('login') }}">
                                 {{ __('Даромад') }}
                             </a>
