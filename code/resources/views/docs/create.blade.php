@@ -27,7 +27,7 @@
                     <div class="custom-file mt-3">
                         <input type="file" id="bookFile" name="file">
                     </div>
-                    <button class="btn btn-primary align-self-end my-3" type="submit">Боргузорӣ</button>
+                    <button class="btn btn-success align-self-end my-3" type="submit">Боргузорӣ</button>
                 </form>
             </div>
         </div>

@@ -43,7 +43,7 @@
                     <input id="password-confirm" placeholder="Такрори парол" type="password" class="form-control" name="password_confirmation" value="{{ old('password') }}" required autofocus>
                 </div>
             </div>
-            <button type="submit" class="btn btn-success w-75" style="border-radius: 20px">
+            <button type="submit" class="btn btn-success w-75">
                 {{ __('Бакайдриред') }}
             </button>
         </form>

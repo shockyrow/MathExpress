@@ -23,7 +23,7 @@
                            value="{{ old('email') }}" required autofocus>
                 </div>
             </div>
-            <button type="submit" class="btn btn-success my-4 w-75" style="border-radius: 20px">
+            <button type="submit" class="btn btn-success my-4 w-75">
                 {{ __('Паролро равон кунед') }}
             </button>
         </form>

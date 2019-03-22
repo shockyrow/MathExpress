@@ -18,7 +18,7 @@
                         <label for="termDescriptionInput">Маълумоти зиёдтар</label>
                         <textarea class="form-control" id="termDescriptionInput" name="body" rows="5" placeholder="Маълумоти зиёдтар оиди махфум">{{$term->getBody()}}</textarea>
                     </div>
-                    <button class="btn btn-primary align-self-end my-3" type="submit">Ислохкуни</button>
+                    <button class="btn btn-success align-self-end my-3" type="submit">Ислохкуни</button>
                 </form>
             </div>
         </div>

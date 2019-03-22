@@ -33,7 +33,7 @@
                 @endif
             </div>
 
-            <button type="submit" class="btn btn-success w-75" style="border-radius: 20px">
+            <button type="submit" class="btn btn-success w-75">
                 {{ __('Логин') }}  <i class="fa fa-angle-right"></i>
             </button>
         </form>
