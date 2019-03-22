@@ -78,3 +78,22 @@ body {
 .btn {
     border-radius: 20px;
 }
+
+.no-border {
+    border: 0;
+}
+.pagination > li > a
+{
+    background-color: white;
+    color: black;
+}
+
+.pagination > li > a:focus,
+.pagination > li > a:hover,
+.pagination > li > span:focus,
+.pagination > li > span:hover
+{
+    color: black;
+    background-color: #eee;
+    border-color: #ddd;
+}

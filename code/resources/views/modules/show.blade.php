@@ -13,9 +13,11 @@
                         @auth
                             @if (Auth::user()->hasAnyRole([\App\Role::ROLE_ADMIN, \App\Role::ROLE_TEACHER]))
                                 <a href="{{route("modules.edit", $module->getId())}}">
-                                    <i class="pr-4 fa fa-pencil-alt"></i>
+                                    <button class="btn mx-3 text-info">
+                                        <i class="fa fa-pencil-alt"></i>
+                                    </button>
                                 </a>
-                                <button type="submit" form="deleteModule{{ $module->getId() }}" class="btn btn-sm text-danger">
+                                <button type="submit" form="deleteModule{{ $module->getId() }}" class="btn text-danger">
                                     <i class="fa fa-trash"></i>
                                 </button>
 

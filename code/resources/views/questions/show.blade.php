@@ -16,7 +16,9 @@
                         @auth
                             @if (Auth::id() === $question->user->getId() || Auth::user()->hasAnyRole([\App\Role::ROLE_ADMIN]))
                                 <a href="{{route("questions.edit", $question->getId())}}">
-                                    <i class="pr-4 fa fa-pencil-alt"></i>
+                                    <button class="btn mx-3 text-info">
+                                        <i class="fa fa-pencil-alt"></i>
+                                    </button>
                                 </a>
                                 <button type="submit" form="deleteQuestion{{ $question->getId() }}" class="btn text-danger">
                                     <i class="fa fa-trash"></i>
@@ -54,6 +56,16 @@
                                     {{ $answer->user->getName() }}
                                 </div>
                                 @auth
+                                    @if (Auth::user()->hasAnyRole([\App\Role::ROLE_ADMIN, \App\Role::ROLE_TEACHER]))
+                                        <button type="submit" form="correctAnswer{{ $answer->getId() }}" class="btn btn-sm text-success mx-1 ">
+                                            <i class="fa fa-check"></i>
+                                        </button>
+
+                                        <form id="correctAnswer{{ $answer->getId() }}" action="#" method="post" class="d-none">
+                                            @csrf
+                                            @method('post')
+                                        </form>
+                                    @endif
                                     @if (Auth::id() === $answer->user->getId() || Auth::user()->hasAnyRole([\App\Role::ROLE_ADMIN]))
                                         <button type="submit" form="deleteAnswer{{ $answer->getId() }}" class="btn btn-sm text-danger">
                                             <i class="fa fa-trash"></i>
