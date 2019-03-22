@@ -27,16 +27,22 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
-@component('layouts.components.header', ['showCarousel' => Route::currentRouteName() === 'welcome' ? true : false])
-@endcomponent
+<div class="d-flex flex-column h-100">
+    <div>
+        @component('layouts.components.header', ['showCarousel' => Route::currentRouteName() === 'welcome' ? true : false])
+        @endcomponent
+    </div>
 
-<div id="app">
-    <main>
-        @yield('content')
-    </main>
+    <div id="app" class="flex-fill d-flex align-items-center">
+        <main class="flex-fill">
+            @yield('content')
+        </main>
+    </div>
+
+    <div class="mt-auto">
+        @component('layouts.components.footer')
+        @endcomponent
+    </div>
 </div>
-
-@component('layouts.components.footer')
-@endcomponent
 </body>
 </html>
