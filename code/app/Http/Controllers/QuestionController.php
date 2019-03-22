@@ -25,11 +25,10 @@ class QuestionController extends Controller
     public function index(Request $request)
     {
         if($request->has('tag')) {
-            $questions = Tag::where('name', $request->get('tag'))
-                ->first()
-                ->questions()
-                ->paginate(10)
-            ;
+            $tags = array_map('trim', explode(',', $request->get('tag')));
+            $questions = Question::whereHas('tags', function ($query) use ($tags) {
+                $query->whereIn('name', $tags);
+            })->paginate(10);
         } elseif ($request->has('q') && $request->get('q') !== null) {
             if($request->has('searchType')) {
                 $questions = Question::search(
@@ -65,13 +64,12 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        $tags = array_map('trim', explode(',', $request->get('tags')));
-
         $question = new Question([
             'title' => $request->get('title'),
             'description' => $request->get('description'),
         ]);
 
+        $tags = array_map('trim', explode(',', $request->get('tags')));
         $tagList = [];
 
         foreach ($tags as $tag)

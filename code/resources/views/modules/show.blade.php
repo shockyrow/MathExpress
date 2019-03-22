@@ -49,9 +49,9 @@
                                 </button>
                             @endif
 
-                            <button type="button" class="btn btn-success my-1" href="{{ route('questions.index') }}">
+                            <a href="{{ route('questions.index', ['tag' => $module->tags->implode('name', ',')]) }}" class="btn btn-success my-1">
                                 Саволхои алокаманд
-                            </button>
+                            </a>
                         </div>
 
                         @if ($module->getAudio())
@@ -81,6 +81,10 @@
                         <div>
                             <strong>Маводхо:</strong>
                             Видео, аудио, пресентасия.
+                        </div>
+                        <div>
+                            <strong>Тагхо:</strong>
+                            {{ $module->tags->implode('name', ', ') }}
                         </div>
                     </div>
                 </div>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Module;
 use App\Role;
+use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -67,11 +68,25 @@ class ModuleController extends Controller
             'description' => $request->get('description'),
             'thumbnail' => "public/thumbnails/module_thumb.default.jpeg",
         ]);
+
+        $tags = array_map('trim', explode(',', $request->get('tags')));
+        $tagList = [];
+
+        foreach ($tags as $tag)
+        {
+            $tagList[] = (Tag::where('name',$tag)->first()
+                ? Tag::where('name',$tag)->first()
+                : Tag::create(['name' => $tag]))->getId()
+            ;
+        }
+
         $module
             ->user()
             ->associate(Auth::user())
             ->save()
         ;
+
+        $module->tags()->attach($tagList);
 
         return redirect(route('modules.show', $module->getId()));
     }
@@ -114,6 +129,20 @@ class ModuleController extends Controller
         if(Auth::id() !== $module->getUserId() && !Auth::user()->hasAnyRole([Role::ROLE_ADMIN])) {
             abort(Response::HTTP_FORBIDDEN);
         }
+
+        $tags = array_map('trim', explode(',', $request->get('tags')));
+        $tagList = [];
+
+        foreach ($tags as $tag)
+        {
+            $tagList[] = (Tag::where('name',$tag)->first()
+                ? Tag::where('name',$tag)->first()
+                : Tag::create(['name' => $tag]))->getId()
+            ;
+        }
+
+        $module->tags()->detach($module->tags->pluck('id'));
+        $module->tags()->attach($tagList);
 
         $module
             ->setTitle($request->get('title'))

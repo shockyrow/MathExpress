@@ -166,6 +166,11 @@ class Module extends Model implements SearchableModelInterface
         return $this;
     }
 
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

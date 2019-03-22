@@ -10,15 +10,26 @@
                 <form action="{{ route('modules.update', $module->getId()) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('patch')
+
                     <div class="form-group">
-                        <label for="bookTitleInput">Сарлавхо</label>
-                        <input type="text" class="form-control" id="bookTitleInput" name="title" placeholder="Сарлавхои модул" value="{{$module->getTitle()}}">
+                        <label for="moduleTitleInput">Сарлавхо</label>
+                        <input type="text" class="form-control" id="moduleTitleInput" name="title" placeholder="Сарлавхои модул" value="{{$module->getTitle()}}">
                     </div>
+
                     <div class="form-group">
-                        <label for="bookDescriptionInput">Маълумот</label>
-                        <textarea class="form-control" id="bookDescriptionInput" name="description" rows="5" placeholder="Контенти модул">{{$module->getDescription()}}</textarea>
+                        <label for="moduleDescriptionInput">Маълумот</label>
+                        <textarea class="form-control" id="moduleDescriptionInput" name="description" rows="5" placeholder="Контенти модул">{{$module->getDescription()}}</textarea>
                     </div>
-                    <button class="btn btn-success align-self-end my-3" type="submit">Ислохкуни</button>
+
+                    <div class="form-group">
+                        <label for="moduleTagsInput">Тагхо</label>
+                        <input type="text" class="form-control" id="moduleTagsInput" name="tags" value="{{ $module->tags->implode('name', ', ') }}"
+                               placeholder="масалан (гиометриа, граф)">
+                    </div>
+
+                    <button class="btn btn-success align-self-end my-3" type="submit">
+                        Ислохкуни
+                    </button>
                 </form>
             </div>
         </div>

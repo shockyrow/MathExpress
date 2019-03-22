@@ -17,14 +17,11 @@
                         <input type="text" class="form-control" id="questionTitleInput" name="title" value="{{$question->getTitle()}}"
                                placeholder="Саволи шумо чист?">
                     </div>
+
                     <div class="form-group">
                         <label for="questionDescriptionInput">Маълумот</label>
                         <textarea class="form-control" id="questionDescriptionInput" rows="5" name="description"
                                   placeholder="Бисёртар маълумот дихед">{{$question->getDescription()}}</textarea>
-                    </div>
-
-                    <div class="mb-5">
-                        <h4>Above input should be here.</h4>
                     </div>
 
                     <div class="form-group">
@@ -32,6 +29,7 @@
                         <input type="text" class="form-control" id="questionTagsInput" name="tags" value="{{ $question->tags->implode('name', ', ') }}"
                                placeholder="масалан (гиометриа, граф)">
                     </div>
+
                     <button
                             class="btn btn-success mt-5" type="submit">
                         Ислохкуни
