@@ -6,7 +6,7 @@
             </h5>
 
             <h4 class="d-flex justify-content-end mb-0">
-                <div class="badge badge-success border m-1 p-1 px-2 mx-0">
+                <div class="badge {{ $question->getAnswerId() ? 'badge-success' : 'badge-light' }} border m-1 p-1 px-2 mx-0">
                     {{ __('Чавобхо') }} : {{ $question->answers->count() }}
                 </div>
 
