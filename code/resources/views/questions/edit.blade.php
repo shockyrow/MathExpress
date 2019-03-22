@@ -10,6 +10,8 @@
                 <form action="{{ route('questions.update', $question->getId()) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('patch')
+                    <input type="hidden" name="answer_id" value="{{ $question->getAnswerId() }}">
+
                     <div class="form-group">
                         <label for="questionTitleInput">Мавзуъи савол</label>
                         <input type="text" class="form-control" id="questionTitleInput" name="title" value="{{$question->getTitle()}}"
@@ -27,7 +29,7 @@
 
                     <div class="form-group">
                         <label for="questionTagsInput">Тагхо</label>
-                        <input type="text" class="form-control" id="questionTagsInput" name="tags" value="{{$question->tags->implode('name', ', ')}}"
+                        <input type="text" class="form-control" id="questionTagsInput" name="tags" value="{{ $question->tags->implode('name', ', ') }}"
                                placeholder="масалан (гиометриа, граф)">
                     </div>
                     <button

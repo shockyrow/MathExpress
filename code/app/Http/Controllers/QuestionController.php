@@ -143,6 +143,7 @@ class QuestionController extends Controller
         $question
             ->setTitle($request->get('title'))
             ->setDescription($request->get('description'))
+            ->setAnswerId($request->get('answer_id'))
         ;
 
         $question->tags()->detach($question->tags->pluck('id'));

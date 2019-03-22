@@ -61,9 +61,13 @@
                                             <i class="fa fa-check"></i>
                                         </button>
 
-                                        <form id="correctAnswer{{ $answer->getId() }}" action="#" method="post" class="d-none">
+                                        <form id="correctAnswer{{ $answer->getId() }}" action="{{ route('questions.update', $question->getId()) }}" method="post" class="d-none">
                                             @csrf
-                                            @method('post')
+                                            @method('put')
+                                            <input type="hidden" name="title" value="{{ $question->getTitle() }}">
+                                            <input type="hidden" name="description" value="{{ $question->getDescription() }}">
+                                            <input type="hidden" name="tags" value="{{ $question->tags->implode('name', ', ') }}">
+                                            <input type="hidden" name="answer_id" value="{{ $answer->getId() }}">
                                         </form>
                                     @endif
                                     @if (Auth::id() === $answer->user->getId() || Auth::user()->hasAnyRole([\App\Role::ROLE_ADMIN]))
