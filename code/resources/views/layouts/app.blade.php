@@ -33,8 +33,8 @@
         @endcomponent
     </div>
 
-    <div id="app" class="flex-fill d-flex align-items-center">
-        <main class="flex-fill">
+    <div id="app" class="flex-fill">
+        <main>
             @yield('content')
         </main>
     </div>
