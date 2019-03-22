@@ -15,9 +15,14 @@
                                 <a href="{{route("modules.edit", $module->getId())}}">
                                     <i class="pr-4 fa fa-pencil-alt"></i>
                                 </a>
-                                <a href="#" class="text-danger">
-                                    <i class="pr-2 fa fa-trash"></i>
-                                </a>
+                                <button type="submit" form="deleteModule{{ $module->getId() }}" class="btn btn-sm text-danger">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+
+                                <form id="deleteModule{{ $module->getId() }}" action="{{ route($module->getTable() . '.destroy', $module->getId()) }}" method="post" class="d-none">
+                                    @csrf
+                                    @method('delete')
+                                </form>
                             @endif
                         @endauth
                     </div>

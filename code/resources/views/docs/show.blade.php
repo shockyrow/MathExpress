@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         @component('layouts.components.title')
-            Маълумот ва боргири
+            Маълумоти мавод ва боргири
         @endcomponent
         <div class="row justify-content-left">
             <div class="col-12">
@@ -16,9 +16,35 @@
                                 />
                             </div>
                             <div class="col">
-                                <h2>
-                                    {{ $doc->getTitle() }}
-                                </h2>
+                                <div class="row my-3">
+                                    <div class="col-9">
+                                        <h2>
+                                            {{ $doc->getTitle() }}
+                                        </h2>
+
+                                    </div>
+                                    <div class="col-3">
+                                        <a href="{{route("doc.download", $doc->getId())}}">
+                                            <i class="text-success pr-4 fa fa-download"></i>
+                                        </a>
+                                        @auth
+                                            @if (Auth::user()->hasAnyRole([\App\Role::ROLE_ADMIN, \App\Role::ROLE_TEACHER]))
+                                                <a href="{{route("docs.edit", $doc->getId())}}">
+                                                    <i class="pr-4 fa fa-pencil-alt"></i>
+                                                </a>
+                                                <button type="submit" form="deleteDoc{{ $doc->getId() }}" class="btn btn-sm text-danger">
+                                                    <i class="fa fa-trash"></i>
+                                                </button>
+
+                                                <form id="deleteDoc{{ $doc->getId() }}" action="{{ route($doc->getTable() . '.destroy', $doc->getId()) }}" method="post" class="d-none">
+                                                    @csrf
+                                                    @method('delete')
+                                                </form>
+                                            @endif
+                                        @endauth
+                                    </div>
+                                </div>
+
                                 <h4>
                                     <small>{{ $doc->getAuthor() }}</small>
                                 </h4>
@@ -26,27 +52,6 @@
                                 <p class="text-justify">
                                     {{ $doc->getDescription() }}
                                 </p>
-
-                                <div class="row">
-                                    <div class="col">
-                                        <a href="{{ route('doc.download', $doc->getId()) }}" style="text-decoration : none">
-                                            <button type="button"
-                                                    class="btn btn-outline-success btn-block shadow-sm my-3"
-                                            >
-                                                Боргири
-                                            </button>
-                                        </a>
-                                    </div>
-                                    <div class="col">
-                                        <a href="{{ route('docs.edit', $doc->getId()) }}" style="text-decoration : none">
-                                            <button type="button"
-                                                    class="btn btn-outline-success btn-block shadow-sm my-3"
-                                            >
-                                                Ислохкуни
-                                            </button>
-                                        </a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
