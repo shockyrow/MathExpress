@@ -19,7 +19,7 @@
                         <span class="input-group-text"><i class="fa fa-user"></i></span>
                     </div>
 
-                    <input id="email" placeholder="Сурогаи электрони" type="email" class="form-control" name="email"
+                    <input id="email" placeholder="Суроғаи электронӣ" type="email" class="form-control" name="email"
                            value="{{ old('email') }}" required autofocus>
                 </div>
             </div>

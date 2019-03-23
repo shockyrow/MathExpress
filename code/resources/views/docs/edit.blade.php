@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         @component('layouts.components.title')
-            Ислохи Китоб
+            Ислоҳи Мавод
         @endcomponent
         <div class="row">
             <div class="col-12">
@@ -11,16 +11,16 @@
                     @csrf
                     @method('patch')
                     <div class="form-group">
-                        <label for="bookTitleInput">Номи китоб</label>
-                        <input type="text" class="form-control" id="bookTitleInput" name="title" placeholder="Номи китоб" value="{{$doc->getTitle()}}">
+                        <label for="bookTitleInput">Номи мавод</label>
+                        <input type="text" class="form-control" id="bookTitleInput" name="title" placeholder="Номи мавод" value="{{$doc->getTitle()}}">
                     </div>
                     <div class="form-group">
                         <label for="bookAuthorInput">Нависанда</label>
                         <input type="text" class="form-control" id="bookAuthorInput" name="author" placeholder="Нависанда" value="{{$doc->getAuthor()}}">
                     </div>
                     <div class="form-group">
-                        <label for="bookDescriptionInput">Дар бораи китоб</label>
-                        <textarea class="form-control" id="bookDescriptionInput" name="description" rows="5">{{$doc->getDescription()}}</textarea>
+                        <label for="bookDescriptionInput">Дар бораи мавод</label>
+                        <textarea class="form-control" id="bookDescriptionInput" placeholder="Каме маълумот дар бораи мавод нависед" name="description" rows="5">{{$doc->getDescription()}}</textarea>
                     </div>
                     <div class="custom-file">
                         <input type="file" id="bookThumb" name="thumbnail">
@@ -28,7 +28,7 @@
                     <div class="custom-file mt-3">
                         <input type="file" id="bookFile" name="file">
                     </div>
-                    <button class="btn btn-success align-self-end my-3" type="submit">Ислохкуни</button>
+                    <button class="btn btn-success align-self-end my-3" type="submit">Ислоҳ</button>
                 </form>
             </div>
         </div>

@@ -13,19 +13,19 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item{{ strpos(Route::getCurrentRoute()->getName(), 'terms') !== false ? ' active' : '' }}">
                         <a class="nav-link" href="{{ route('terms.index') }}">
-                            {{ __('Махфум') }}
+                            {{ __('Маҳфум') }}
                         </a>
                     </li>
 
                     <li class="nav-item{{ strpos(Route::getCurrentRoute()->getName(), 'modules') !== false ? ' active' : '' }}">
                         <a class="nav-link" href="{{ route('modules.index') }}">
-                            {{ __('Модулхо') }}
+                            {{ __('Модул') }}
                         </a>
                     </li>
 
                     <li class="nav-item{{ strpos(Route::getCurrentRoute()->getName(), 'docs') !== false ? ' active' : '' }}">
                         <a class="nav-link" href="{{ route('docs.index') }}">
-                            {{ __('Маводхо') }}
+                            {{ __('Мавод') }}
                         </a>
                     </li>
 

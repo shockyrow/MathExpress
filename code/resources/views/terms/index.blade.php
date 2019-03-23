@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @component('layouts.components.search', ['search_text' => 'Номи Махфум'])
+    @component('layouts.components.search', ['search_text' => 'Номи Маҳфум'])
     @endcomponent
 
     @component('layouts.components.letters')

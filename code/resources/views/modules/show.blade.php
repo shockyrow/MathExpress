@@ -44,7 +44,7 @@
                             @endif
 
                             <a href="{{ route('questions.index', ['tag' => $module->tags->implode('name', ',')]) }}" class="btn btn-success my-1">
-                                Саволхои алокаманд
+                                Саволҳои алоқаманд
                             </a>
                         </div>
                     </div>

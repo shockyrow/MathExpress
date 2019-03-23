@@ -11,25 +11,25 @@
                     @csrf
 
                     <div class="form-group">
-                        <label for="bookTitleInput">Сарлавхо</label>
-                        <input type="text" class="form-control" id="bookTitleInput" name="title" placeholder="Сарлавхои модул">
+                        <label for="title">Сарлавҳа</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Сарлавҳаи модул">
                     </div>
 
                     <div class="form-group">
-                        <label for="bookDescriptionInput">Маълумот</label>
-                        <textarea class="form-control" id="bookDescriptionInput" name="description" rows="5" placeholder="Контенти модул"></textarea>
+                        <label for="description">Маълумот</label>
+                        <textarea class="form-control" id="description" name="description" rows="5" placeholder="Контенти модул"></textarea>
                     </div>
                     <div class="custom-file mt-3">
                         <input type="file" id="moduleFile" name="file">
                     </div>
 
                     <div class="form-group">
-                        <label for="moduleTagsInput">Тагхо</label>
-                        <input type="text" class="form-control" id="moduleTagsInput" name="tags" placeholder="масалан (гиометриа, граф)">
+                        <label for="moduleTagsInput">Тагҳо</label>
+                        <input type="text" class="form-control" id="moduleTagsInput" name="tags" placeholder="масалан (маҷмӯъ)">
                     </div>
 
                     <button class="btn btn-success align-self-end my-3" type="submit">
-                        Боргузори
+                        Боргузоред
                     </button>
                 </form>
             </div>

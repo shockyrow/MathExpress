@@ -3,7 +3,7 @@
 @section('content')
     @component('layouts.components.auth')
         <h2 class="mb-3">
-            {{ __('Бакайдгири') }}
+            {{ __('Бақайдгирӣ') }}
         </h2>
         <form method="POST" action="{{ route('register') }}">
             @csrf
@@ -22,7 +22,7 @@
                         <span class="input-group-text"><i class="fa fa-at"></i></span>
                     </div>
 
-                    <input id="email" placeholder="Сурогаи электрони" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                    <input id="email" placeholder="Суроғаи электронӣ" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
                 </div>
             </div>
             <div class="form-group">
@@ -44,11 +44,11 @@
                 </div>
             </div>
             <button type="submit" class="btn btn-success w-75">
-                {{ __('Бакайдриред') }}
+                {{ __('Бақайдгиред') }}
             </button>
         </form>
         <div class="my-2">
-            Суратхисоб доред?
+            Суратҳисоб доред?
             <a href="{{ route('login') }}" style="color: #e3342f">
                 Даромад
             </a>

@@ -8,7 +8,7 @@
             <h5 class="font-weight-bold text-dark m-0">
                 {{ $module->getTitle() }}
                 <div class="small">
-                    by {{ $module->user->getName() }}
+                    {{ $module->user->getName() }}
                 </div>
                 <div class="small text-muted">
                     {{ \Carbon\Carbon::parse($module->created_at)->diffForHumans() }}

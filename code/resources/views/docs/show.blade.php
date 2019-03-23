@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         @component('layouts.components.title')
-            Маълумоти мавод ва боргири
+            Маълумоти мавод ва боргирӣ
         @endcomponent
         <div class="row justify-content-left">
             <div class="col-12">

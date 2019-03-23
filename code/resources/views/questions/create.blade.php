@@ -11,7 +11,7 @@
                     @csrf
 
                     <div class="form-group">
-                        <label for="questionTitleInput">Мавзуъи савол</label>
+                        <label for="questionTitleInput">Сарлавҳаи савол</label>
                         <input type="text" class="form-control" id="questionTitleInput" name="title" placeholder="Саволи шумо чист?">
                     </div>
 
@@ -21,12 +21,12 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="questionTagsInput">Тагхо</label>
-                        <input type="text" class="form-control" id="questionTagsInput" name="tags" placeholder="масалан (гиометриа, граф)">
+                        <label for="questionTagsInput">Тагҳо</label>
+                        <input type="text" class="form-control" id="questionTagsInput" name="tags" placeholder="масалан (маҷмӯъ)">
                     </div>
 
                     <button class="btn btn-success mt-5" type="submit">
-                        Саволро боргузоред.
+                        Саволро боргузоред
                     </button>
                 </form>
             </div>

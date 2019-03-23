@@ -7,9 +7,9 @@
 
                     <div class="input-group-append">
                         <select name="searchType" class="btn btn-outline-success">
-                            <option value="2">Contains</option>
-                            <option value="1">Begins with</option>
-                            <option value="3">Ends with</option>
+                            <option value="2">Дохил</option>
+                            <option value="1">Саршавӣ бо</option>
+                            <option value="3">Тамомшавӣ бо</option>
                         </select>
 
                         <button class="btn btn-success" type="submit">Кофтан</button>

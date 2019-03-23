@@ -12,8 +12,8 @@
                     @method('patch')
 
                     <div class="form-group">
-                        <label for="moduleTitleInput">Сарлавхо</label>
-                        <input type="text" class="form-control" id="moduleTitleInput" name="title" placeholder="Сарлавхои модул" value="{{$module->getTitle()}}">
+                        <label for="title">Сарлавҳа</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="Сарлавҳаи модул" value="{{$module->getTitle()}}">
                     </div>
 
                     <div class="form-group">
@@ -22,13 +22,13 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="moduleTagsInput">Тагхо</label>
+                        <label for="moduleTagsInput">Тагҳо</label>
                         <input type="text" class="form-control" id="moduleTagsInput" name="tags" value="{{ $module->tags->implode('name', ', ') }}"
-                               placeholder="масалан (гиометриа, граф)">
+                               placeholder="масалан (маҷмӯъ)">
                     </div>
 
                     <button class="btn btn-success align-self-end my-3" type="submit">
-                        Ислохкуни
+                        Ислоҳ
                     </button>
                 </form>
             </div>

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         @component('layouts.components.title')
-            Ислохи савол
+            Ислоҳи савол
         @endcomponent
         <div class="row">
             <div class="col-12">
@@ -13,7 +13,7 @@
                     <input type="hidden" name="answer_id" value="{{ $question->getAnswerId() }}">
 
                     <div class="form-group">
-                        <label for="questionTitleInput">Мавзуъи савол</label>
+                        <label for="questionTitleInput">Сарлавҳаи савол</label>
                         <input type="text" class="form-control" id="questionTitleInput" name="title" value="{{$question->getTitle()}}"
                                placeholder="Саволи шумо чист?">
                     </div>
@@ -25,14 +25,14 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="questionTagsInput">Тагхо</label>
+                        <label for="questionTagsInput">Тагҳо</label>
                         <input type="text" class="form-control" id="questionTagsInput" name="tags" value="{{ $question->tags->implode('name', ', ') }}"
-                               placeholder="масалан (гиометриа, граф)">
+                               placeholder="масалан (маҷмӯъ)">
                     </div>
 
                     <button
                             class="btn btn-success mt-5" type="submit">
-                        Ислохкуни
+                        Ислоҳ
                     </button>
                 </form>
             </div>

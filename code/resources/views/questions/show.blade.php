@@ -45,7 +45,7 @@
             <div class="col-12">
                 <div class="p-0">
                     <hr>
-                    <div class="text-right">{{$question->answers->count()}} чавоб</div>
+                    <div class="text-right">{{$question->answers->count()}} ҷавоб</div>
                     @foreach($question->answers as $answer)
                         <div class="p-0 card shadow mb-3 text-justify my-3 {{ $answer->getId() === $question->getAnswerId() ? 'border border-success' : '' }}">
                             <div class="card-body">
@@ -96,14 +96,14 @@
                             <input type="hidden" name="question_id" value="{{ $question->getId() }}"/>
 
                             <div class="form-group">
-                                <label for="answerInput">Чавоби шумо</label>
-                                <textarea class="form-control" id="answerInput" rows="5" placeholder="Чавобатонро дар инчо набисед." name="text"></textarea>
+                                <label for="answerInput">Ҷавоби шумо</label>
+                                <textarea class="form-control" id="answerInput" rows="5" placeholder="Ҷавобатонро дар инҷо нависед" name="text"></textarea>
                             </div>
                             <button
                                     type="submit"
                                     class="btn btn-success mt-5"
                                     href="{{ route('questions.create') }}">
-                                Чавобро боргузоред.
+                                Ҷавобро боргузоред
                             </button>
                         </form>
                     </div>

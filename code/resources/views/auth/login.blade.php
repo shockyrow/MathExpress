@@ -13,7 +13,7 @@
                         <span class="input-group-text"><i class="fa fa-user"></i></span>
                     </div>
 
-                    <input id="email" placeholder="Сурогаи электрони" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                    <input id="email" placeholder="Суроғаи электронӣ" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
                 </div>
             </div>
 
@@ -28,7 +28,7 @@
             <div class="my-2">
                 @if (Route::has('password.request'))
                     <a class="btn btn-link" style="color: #4e555b" href="{{ route('password.request') }}">
-                        {{ __('Паролро фаромуш кардед?') }}
+                        {{ __('Паролро фаромӯш кардед?') }}
                     </a>
                 @endif
             </div>
@@ -39,9 +39,9 @@
         </form>
 
         <div class="my-2">
-            Суратхисоб надоред?
+            Суратҳисоб надоред?
             <a href="{{ route('register') }}" style="color: #e3342f">
-                Бакайдгиред
+                Бақайдгиред
             </a>
         </div>
     @endcomponent

@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         @component('layouts.components.title')
-            Ислохи махфум
+            Ислоҳи маҳфум
         @endcomponent
         <div class="row">
             <div class="col-12">
@@ -11,14 +11,14 @@
                     @csrf
                     @method('patch')
                     <div class="form-group">
-                        <label for="termTitleInput">Номи махфум</label>
-                        <input type="text" class="form-control" id="termTitleInput" name="title" placeholder="Номи махфум" value="{{$term->getTitle()}}">
+                        <label for="termTitleInput">Номи маҳфум</label>
+                        <input type="text" class="form-control" id="termTitleInput" name="title" placeholder="Номи маҳфум" value="{{$term->getTitle()}}">
                     </div>
                     <div class="form-group">
                         <label for="termDescriptionInput">Маълумоти зиёдтар</label>
-                        <textarea class="form-control" id="termDescriptionInput" name="body" rows="5" placeholder="Маълумоти зиёдтар оиди махфум">{{$term->getBody()}}</textarea>
+                        <textarea class="form-control" id="termDescriptionInput" name="body" rows="5" placeholder="Маълумоти зиёдтар оиди маҳфум">{{$term->getBody()}}</textarea>
                     </div>
-                    <button class="btn btn-success align-self-end my-3" type="submit">Ислохкуни</button>
+                    <button class="btn btn-success align-self-end my-3" type="submit">Ислоҳ</button>
                 </form>
             </div>
         </div>
