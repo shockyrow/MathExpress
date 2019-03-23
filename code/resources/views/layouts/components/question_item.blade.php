@@ -7,7 +7,7 @@
 
             <h4 class="d-flex justify-content-end mb-0">
                 <div class="badge {{ $question->getAnswerId() ? 'badge-success' : 'badge-light' }} border m-1 p-1 px-2 mx-0">
-                    {{ __('Чавобхо') }} : {{ $question->answers->count() }}
+                    {{ __('Ҷавобҳо') }} : {{ $question->answers->count() }}
                 </div>
 
                 <div class="badge badge-primary border m-1 p-1 px-2 mx-0">
@@ -17,7 +17,7 @@
         </a>
         <h4 class="card-footer d-flex flex-wrap align-items-center py-2 mb-0">
             <div class="badge m-1 p-1 px-0 mx-0">
-                {{ __('Тагхо') }} :
+                {{ __('Тагҳо') }} :
             </div>
 
             @forelse($question->tags as $tag)
@@ -26,7 +26,7 @@
                 </a>
             @empty
                 <div class="badge font-weight-light m-1 p-1">
-                    No tags found!
+                    Тагҳо вуҷуд надоранд
                 </div>
             @endforelse
         </h4>
