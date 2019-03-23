@@ -25,6 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
  */
 
 Route::get('/docs/{doc}/download', 'DocController@download')->name('doc.download');
+Route::get('/modules/{module}/download', 'ModuleController@download')->name('module.download');
 Route::resource('/docs', 'DocController');
 Route::resource('/terms', 'TermController');
 Route::resource('/questions','QuestionController');

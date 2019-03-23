@@ -15,9 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $description
  * @property int $user_id
  * @property string|null $thumbnail
- * @property string|null $video
- * @property string|null $audio
- * @property string|null $presentation
+ * @property string|null $filename
  */
 class Module extends Model implements SearchableModelInterface
 {
@@ -26,9 +24,7 @@ class Module extends Model implements SearchableModelInterface
         'professor',
         'thumbnail',
         'description',
-        'presentation',
-        'video',
-        'audio'
+        'filename'
     ];
 
     /**
@@ -113,58 +109,24 @@ class Module extends Model implements SearchableModelInterface
     }
 
     /**
-     * @return string|null
+     * @return string
      */
-    public function getVideo(): ?string
+    public function getFilename(): ?string
     {
-        return $this->video;
+        return $this->filename;
     }
 
     /**
-     * @param string|null $video
+     * @param string $filename
      * @return Module
      */
-    public function setVideo(?string $video): Module
+    public function setFilename(string $filename): Module
     {
-        $this->video = $video;
+        $this->filename = $filename;
         return $this;
     }
 
-    /**
-     * @return string|null
-     */
-    public function getAudio(): ?string
-    {
-        return $this->audio;
-    }
 
-    /**
-     * @param string|null $audio
-     * @return Module
-     */
-    public function setAudio(?string $audio): Module
-    {
-        $this->audio = $audio;
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getPresentation(): ?string
-    {
-        return $this->presentation;
-    }
-
-    /**
-     * @param string|null $presentation
-     * @return Module
-     */
-    public function setPresentation(?string $presentation): Module
-    {
-        $this->presentation = $presentation;
-        return $this;
-    }
 
     public function tags()
     {

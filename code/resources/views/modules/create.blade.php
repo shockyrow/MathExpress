@@ -19,6 +19,9 @@
                         <label for="bookDescriptionInput">Маълумот</label>
                         <textarea class="form-control" id="bookDescriptionInput" name="description" rows="5" placeholder="Контенти модул"></textarea>
                     </div>
+                    <div class="custom-file mt-3">
+                        <input type="file" id="moduleFile" name="file">
+                    </div>
 
                     <div class="form-group">
                         <label for="moduleTagsInput">Тагхо</label>

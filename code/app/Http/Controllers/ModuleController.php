@@ -8,6 +8,7 @@ use App\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ModuleController extends Controller
 {
@@ -63,10 +64,17 @@ class ModuleController extends Controller
     {
         Auth::user()->authorizeRoles([Role::ROLE_ADMIN, Role::ROLE_TEACHER]);
 
+        if($request->hasFile('file')) {
+            $filePath = $request->file('file')->storePublicly('public/files');
+        } else {
+            $filePath = null;
+        }
+
         $module = new Module([
             'title' => $request->get('title'),
             'description' => $request->get('description'),
             'thumbnail' => "public/thumbnails/module_thumb.default.jpeg",
+            'filename' => $filePath
         ]);
 
         $tags = array_map('trim', explode(',', $request->get('tags')));
@@ -170,5 +178,10 @@ class ModuleController extends Controller
         $module->forceDelete();
 
         return redirect(route('modules.index'));
+    }
+
+    public function download(Module $module)
+    {
+        return Storage::download($module->getFilename());
     }
 }

@@ -18,9 +18,7 @@ class CreateModulesTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->integer('user_id')->unsigned();
-            $table->string('audio')->nullable();
-            $table->string('video')->nullable();
-            $table->string('presentation')->nullable();
+            $table->string('filename')->nullable();
             $table->string('thumbnail')->nullable();
             $table->timestamps();
         });
