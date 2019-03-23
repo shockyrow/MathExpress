@@ -8,14 +8,12 @@
     @endcomponent
 
     @component('layouts.components.list', ['data' => $terms, 'createRouteName' => 'terms.create'])
-        @foreach($terms as $term)
+        @forelse($terms as $term)
             @component('layouts.components.term_item', ['term' => $term])
             @endcomponent
-        @endforeach
-        @if(sizeof($terms) === 0)
+        @empty
             @component('layouts.components.empty')
             @endcomponent
-        @endif
-
+        @endforelse
     @endcomponent
 @endsection

@@ -6,13 +6,12 @@
     @endcomponent
 
     @component('layouts.components.list', ['data' => $docs, 'createRouteName' => 'docs.create'])
-        @foreach($docs as $doc)
+        @forelse($docs as $doc)
             @component('layouts.components.doc_item', ['doc' => $doc])
             @endcomponent
-        @endforeach
-        @if(sizeof($docs) === 0)
+        @empty
             @component('layouts.components.empty')
             @endcomponent
-        @endif
+        @endforelse
     @endcomponent
 @endsection

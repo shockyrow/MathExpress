@@ -5,13 +5,12 @@
     @endcomponent
 
     @component('layouts.components.list', ['data' => $questions, 'createRouteName' => 'questions.create'])
-        @foreach($questions as $question)
+        @forelse($questions as $question)
             @component('layouts.components.question_item', ['question' => $question])
             @endcomponent
-        @endforeach
-        @if(sizeof($questions) === 0)
+        @empty
             @component('layouts.components.empty')
             @endcomponent
-        @endif
+        @endforelse
     @endcomponent
 @endsection

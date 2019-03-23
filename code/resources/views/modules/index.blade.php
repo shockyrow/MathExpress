@@ -6,13 +6,12 @@
     @endcomponent
 
     @component('layouts.components.list', ['data' => $modules, 'createRouteName' => 'modules.create'])
-        @foreach($modules as $module)
+        @forelse($modules as $module)
             @component('layouts.components.module_item', ['module' => $module])
             @endcomponent
-        @endforeach
-        @if(sizeof($modules) === 0)
+        @empty
             @component('layouts.components.empty')
             @endcomponent
-        @endif
+        @endforelse
     @endcomponent
 @endsection
