@@ -10,5 +10,9 @@
             @component('layouts.components.doc_item', ['doc' => $doc])
             @endcomponent
         @endforeach
+        @if(sizeof($docs) === 0)
+            @component('layouts.components.empty')
+            @endcomponent
+        @endif
     @endcomponent
 @endsection

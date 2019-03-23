@@ -10,5 +10,9 @@
             @component('layouts.components.module_item', ['module' => $module])
             @endcomponent
         @endforeach
+        @if(sizeof($modules) === 0)
+            @component('layouts.components.empty')
+            @endcomponent
+        @endif
     @endcomponent
 @endsection

@@ -12,5 +12,10 @@
             @component('layouts.components.term_item', ['term' => $term])
             @endcomponent
         @endforeach
+        @if(sizeof($terms) === 0)
+            @component('layouts.components.empty')
+            @endcomponent
+        @endif
+
     @endcomponent
 @endsection

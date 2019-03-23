@@ -9,5 +9,9 @@
             @component('layouts.components.question_item', ['question' => $question])
             @endcomponent
         @endforeach
+        @if(sizeof($questions) === 0)
+            @component('layouts.components.empty')
+            @endcomponent
+        @endif
     @endcomponent
 @endsection
